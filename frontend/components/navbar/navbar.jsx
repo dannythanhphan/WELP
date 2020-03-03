@@ -36,10 +36,10 @@ class Navbar extends React.Component {
 
                 <div id="session-buttons">
                     <div id="login-button">
-                        <Link to='/login'>Log In</Link>
+                        <Link to='/login' id="login-button-text">Log In</Link>
                     </div>
                     <div id="signup-button">
-                        <Link to='/signup'>Sign Up</Link>
+                        <Link to='/signup' id="signup-button-text">Sign Up</Link>
                     </div>
                 </div>
 

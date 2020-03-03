@@ -33,20 +33,36 @@ export default class Login extends React.Component {
                 <div id="body-div">
                     <div id="picture-login-container">
                         <div id="login-container">
+                            <div></div>
+                            <fieldset className="line-seperator">
+                                <legend className="or-seperator">OR</legend>
+                            </fieldset>
                             <form>
-                                <label>Username:
-                                    <input type="text" onChange={this.handleInput("username")} value={this.state.username} />
-                                </label>
+                                <input 
+                                    type="text" 
+                                    onChange={this.handleInput("username")} 
+                                    value={this.state.username} 
+                                    placeholder="Email" 
+                                    className="login-username-box"
+                                />
                                 <br />
-                                <label>Password:
-                                    <input type="password" onChange={this.handleInput("password")} value={this.state.password} />
-                                </label>
+                                <input 
+                                    type="password" 
+                                    onChange={this.handleInput("password")} 
+                                    value={this.state.password} 
+                                    placeholder="Password"
+                                    className="login-password-box"
+                                />
                                 <br />
-                                <button onClick={this.handleSubmit}>Login</button>
+                                <a href="" className="forgot-password">Forgot password?</a>
+                                <br/>
+                                <button className="login-login-button" onClick={this.handleSubmit}>Log In</button>
                             </form>
                         </div>
                         <div id="picture-container">
-                            
+                            <div id="picture-container-content">
+
+                            </div>
                         </div>
 
                     </div>

@@ -39,7 +39,7 @@ export default class Signup extends React.Component {
                     </label>
                     <br />
                     <label>Last Name:
-                        <input type="text" onChange={this.handleInput('fname')} value={this.state.lname} />
+                        <input type="text" onChange={this.handleInput('lname')} value={this.state.lname} />
                     </label>
                     <br />
                     <label>Email:

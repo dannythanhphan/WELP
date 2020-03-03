@@ -16,20 +16,20 @@
     left: 30%;
 }
 
-#write-a-review-container:hover {
-    padding-bottom: 5px;
-    border-bottom: 2px solid white;
-}
+// #write-a-review-container:hover {
+//     padding-bottom: 5px;
+//     border-bottom: 2px solid white;
+// }
 
-#events-container:hover {
-    padding-bottom: 5px;
-    border-bottom: 2px solid white;
-}
+// #events-container:hover {
+//     padding-bottom: 5px;
+//     border-bottom: 2px solid white;
+// }
 
-#talk-container:hover {
-    padding-bottom: 5px;
-    border-bottom: 2px solid white;
-}
+// #talk-container:hover {
+//     padding-bottom: 5px;
+//     border-bottom: 2px solid white;
+// }
 
 #home-review-button {
     text-decoration: none;
@@ -38,6 +38,10 @@
     padding: 10px;
     font-size: 14px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#home-review-button:hover {
+    border-bottom: 2px solid white;
 }
 
 #event-button {
@@ -49,6 +53,10 @@
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+#event-button:hover {
+    border-bottom: 2px solid white;
+}
+
 #talk-button {
     text-decoration: none;
     font-weight: bold;
@@ -56,6 +64,62 @@
     padding: 10px;
     font-size: 14px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#talk-button:hover {
+    border-bottom: 2px solid white;
+}
+
+#session-buttons {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 45px;
+    left: 61%;
+}
+
+#login-button {
+    margin-right: 20px;
+
+}
+
+#login-button-text {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+}
+
+#login-button-text:hover {
+    border-bottom: 2px solid white;
+}
+
+#signup-button {
+    margin-right: 10px;
+    position: relative;
+    bottom: 12px;
+    border: 2px solid white;
+    transition: 0.5s ease;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 8px;
+}
+
+#signup-button:hover {
+    background-color: white;
+    #signup-button-text {
+        color: grey;
+    }
+}
+
+#signup-button-text {
+    padding-right: 20px;
+    padding-left: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
 }
 
 #home-search-bar {
