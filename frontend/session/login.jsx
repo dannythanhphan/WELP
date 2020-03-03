@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Login extends React.Component {
     constructor(props) {
@@ -33,7 +34,33 @@ export default class Login extends React.Component {
                 <div id="body-div">
                     <div id="picture-login-container">
                         <div id="login-container">
-                            <div></div>
+                            <div className="login-top-words">
+                                Log In to Welp
+                            </div>
+                            <div className="login-signup-words">
+                                New to Welp? 
+                                <Link to="/signup" className="signup-redirect">Sign Up</Link>
+                            </div>
+                            <div className="legal-stuff">
+                                By loggin in, you agree to Welp's 
+                                <a href="" className="login-tos">Terms of Service</a>
+                                
+                                <br/>
+                                <div className="legal-stuff-organized">
+                                    <p>and</p>
+                                    <a href="" className="login-privacy">Privacy Policy.</a>
+                                </div>
+
+                            </div>
+                            <div className="social-login-buttons-container">
+                                <button className="facebook-login" disabled>
+                                    <i className="fab fa-facebook-square fa-lg"></i>
+                                    Log In with Facebook</button>
+                                <br/>
+                                <button className="google-login" disabled>
+                                    <i className="fab fa-google fa-lg"></i>
+                                    Log In with Google</button>
+                            </div>
                             <fieldset className="line-seperator">
                                 <legend className="or-seperator">OR</legend>
                             </fieldset>
@@ -57,6 +84,10 @@ export default class Login extends React.Component {
                                 <a href="" className="forgot-password">Forgot password?</a>
                                 <br/>
                                 <button className="login-login-button" onClick={this.handleSubmit}>Log In</button>
+                                <div className="form-signup-words">
+                                    New to Welp?
+                                    <Link to="/signup" className="form-signup-redirect">Sign Up</Link>
+                                </div>
                             </form>
                         </div>
                         <div id="picture-container">
@@ -64,9 +95,7 @@ export default class Login extends React.Component {
 
                             </div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         );

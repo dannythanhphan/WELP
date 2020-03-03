@@ -13,13 +13,13 @@
     background-position: center;
 }
 
-#picture-login-container {
+#picture-signup-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-#login-container {
+#signup-container {
     margin-right: 20px;
     position: relative;
     display: flex;
@@ -27,7 +27,7 @@
     justify-content: center;
 }
 
-.login-top-words {
+.signup-top-words {
     color: rgb(230, 55, 55);
     display: flex;
     font-size: 20px;
@@ -36,22 +36,13 @@
     font-weight: bold;
 }
 
-.login-signup-words {
+.signup-words {
     display: flex;
-    font-size: 14px;
     justify-content: center;
-    margin-bottom: 15px;
-}
-
-.signup-redirect {
-    margin-left: 3px;
-    text-decoration: none;
+    color: rgb(10, 10, 10);
+    font-size: 13px;
     font-weight: bold;
-    color: rgb(48, 91, 233);
-}
-
-.signup-redirect:hover {
-    text-decoration: underline;
+    margin-bottom: 15px;
 }
 
 .legal-stuff {
@@ -136,40 +127,37 @@
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.login-username-box {
+.first-input-box {
+    padding: 8px;
+    font-size: 14px;
+    width: 120px;
+    margin-right: 4px;
+    border: none;
+    border: 1px solid rgb(184, 178, 178);
+    border-radius: 6px;
+}
+
+.last-input-box {
+    padding: 8px;
+    font-size: 14px;
+    width: 120px;
+    border: none;
+    border: 1px solid rgb(184, 178, 178);
+    border-radius: 6px;
+    margin-bottom: 6px;
+}
+
+.signup-input-box {
     padding: 7px;
     margin-bottom: 7px;
-    width: 260px;
+    width: 264px;
     font-size: 14px;
     border: none;
-    border: 1px solid lightgray;
+    border: 1px solid rgb(184, 178, 178);
     border-radius: 6px;
 }
 
-.login-password-box {
-    padding: 7px;
-    margin-bottom: 5px;
-    width: 260px;
-    font-size: 14px;
-    border: none;
-    border: 1px solid lightgray;
-    border-radius: 6px;
-}
-
-.forgot-password {
-    text-decoration: none;
-    font-size: 11px;
-    color: rgb(48, 91, 233);
-    display: flex;
-    justify-content: flex-end;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-.login-login-button {
+.signup-signup-button {
     display: flex;
     justify-content: center;
     background-color: rgb(219, 40, 40);
@@ -183,12 +171,12 @@
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.login-login-button:hover {
+.signup-signup-button:hover {
     cursor: pointer;
     background-color: rgba(219, 40, 40, 0.76);
 }
 
-.form-signup-words {
+.form-login-words {
     margin-top: 10px;
     display: flex;
     font-size: 12px;
@@ -196,14 +184,14 @@
     color: grey;
 }
 
-.form-signup-redirect {
+.form-login-redirect {
     margin-left: 3px;
     text-decoration: none;
     font-weight: bold;
     color: rgb(48, 91, 233);
 }
 
-.form-signup-redirect:hover {
+.form-login-redirect:hover {
     text-decoration: underline;
 }
 
