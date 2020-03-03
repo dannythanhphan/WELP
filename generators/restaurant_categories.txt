@@ -1,0 +1,18 @@
+Cafeteria
+Sandwich Bar
+Buffet
+Pizzeria
+Pop-up
+Trattoria
+Snack Bar
+Cafe
+Bistro
+Osteria
+Food Truck
+Steakhouse
+Barbeque
+Hot Dogs
+Doughnuts
+Pizza
+Bakery
+Bagels

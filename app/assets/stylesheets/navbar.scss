@@ -1,0 +1,135 @@
+#nav-bar {
+    background-image: image-url("main_picture.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    // filter: brightness(70%);
+}
+
+#home-buttons-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 10%;
+    left: 30%;
+}
+
+#write-a-review-container:hover {
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+}
+
+#events-container:hover {
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+}
+
+#talk-container:hover {
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+}
+
+#home-review-button {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#event-button {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#talk-button {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#home-search-bar {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    top: 10%;
+}
+
+#find {
+    width: 30px;
+    height: 40px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    position: relative;
+    top: 3%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+    border: none;
+    background: white;
+}
+
+#food-search {
+    width: 300px;
+    height: 40px;
+    outline-width: 0;
+    border: none;
+}
+
+#near {
+    width: 30px;
+    height: 40px;
+    position: relative;
+    top: 3%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+    border: none;
+    border-left: solid 1px lightgray;
+    background: white;
+}
+
+#city-search {
+    width: 300px;
+    height: 40px;
+    outline-width: 0;
+    border: none;
+}
+
+#home-search-button {
+    height: 42px;
+    width: 55px;
+    border: none;
+    background-color: rgb(218, 50, 50);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+#home-search-button:hover {
+    background-color: rgb(190, 35, 35);
+    cursor: pointer;
+}
+
+#welp-name-logo {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    position: relative;
+    left: 45%;
+    top: 10%;
+    background-image: url("welp_logo.png");
+}
+
+.fa-search {
+    color: rgba(255, 255, 255, 0.911);
+}

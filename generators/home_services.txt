@@ -1,0 +1,16 @@
+Home Cleaning-Cleaning
+Office Cleaning-Cleaning
+Maid Service-Cleaning
+TV Mounting-Appliances
+Contractor-Remodel
+Electrician-Electrical
+Plumber-Plumbing
+Mover-Handyman
+Locksmith-Handyman
+Landscaping-Landscape
+Furniture Assembly-Handyman
+Handyman Service-Handyman
+Painting-Remodel
+Home Improvement-Remodel
+Lawncare-Landscape
+Carpentry-Remodel
