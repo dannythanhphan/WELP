@@ -9,6 +9,7 @@ class Navbar extends React.Component {
         }
         this.handleInput = this.handleInput.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.demoSubmit = this.demoSubmit.bind(this)
     }
 
     handleInput(e) {
@@ -17,6 +18,13 @@ class Navbar extends React.Component {
 
     handleSubmit(e) {
 
+    }
+
+    demoSubmit(e) {
+        e.preventDefault();
+        const user = {username: "Phantom", password: "password"}
+        this.props.login(user)
+            .then(() => this.props.history.push('/'));
     }
 
     render() {
@@ -70,13 +78,10 @@ class Navbar extends React.Component {
                                         <p className="profile-dropdown-words">Account Settings</p>
                                     </div>
                                 </div>
-
                                 <button onClick={logout} className="logout-button">Log Out</button>
-
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         ) : (
@@ -86,6 +91,11 @@ class Navbar extends React.Component {
                 </div>
                 <div id="signup-button">
                     <Link to='/signup' id="signup-button-text">Sign Up</Link>
+                </div>
+                <div id="demo-button-container">
+                    <button className="demo-button" onClick={this.demoSubmit}>
+                        <p className="demo-word">Demo</p>
+                    </button>
                 </div>
             </div>
         )

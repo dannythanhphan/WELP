@@ -17,21 +17,6 @@
     left: 30%;
 }
 
-// #write-a-review-container:hover {
-//     padding-bottom: 5px;
-//     border-bottom: 2px solid white;
-// }
-
-// #events-container:hover {
-//     padding-bottom: 5px;
-//     border-bottom: 2px solid white;
-// }
-
-// #talk-container:hover {
-//     padding-bottom: 5px;
-//     border-bottom: 2px solid white;
-// }
-
 #home-review-button {
     text-decoration: none;
     font-weight: bold;
@@ -101,13 +86,13 @@
     position: relative;
     bottom: 12px;
     border: 2px solid white;
-    transition: 0.5s ease;
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 8px;
 }
 
 #signup-button:hover {
+    transition: 0.5s ease;
     background-color: white;
     #signup-button-text {
         color: grey;
@@ -121,6 +106,35 @@
     font-size: 14px;
     font-weight: bold;
     color: white;
+}
+
+.demo-button {
+    height: 40px;
+    border: none;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    position: relative;
+    bottom: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.demo-button:hover {
+    cursor: pointer;
+    transition: 0.5s ease;
+    background-color: white;
+    .demo-word {
+        color: grey;
+    }
+}
+
+.demo-word {
+    padding-bottom: 10px;
 }
 
 .logged-in-container {

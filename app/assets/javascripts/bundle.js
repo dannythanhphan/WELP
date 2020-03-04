@@ -352,6 +352,7 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
     };
     _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.demoSubmit = _this.demoSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -365,6 +366,20 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {}
+  }, {
+    key: "demoSubmit",
+    value: function demoSubmit(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      var user = {
+        username: "Phantom",
+        password: "password"
+      };
+      this.props.login(user).then(function () {
+        return _this2.props.history.push('/');
+      });
+    }
   }, {
     key: "render",
     value: function render() {
@@ -452,7 +467,14 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/signup",
         id: "signup-button-text"
-      }, "Sign Up")));
+      }, "Sign Up")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "demo-button-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "demo-button",
+        onClick: this.demoSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "demo-word"
+      }, "Demo"))));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "nav-bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -537,6 +559,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["logout"])());
+    },
+    login: function login(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
     }
   };
 };
