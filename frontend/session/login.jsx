@@ -69,7 +69,7 @@ export default class Login extends React.Component {
                                     type="text" 
                                     onChange={this.handleInput("username")} 
                                     value={this.state.username} 
-                                    placeholder="Email" 
+                                    placeholder="Username" 
                                     className="login-username-box"
                                 />
                                 <br />

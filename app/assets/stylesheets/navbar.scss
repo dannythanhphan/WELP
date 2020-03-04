@@ -122,6 +122,59 @@
     color: white;
 }
 
+.logged-in-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 45px;
+    left: 61%;
+}
+
+.message-icon {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-right: 5px;
+}
+
+.message-icon:hover {
+    background-color: rgba(0, 0, 0, 0.397);
+    border: none;
+}
+
+.notification-icon {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-right: 5px;
+}
+
+.notification-icon:hover {
+    background-color: rgba(0, 0, 0, 0.397);
+    border: none;
+}
+
+.fa-comment-alt {
+    color: white
+}
+
+.fa-bell {
+    color: white
+}
+
+.profile-dropdown {
+    width: 50px;
+    height: 50px;
+}
+
 #home-search-bar {
     display: flex;
     position: relative;

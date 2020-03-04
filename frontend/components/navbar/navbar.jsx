@@ -20,6 +20,32 @@ class Navbar extends React.Component {
     }
 
     render() {
+        let logged = (this.props.currentUser) ? (
+            <div className="logged-in-container">
+                <div className="message-button">
+                    <button className="message-icon">
+                        <i className="fas fa-comment-alt"></i>
+                    </button>
+                </div>
+                <div className="notification-button">
+                    <button className="notification-icon">
+                        <i className="fas fa-bell"></i>
+                    </button>
+                </div>
+                <div className="profile-dropdown">
+
+                </div>
+            </div>
+        ) : (
+            <div id="session-buttons">
+                <div id="login-button">
+                    <Link to='/login' id="login-button-text">Log In</Link>
+                </div>
+                <div id="signup-button">
+                    <Link to='/signup' id="signup-button-text">Sign Up</Link>
+                </div>
+            </div>
+        )
         return (
             <div id="nav-bar">
                 <div id="home-buttons-container">
@@ -34,14 +60,7 @@ class Navbar extends React.Component {
                     </div>
                 </div>
 
-                <div id="session-buttons">
-                    <div id="login-button">
-                        <Link to='/login' id="login-button-text">Log In</Link>
-                    </div>
-                    <div id="signup-button">
-                        <Link to='/signup' id="signup-button-text">Sign Up</Link>
-                    </div>
-                </div>
+                {logged}
 
                 <div id="welp-name-logo">
                     
