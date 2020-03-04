@@ -2,6 +2,7 @@
     background-image: image-url("main_picture.jpg");
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     height: 600px;
     display: flex;
     flex-direction: column;
@@ -126,7 +127,7 @@
     display: flex;
     flex-direction: row;
     position: relative;
-    top: 45px;
+    top: 40px;
     left: 61%;
 }
 
@@ -170,9 +171,202 @@
     color: white
 }
 
+.profile-dropdown-arrow {
+    display: flex;
+    flex-direction: row;
+}
+
 .profile-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    background-image: url("stock.jpg");
+    background-size: cover;
+    background-position: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.arrow-down {
+    width: 10px;
+    height: 35px;
+    background-color: rgba(46, 46, 46, 0.603);
+    border: none;
+    outline: none;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    left: 35px;
+}
+
+.arrow-down:hover {
+    cursor: pointer;
+}
+
+.fa-caret-down {
+    color: white;
+}
+
+.profile-dropdown::after {
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 35px solid red;
+}
+
+.dropdown-arrow-container {
+    width: 50px;
+}
+
+.dropdown-arrow {
+    display: none;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 13px solid white;
+    position: relative;
+    left: 15px;
+}
+
+.profile-dropdown-content {
+    display: none;
+    position: relative;
+    background-color: #f1f1f1;
+    right: 138px;
+    border-radius: 4px;
+    min-width: 160px;
+    min-height: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    cursor: default;
+}
+
+.profile-dropdown:hover .dropdown-arrow-container .dropdown-arrow {
+    display: block;
+}
+
+.profile-dropdown:hover .profile-dropdown-content {
+    display: block;
+}
+
+.pp-user-info-container {
+    vertical-align: baseline;
+}
+
+.pp-ui-container {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid lightgray;
+}
+
+.profile-picture {
     width: 50px;
     height: 50px;
+    background-image: url("stock.jpg");
+    background-size: cover;
+    background-position: center;
+    margin-right: 15px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-info-name {
+    cursor: pointer;
+    color: rgb(72, 72, 218);
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.user-info-name:hover {
+    text-decoration: underline;
+}
+
+.user-info-username {
+    cursor: pointer;
+    color: rgb(72, 72, 218);
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.user-info-username:hover {
+    text-decoration: underline;
+}
+
+.profile-buttons {
+    padding-bottom: 5px;
+    border-bottom: 1px solid lightgray;
+}
+
+.profile-dropdown-button {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
+}
+
+.fa-user {
+    margin-right: 10px;
+}
+
+.fa-user-friends {
+    margin-right: 4px;
+    position: relative;
+    right: 4px;
+}
+
+.fa-dollar-sign {
+    margin-right: 15px;
+    font-size: 16px;
+    position: relative;
+    left: 1px;
+}
+
+.fa-cog {
+    margin-right: 8px;
+    position: relative;
+    right: 2px;
+}
+
+.profile-dropdown-words {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(72, 72, 218);
+}
+
+.profile-dropdown-words:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.logout-button {
+    border: none;
+    position: relative;
+    right: 5px;
+    color: rgb(72, 72, 218);
+    outline: none;
+    padding-top: 8px;
+}
+
+.logout-button:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 #home-search-bar {

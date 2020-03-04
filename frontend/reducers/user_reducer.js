@@ -10,7 +10,8 @@ const UserReducer = (state = {}, action) => {
         case RECEIVE_USER:
             return Object.assign({}, state, action.user)
         case RECEIVE_CURRENT_USER:
-            return nextState[action.user.id] = action.user
+            nextState[action.user.id] = action.user
+            return nextState
         case REMOVE_USER:
             delete nextState[action.userId]
             return nextState
