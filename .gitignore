@@ -6,6 +6,7 @@
 
 node_modules/
 config/database.yml
+bundle.js*
 # Ignore bundler config.
 /.bundle
 
