@@ -1,0 +1,57 @@
+.business-info-box-container {
+    display: flex;
+    width: 45%;
+    margin-left: 3%;
+    margin-right: 0;
+    height: 200px;
+    margin-bottom: 20px;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.business-info-box-container:hover {
+    box-shadow: 0 0 10px lightgray;
+}
+
+.business-picture-container {
+    position: relative;
+    top: 15%;
+    left: 5%;
+    background-image: url("stock.jpg");
+    background-size: cover;
+    width: 140px;
+    height: 140px;
+    border-radius: 6px;
+}
+
+.business-info-container {
+    position: relative;
+    display: flex;
+    width: 70%;
+    top: 15%;
+    left: 10%;
+}
+
+.search-business-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(8, 8, 8);
+}
+
+.search-phone-street-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    font-size: 12px;
+    color: grey;
+    padding-top: 10px;
+    width: 100px;
+    text-align: right;
+    margin-top: 1%;
+    left: -1%;
+}
+
+.search-business-phone {
+    margin-bottom: 5px;
+}

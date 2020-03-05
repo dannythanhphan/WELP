@@ -1,31 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SearchContainer from '../search/search_container'
-class Navbar extends React.Component {
+class BusinessShowHeader extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             category: ""
-        }
-        this.handleInput = this.handleInput.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.demoSubmit = this.demoSubmit.bind(this)
-    }
-
-    handleInput(e) {
-        this.setState({ category: e.target.value })
-    }
-
-    handleSubmit(e) {
-        e.preventDefault();
-        
-    }
-
-    demoSubmit(e) {
-        e.preventDefault();
-        const user = {username: "Phantom", password: "password"}
-        this.props.login(user)
-            .then(() => this.props.history.push('/'));
+        };
     }
 
     render() {
@@ -60,7 +40,7 @@ class Navbar extends React.Component {
                                         <p className="user-info-name">{currentUser.fname} {currentUser.lname[0]}.</p>
                                         <p className="user-info-username">{currentUser.username}</p>
                                     </div>
-                                </div>    
+                                </div>
                                 <div className="profile-buttons">
                                     <div className="profile-dropdown-button">
                                         <i className="fas fa-user fa-"></i>
@@ -86,54 +66,49 @@ class Navbar extends React.Component {
                 </div>
             </div>
         ) : (
-            <div id="session-buttons">
-                <div id="login-button">
-                    <Link to='/login' id="login-button-text">Log In</Link>
+                <div className="business-session-buttons">
+                    <div className="business-login-button">
+                        <Link to='/login' className="business-login-button-text">Log In</Link>
+                    </div>
+                    <div className="business-signup-button">
+                        <Link to='/signup' className="business-signup-button-text">Sign Up</Link>
+                    </div>
                 </div>
-                <div id="signup-button">
-                    <Link to='/signup' id="signup-button-text">Sign Up</Link>
-                </div>
-                <div id="demo-button-container">
-                    <button className="demo-button" onClick={this.demoSubmit}>
-                        <p className="demo-word">Demo</p>
-                    </button>
-                </div>
-            </div>
-        )
+            )
         return (
-            <div id="nav-bar">
-                <div id="home-buttons-container">
-                    <div id="write-a-review-container">
-                        <a id="home-review-button" href="" >Write a Review</a>
-                    </div>
-                    <div id="events-container">
-                        <a id="event-button" href="">Events</a>
-                    </div>
-                    <div id="talk-container">
-                        <a id="talk-button" href="">Talk</a>
-                    </div>
-                </div>
-
-                {logged}
-
-                <div id="welp-name-logo">
-                    
-                </div>
-                <div id="home-search-bar">
-                    <form>
-                        <input id="find" type="text" value="Find" disabled/>
-                        <input id="food-search" type="text" readOnly={this.state.category}/>
-                        <input id="near" type="text" value="Near" disabled/>
-                        <input id="city-search" type="text" placeholder="San Francisco, CA"/>
-                        <button id="home-search-button" onClick={this.handleSubmit}><i className="fas fa-search fa-lg"></i></button>
+            <div className="business-show-header">
+                <Link to="/" ><div className="show-logo"></div></Link>
+                <div className="show-search-bar">
+                    <form className="show-search-container">
+                        <input 
+                            type="text"
+                            className="show-search"
+                            placeholder="tacos, cheap dinner, Max's"
+                        />
+                        
+                        <input 
+                            type="text"
+                            className="show-search show-search-border"
+                            placeholder="San Francisco, CA"
+                        />
+                        <button className="business-search-button"><i className="fas fa-search fa-lg"></i></button>
                     </form>
                 </div>
-                <div id="home-category-buttons">
-
+                <div className="business-review-buttons-container">
+                    <div className="business-business-button">
+                        <button className="business-button">For Businesses</button>
+                    </div>
+                    <div className="business-review-button">
+                        {/* REMEMBER TO CHANGE THIS */}
+                        <Link to="/businesses/1/reviews" className="business-review-redirect">Write a Review</Link>
+                    </div>
+                </div>
+                <div>
+                    {logged}
                 </div>
             </div>
         );
     }
-}
+};
 
-export default Navbar
+export default BusinessShowHeader;

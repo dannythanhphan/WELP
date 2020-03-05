@@ -4,18 +4,9 @@ class Api::BusinessesController < ApplicationController
         render :index
     end
 
-    def create
-        @business = Business.new(biz_params)
-
-        if @business.save
-            render :show
-        else
-            flash[:errors] = "Invalid credentials"
-        end
-    end
-
     def show
-
+        @business = Business.find(params[:id])
+        render :show
     end
 
     def biz_params
