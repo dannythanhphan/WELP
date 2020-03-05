@@ -5,4 +5,14 @@ class Business < ApplicationRecord
     has_many :reviews,
         foreign_key: :business_id,
         class_name: :Review
+
+    def average_rating
+        total = 0
+        reviews.each { |review| total += review.rating }
+        average = (total / reviews.length)
+    end
+
+    def number_of_reviews
+        reviews.length
+    end
 end

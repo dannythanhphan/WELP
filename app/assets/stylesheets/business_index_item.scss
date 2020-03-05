@@ -28,6 +28,7 @@
 .business-info-container {
     position: relative;
     display: flex;
+    flex-direction: column;
     width: 70%;
     top: 15%;
     left: 10%;
@@ -54,4 +55,41 @@
 
 .search-business-phone {
     margin-bottom: 5px;
+}
+
+.stars-count-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.stars-container {
+    padding-top: 1.5%;
+    width: 115px;
+    height: 17px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.fa-star {
+    color: white;
+    height: 100%;
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 4px;
+    align-items: center;
+    background-color: grey;
+    font-size: 10px;
+    padding-top: 5%;
+    padding-left: 4%;
+}
+
+.checked {
+    background-color: orange;
+}
+
+.review-count {
+    padding-top: 2.7%;
+    padding-left: 1.8%;
+    color: grey;
+    font-size: 13px;
 }
