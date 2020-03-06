@@ -1,6 +1,6 @@
 .business-info-box-container {
     display: flex;
-    width: 45%;
+    width: 88%;
     margin-left: 3%;
     margin-right: 0;
     height: 200px;
@@ -90,6 +90,34 @@
 .review-count {
     padding-top: 2.7%;
     padding-left: 1.8%;
+    color: grey;
+    font-size: 13px;
+}
+
+.cost-cat-container {
+    display: flex;
+    width: 150px;
+    padding-top: 15px;
+    padding-left: 3px;
+}
+
+.money-sign-container {
+    width: 25px;
+    height: 25px;
+}
+
+.category-container {
+    margin-left: 2%;
+}
+
+.cost-cat {
+    margin-right: 12px;
+    color: grey;
+    font-size: 13px;
+}
+
+.business-item-review {
+    margin-top: 10px;
     color: grey;
     font-size: 13px;
 }

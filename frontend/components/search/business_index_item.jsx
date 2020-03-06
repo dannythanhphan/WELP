@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const BusinessIndexItem = ({ business }) => {
+    let cost = ""
+    for (let i = 1; i <= business.cost; i++) {
+        cost += "$";
+    }
     return (
         <Link to={`/businesses/${business.id}`} className="business-info-box-container">
             <div className="business-picture-container"></div>
@@ -17,7 +21,21 @@ const BusinessIndexItem = ({ business }) => {
                     </div>
                     <div className="review-count">{business.num_reviews}</div>
                 </div>  
+                <div className="cost-cat-container">
+                    <span className="cost-cat">
+                        {cost} 
+                    </span>
+                    <span className="cost-cat">
+                        &#8226; 
+                    </span>
+                    <span className="cost-cat">
+                        {business.categories}
+                    </span>
+                </div>
 
+                <div className="business-item-review">
+                    "{business.review}"
+                </div>
             </div>
             <div className="search-phone-street-container">
                 <p className="search-business-phone">{business.business_phone}</p>

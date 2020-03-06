@@ -4,11 +4,13 @@ import BusinessIndex from './business_index'
 import BusinessShowHeader from '../business/business_show_header_container';
 import BusinessShowHeaderContainer from '../business/business_show_header_container';
 
-const Search = ({ businesses, fetchBusinesses}) => (
+const Search = ({ businesses, fetchBusinesses, updateBounds}) => (
     <div className="search-page-container">
         <BusinessShowHeader />
-        <BusinessIndex businesses={businesses} fetchBusinesses={fetchBusinesses}/>
-        <BusinessMap />
+        <div className="index-map-container">
+            <BusinessIndex businesses={businesses} fetchBusinesses={fetchBusinesses}/>
+            <BusinessMap businesses={businesses} updateBounds={updateBounds} />
+        </div>
     </div>
 );
 

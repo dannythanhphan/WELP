@@ -10,7 +10,7 @@ class BusinessIndex extends React.Component {
         return (
             <div className="searched-businesses-container">
                 {businesses.map((business) => {
-                    return <BusinessIndexItem business={business} />
+                    return <BusinessIndexItem key={business.id} business={business} />
                 })}
             </div>
         )

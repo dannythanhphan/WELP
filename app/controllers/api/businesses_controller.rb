@@ -1,6 +1,12 @@
 class Api::BusinessesController < ApplicationController
     def index
-        @businesses = Business.all
+        # bizs = Business.in_bounds(params[:bounds])
+        bizs = Business.all
+        if bizs.length > 20
+            @businesses = bizs[0...19]
+        else
+            @businesses = bizs
+        end
         render :index
     end
 

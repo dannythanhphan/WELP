@@ -54,6 +54,10 @@ def lng_gen
     return result.to_f
 end
 
+def ran_cost
+    return rand(1...4)
+end
+
 User.destroy_all
 Business.destroy_all
 # Reviews.destroy_all
@@ -74,205 +78,205 @@ Business.destroy_all
     # RESTAURANTS
         r1 = Business.create!(name: "#{curr = name.pop()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r2 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r3 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r4 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r5 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r6 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r7 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r8 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r9 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r10 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r11 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r12 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r13 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r14 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r15 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r16 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r17 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r18 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r19 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r20 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r21 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         r22 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
     # HOME SERVICES
         home_service_name = home_service.sample.split("-")
         h1 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h2 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h3 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h4 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h5 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h6 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h7 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h8 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h9 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h10 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h11 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h12 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h13 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h14 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h15 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h16 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h17 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h18 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h19 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h20 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         home_service_name = home_service.sample.split("-")
         h21 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,
                               url: "#{curr}#{home_service_name.first}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen)
+                              email: "#{curr}@welp.com", business_type: "Home", lat: lat_gen, lng: lng_gen, cost: ran_cost)
     # AUTO SERVICES
         a1 = Business.create!(name: "Joe's Auto Repair Shop", categories: "Auto Repair", business_phone: number_generator,
                               url: "joesautorepair.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "joes@welp.com", business_type: "Auto", lat: lat_gen, lng: lng_gen)
+                              email: "joes@welp.com", business_type: "Auto", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         a2 = Business.create!(name: "Prettier", categories: "Auto Detailing", business_phone: number_generator,
                               url: "prettier.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "prettier@welp.com", business_type: "Auto", lat: lat_gen, lng: lng_gen)
+                              email: "prettier@welp.com", business_type: "Auto", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         a3 = Business.create!(name: "Used Parts", categories: "Body Shop", business_phone: number_generator,
                               url: "cheaperparts.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "usedlikenew@welp.com", business_type: "Auto", lat: lat_gen, lng: lng_gen)
+                              email: "usedlikenew@welp.com", business_type: "Auto", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         a4 = Business.create!(name: "Shiny Cars", categories: "Car Wash", business_phone: number_generator,
                               url: "letsclean.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "shiny@welp.com", business_type: "Auto", lat: lat_gen, lng: lng_gen)
+                              email: "shiny@welp.com", business_type: "Auto", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         a5 = Business.create!(name: "Phancy Dealership", categories: "Car Dealership", business_phone: number_generator,
                               url: "phancy.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "phancy@welp.com", business_type: "Auto", lat: lat_gen, lng: lng_gen)
+                              email: "phancy@welp.com", business_type: "Auto", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         a6 = Business.create!(name: "Detox", categories: "Oil Change", business_phone: number_generator,
                               url: "changethatoil.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "oilman@welp.com", business_type: "Auto", lat: lat_gen, lng: lng_gen)
+                              email: "oilman@welp.com", business_type: "Auto", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         a7 = Business.create!(name: "Big Lot", categories: "Parking", business_phone: number_generator,
                               url: "biglot.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "biglot@welp.com", business_type: "Auto", lat: lat_gen, lng: lng_gen)
+                              email: "biglot@welp.com", business_type: "Auto", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         a8 = Business.create!(name: "Big Mike's Towing Company", categories: "Towing", business_phone: number_generator,
                               url: "bigmike.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "mikey@welp.com", business_type: "Auto", lat: lat_gen, lng: lng_gen)
+                              email: "mikey@welp.com", business_type: "Auto", lat: lat_gen, lng: lng_gen, cost: ran_cost)
     # OTHER
         o1 = Business.create!(name: "Lee Cleaning", categories: "Dry Cleaning", business_phone: number_generator,
                               url: "lee.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "lee@welp.com", business_type: "Other", lat: lat_gen, lng: lng_gen)
+                              email: "lee@welp.com", business_type: "Other", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         o2 = Business.create!(name: "Fix It", categories: "Phone Repair", business_phone: number_generator,
                               url: "fixit.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "fixit@welp.com", business_type: "Other", lat: lat_gen, lng: lng_gen)
+                              email: "fixit@welp.com", business_type: "Other", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         o3 = Business.create!(name: "Tap in", categories: "Bar", business_phone: number_generator,
                               url: "tapin.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "tapin@welp.com", business_type: "Other", lat: lat_gen, lng: lng_gen)
+                              email: "tapin@welp.com", business_type: "Other", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         o4 = Business.create!(name: "Ring", categories: "Nightlife", business_phone: number_generator,
                               url: "ring.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "ring@welp.com", business_type: "Other", lat: lat_gen, lng: lng_gen)
+                              email: "ring@welp.com", business_type: "Other", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         o5 = Business.create!(name: "Chez Moi Salon", categories: "Hair Salons", business_phone: number_generator,
                               url: "chezmoisalon.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "chezmoi@welp.com", business_type: "Other", lat: lat_gen, lng: lng_gen)
+                              email: "chezmoi@welp.com", business_type: "Other", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         o6 = Business.create!(name: "23 Hour Fitness", categories: "Gym", business_phone: number_generator,
                               url: "23hour.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "23hour@welp.com", business_type: "Other", lat: lat_gen, lng: lng_gen)
+                              email: "23hour@welp.com", business_type: "Other", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         o7 = Business.create!(name: "Happy", categories: "Massage", business_phone: number_generator,
                               url: "happy.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "happy@welp.com", business_type: "Other", lat: lat_gen, lng: lng_gen)
+                              email: "happy@welp.com", business_type: "Other", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         o8 = Business.create!(name: "Excellent Mall", categories: "Shopping", business_phone: number_generator,
                               url: "excellent.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "excellent@welp.com", business_type: "Other", lat: lat_gen, lng: lng_gen)
+                              email: "excellent@welp.com", business_type: "Other", lat: lat_gen, lng: lng_gen, cost: ran_cost)
 
 # REVIEWS
     r1 = Review.create!(business_id: r1.id, user_id: u1.id, rating: 5, body: "Excellent service and the food was A1")
