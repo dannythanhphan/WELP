@@ -1,7 +1,8 @@
-export const fetchBusinesses = (filter) => (
+export const fetchBusinesses = (bounds) => (
     $.ajax({
         method: "GET",
-        url: "/api/businesses"
+        url: "/api/businesses",
+        data: {bounds}
     })
     // .then(response => {
     //     debugger

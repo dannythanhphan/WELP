@@ -12,7 +12,7 @@ class Business < ApplicationRecord
         sw_lat = bounds["southWest"]["lat"]
         sw_lng = bounds["southWest"]["lng"]
 
-        Business.where(lat < ?, "ne_lat").where(lng < ?, "ne_lng").where(lat > ?, "sw_lat").where(lng > ?, "sw_lng")
+        Business.where("lat < ?", ne_lat).where("lng < ?", ne_lng).where("lat > ?", sw_lat).where("lng > ?", sw_lng)
     end
 
     def average_rating

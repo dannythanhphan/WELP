@@ -6,7 +6,7 @@ import uiReducer from './ui_reducer';
 const RootReducer = combineReducers({
     entities: EntityReducer,
     session: SessionReducer,
-    filter: uiReducer
+    ui: uiReducer
 })
 
 export default RootReducer;

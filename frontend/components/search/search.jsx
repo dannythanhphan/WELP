@@ -8,7 +8,7 @@ const Search = ({ businesses, fetchBusinesses, updateBounds}) => (
     <div className="search-page-container">
         <BusinessShowHeader />
         <div className="index-map-container">
-            <BusinessIndex businesses={businesses} fetchBusinesses={fetchBusinesses}/>
+            <BusinessIndex businesses={businesses} updateBounds={updateBounds}/>
             <BusinessMap businesses={businesses} updateBounds={updateBounds} />
         </div>
     </div>

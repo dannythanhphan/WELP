@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import FilterReducer from "./filter_reducer";
 
 const uiReducer = combineReducers({
-    FilterReducer
+    filter: FilterReducer
 });
 
 export default uiReducer;

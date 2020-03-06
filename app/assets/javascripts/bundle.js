@@ -118,9 +118,9 @@ var receiveBusiness = function receiveBusiness(business) {
   };
 };
 
-var fetchAllBusinesses = function fetchAllBusinesses() {
+var fetchAllBusinesses = function fetchAllBusinesses(bounds) {
   return function (dispatch) {
-    return _utils_business_utils__WEBPACK_IMPORTED_MODULE_0__["fetchBusinesses"]().then(function (businesses) {
+    return _utils_business_utils__WEBPACK_IMPORTED_MODULE_0__["fetchBusinesses"](bounds).then(function (businesses) {
       return dispatch(receiveAllBusinesses(businesses));
     });
   };
@@ -147,6 +147,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_BOUNDS", function() { return UPDATE_BOUNDS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateBounds", function() { return updateBounds; });
 /* harmony import */ var _utils_business_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/business_utils */ "./frontend/utils/business_utils.js");
+/* harmony import */ var _business_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./business_actions */ "./frontend/actions/business_actions.js");
+
 
 var UPDATE_BOUNDS = "UPDATE_BOUNDS";
 
@@ -158,9 +160,10 @@ var updateBound = function updateBound(bounds) {
 };
 
 var updateBounds = function updateBounds(bounds) {
-  return _utils_business_utils__WEBPACK_IMPORTED_MODULE_0__["fetchBusinesses"](bounds).then(function () {
-    return dispatch(updateBound(bounds));
-  });
+  return function (dispatch, getState) {
+    dispatch(updateBound(bounds));
+    return Object(_business_actions__WEBPACK_IMPORTED_MODULE_1__["fetchAllBusinesses"])(getState().ui.filter)(dispatch);
+  };
 };
 /* harmony default export */ __webpack_exports__["default"] = (updateBounds);
 
@@ -975,11 +978,6 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(BusinessIndex, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.fetchBusinesses();
-    }
-  }, {
     key: "render",
     value: function render() {
       var businesses = this.props.businesses;
@@ -1149,8 +1147,10 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "componentDidUpdate",
-    value: function componentDidUpdate() {
-      this.MarkerManager.updateMarkers(this.props.businesses);
+    value: function componentDidUpdate(prevProps) {
+      if (prevProps.businesses !== this.props.businesses) {
+        this.MarkerManager.updateMarkers(this.props.businesses);
+      }
     }
   }, {
     key: "render",
@@ -1205,7 +1205,7 @@ var Search = function Search(_ref) {
     className: "index-map-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
     businesses: businesses,
-    fetchBusinesses: fetchBusinesses
+    updateBounds: updateBounds
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_map__WEBPACK_IMPORTED_MODULE_1__["default"], {
     businesses: businesses,
     updateBounds: updateBounds
@@ -1242,9 +1242,6 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    fetchBusinesses: function fetchBusinesses() {
-      return dispatch(Object(_actions_business_actions__WEBPACK_IMPORTED_MODULE_2__["fetchAllBusinesses"])());
-    },
     updateBounds: function updateBounds(bounds) {
       return dispatch(Object(_actions_filter_actions__WEBPACK_IMPORTED_MODULE_3__["default"])(bounds));
     }
@@ -1361,7 +1358,7 @@ __webpack_require__.r(__webpack_exports__);
 var RootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_1__["combineReducers"])({
   entities: _entities_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
   session: _session_reducer__WEBPACK_IMPORTED_MODULE_0__["default"],
-  filter: _ui_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
+  ui: _ui_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (RootReducer);
 
@@ -1416,7 +1413,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var uiReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  FilterReducer: _filter_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  filter: _filter_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (uiReducer);
 
@@ -1922,10 +1919,13 @@ var configureStore = function configureStore(preloadedState) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchBusinesses", function() { return fetchBusinesses; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchBusiness", function() { return fetchBusiness; });
-var fetchBusinesses = function fetchBusinesses(filter) {
+var fetchBusinesses = function fetchBusinesses(bounds) {
   return $.ajax({
     method: "GET",
-    url: "/api/businesses"
+    url: "/api/businesses",
+    data: {
+      bounds: bounds
+    }
   }) // .then(response => {
   //     debugger
   // })
@@ -1970,27 +1970,32 @@ var MarkerManager = /*#__PURE__*/function () {
     value: function updateMarkers(businesses) {
       var _this = this;
 
+      businesses.forEach(function (business) {});
       businesses.forEach(function (business) {
         var bizId = business.id;
 
+        _this.createMarkerFromBusiness(business);
+
         if (!Object.keys(_this.markers).includes(bizId)) {
-          Object.assign(_this.markers, _defineProperty({}, business.id, business.id));
-          return _this.createMarkerFromBusiness(business);
+          _this.removeMarker();
         }
       });
     }
   }, {
     key: "createMarkerFromBusiness",
     value: function createMarkerFromBusiness(business) {
-      new google.maps.Marker({
+      Object.assign(this.markers, _defineProperty({}, business.id, new google.maps.Marker({
         position: {
           lat: business.lat,
           lng: business.lng
         },
         map: this.map,
         title: business.name
-      });
+      })));
     }
+  }, {
+    key: "removeMarker",
+    value: function removeMarker() {}
   }]);
 
   return MarkerManager;
