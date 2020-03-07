@@ -1,7 +1,6 @@
 import React from 'react';
 import MarkerManager from '../../utils/marker_manager';
 
-
 class BusinessMap extends React.Component {
     componentDidMount() {
         // set the map to show SF
@@ -14,6 +13,8 @@ class BusinessMap extends React.Component {
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map);
         this.MarkerManager.updateMarkers(this.props.businesses)
+
+        // debugger
 
         this.map.addListener("idle", () => {
             let bounds = { northEast: {
@@ -36,7 +37,7 @@ class BusinessMap extends React.Component {
     }
 
     render() {
-
+        // debugger
         return (
             <div className="search-map-container">
                 <div className="search-map" ref={map => this.mapNode = map}>

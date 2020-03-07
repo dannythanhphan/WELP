@@ -1,6 +1,11 @@
 .business-show-header {
     height: 130px;
+    position: sticky;
     display: flex;
+    z-index: 1;
+    background-color: white;
+    border-bottom: 1px solid lightgrey;
+    top: 0;
 }
 
 .show-logo {

@@ -1,11 +1,15 @@
 .index-map-container {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+
 }
 
-.search-businesses-container {
-    width: 1000px;
-    height: 500px;
-    background-color: red;
+.searched-businesses-container {
+    width: 60%;
+    height: 100%;
+    // position: sticky;
+    // top: 0;
 }
-

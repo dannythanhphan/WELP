@@ -14,6 +14,6 @@ export const fetchBusinesses = (bounds) => (
 export const fetchBusiness = (businessId) => (
     $.ajax({
         method: "GET",
-        url: `/api/business/${businessId}`
+        url: `/api/businesses/${businessId}`
     })
 )

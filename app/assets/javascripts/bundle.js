@@ -149,6 +149,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_business_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/business_utils */ "./frontend/utils/business_utils.js");
 /* harmony import */ var _business_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./business_actions */ "./frontend/actions/business_actions.js");
 
+ // export const UPDATE_FILTERS = "UPDATE_FILTERS"
+// export const updateFilter = (filter, value) => ({
+//     type: UPDATE_FILTERS,
+//     filter, value
+// });
+// export const updateFilters = (filter, value) => (dispatch, getState) => {
+//     dispatch(updateFilter(filter, value));
+//     return fetchAllBusinesses(filter, getState().ui.filter.bounds)(dispatch)
+// }
+// export default updateFilters;
 
 var UPDATE_BOUNDS = "UPDATE_BOUNDS";
 
@@ -342,7 +352,7 @@ var App = function App() {
     component: _session_signup_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     exact: true,
-    path: "/businesses/1",
+    path: "/businesses/:id",
     component: _components_business_business_show_container__WEBPACK_IMPORTED_MODULE_5__["default"]
   }));
 };
@@ -396,7 +406,7 @@ var BusinessShow = /*#__PURE__*/function (_React$Component) {
   _createClass(BusinessShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchBusiness(1);
+      this.props.fetchBusiness(this.props.match.params.id);
     }
   }, {
     key: "render",
@@ -431,7 +441,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    business: state.entities.businesses[1]
+    business: state.entities.businesses[ownProps.match.params.id]
   };
 };
 
@@ -490,7 +500,7 @@ var BusinessShowHeader = /*#__PURE__*/function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(BusinessShowHeader).call(this, props));
     _this.state = {
-      category: ""
+      search: ""
     };
     return _this;
   }
@@ -1129,7 +1139,8 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
 
       this.map = new google.maps.Map(this.mapNode, mapOptions);
       this.MarkerManager = new _utils_marker_manager__WEBPACK_IMPORTED_MODULE_1__["default"](this.map);
-      this.MarkerManager.updateMarkers(this.props.businesses);
+      this.MarkerManager.updateMarkers(this.props.businesses); // debugger
+
       this.map.addListener("idle", function () {
         var bounds = {
           northEast: {
@@ -1157,6 +1168,7 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      // debugger
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-map-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1934,7 +1946,7 @@ var fetchBusinesses = function fetchBusinesses(bounds) {
 var fetchBusiness = function fetchBusiness(businessId) {
   return $.ajax({
     method: "GET",
-    url: "/api/business/".concat(businessId)
+    url: "/api/businesses/".concat(businessId)
   });
 };
 
@@ -1970,14 +1982,23 @@ var MarkerManager = /*#__PURE__*/function () {
     value: function updateMarkers(businesses) {
       var _this = this;
 
-      businesses.forEach(function (business) {});
+      this.businessObj = {};
       businesses.forEach(function (business) {
-        var bizId = business.id;
+        Object.assign(_this.businessObj, _defineProperty({}, business.id, business));
+      });
+      this.markerKeys = Object.keys(this.markers);
 
-        _this.createMarkerFromBusiness(business);
+      for (var i = 0; i < this.markerKeys.length; i++) {
+        if (!Object.keys(this.businessObj).includes(this.markerKeys[i])) {
+          this.removeMarker(this.markers[this.markerKeys[i]]);
+          delete this.markers[this.markerKeys[i]];
+        }
+      }
 
-        if (!Object.keys(_this.markers).includes(bizId)) {
-          _this.removeMarker();
+      var that = this;
+      businesses.forEach(function (business) {
+        if (!Object.keys(that.markers).includes("".concat(business.id))) {
+          _this.createMarkerFromBusiness(business);
         }
       });
     }
@@ -1995,7 +2016,9 @@ var MarkerManager = /*#__PURE__*/function () {
     }
   }, {
     key: "removeMarker",
-    value: function removeMarker() {}
+    value: function removeMarker(marker) {
+      marker.setMap(null);
+    }
   }]);
 
   return MarkerManager;

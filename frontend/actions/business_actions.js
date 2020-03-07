@@ -13,10 +13,10 @@ const receiveBusiness = (business) => ({
     business
 })
 
-export const fetchAllBusinesses = (bounds) => (dispatch) => (
-    bizUtil.fetchBusinesses(bounds)
+export const fetchAllBusinesses = (bounds) => (dispatch) => {
+    return bizUtil.fetchBusinesses(bounds)
         .then(businesses => dispatch(receiveAllBusinesses(businesses)))
-)
+}
 
 export const fetchBusiness = (businessId) => (dispatch) => (
     bizUtil.fetchBusiness(businessId)
