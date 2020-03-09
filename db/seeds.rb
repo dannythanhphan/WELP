@@ -55,7 +55,7 @@ def lng_gen
 end
 
 def ran_cost
-    return rand(1...4)
+    return rand(1..4)
 end
 
 User.destroy_all

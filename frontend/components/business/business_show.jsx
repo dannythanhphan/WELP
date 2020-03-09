@@ -13,7 +13,7 @@ class BusinessShow extends React.Component {
             <div>
                 <BusinessShowHeader />
                 <div>
-
+                    {business.cost}
                 </div>
             </div>
         );

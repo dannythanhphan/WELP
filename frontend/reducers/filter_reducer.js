@@ -1,10 +1,16 @@
-import { UPDATE_BOUNDS } from "../actions/filter_actions";
+import { UPDATE_FILTERS } from "../actions/filter_actions";
 
-const FilterReducer = (state = {}, action) => {
+const filtersState = {
+    bounds: {},
+    maxCost: 0,
+    category: "",
+}
+
+const FilterReducer = (state = filtersState, action) => {
     Object.freeze(state)
     switch (action.type) {
-        case UPDATE_BOUNDS:
-            return action.bounds
+        case UPDATE_FILTERS:
+            return Object.assign({}, state, {[action.filter]: action.value})
         default:
             return state;
     }

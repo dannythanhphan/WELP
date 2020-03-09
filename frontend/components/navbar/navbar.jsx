@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SearchContainer from '../search/search_container'
+
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            category: ""
+            category: "",
         }
         this.handleInput = this.handleInput.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -18,7 +18,8 @@ class Navbar extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        
+        this.props.updateFilters("category", this.state.category)
+            .then(() => this.props.history.push("/search"))
     }
 
     demoSubmit(e) {
@@ -122,9 +123,9 @@ class Navbar extends React.Component {
                 <div id="home-search-bar">
                     <form>
                         <input id="find" type="text" value="Find" disabled/>
-                        <input id="food-search" type="text" readOnly={this.state.category}/>
+                        <input id="food-search" type="text" value={this.state.category} onChange={this.handleInput}/>
                         <input id="near" type="text" value="Near" disabled/>
-                        <input id="city-search" type="text" placeholder="San Francisco, CA"/>
+                        <input id="city-search" type="text" value="San Francisco" />
                         <button id="home-search-button" onClick={this.handleSubmit}><i className="fas fa-search fa-lg"></i></button>
                     </form>
                 </div>

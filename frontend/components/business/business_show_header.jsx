@@ -77,7 +77,7 @@ class BusinessShowHeader extends React.Component {
             )
         return (
             <div className="business-show-header">
-                <Link to="/" ><div className="show-logo"></div></Link>
+                <Link to="/" className="show-logo-button"><div className="show-logo"></div></Link>
                 <div className="show-search-bar">
                     <form className="show-search-container">
                         <input 

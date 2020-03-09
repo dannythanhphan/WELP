@@ -1,15 +1,13 @@
-export const fetchBusinesses = (bounds) => (
-    $.ajax({
+export const fetchBusinesses = (data) => {
+    return $.ajax({
         method: "GET",
         url: "/api/businesses",
-        data: {bounds}
+        data
     })
     // .then(response => {
-    //     debugger
+    //
     // })
-)
-
-
+}
 
 export const fetchBusiness = (businessId) => (
     $.ajax({

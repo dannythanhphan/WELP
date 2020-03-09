@@ -3,18 +3,27 @@ import MarkerManager from '../../utils/marker_manager';
 
 class BusinessMap extends React.Component {
     componentDidMount() {
-        // set the map to show SF
+        const firstBiz = Object.values(this.props.businesses)[0]
+
         const mapOptions = {
-            center: { lat: 37.7758, lng: -122.435 }, // this is SF
+            center: { lat: firstBiz.lat, lng: firstBiz.lng },
             zoom: 14
         };
 
-        // wrap this.mapNode in a Google Map
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map);
         this.MarkerManager.updateMarkers(this.props.businesses)
-
-        // debugger
+        
+        // let bounds = { northEast: {
+        //                     lat: this.map.getBounds().getNorthEast().lat(),
+        //                     lng: this.map.getBounds().getNorthEast().lng()
+        //                     },
+        //                 southWest: {
+        //                     lat: this.map.getBounds().getSouthWest().lat(),
+        //                     lng: this.map.getBounds().getSouthWest().lng(),
+        //                     }
+        //                 }
+        // this.props.updateFilters("bounds", bounds)
 
         this.map.addListener("idle", () => {
             let bounds = { northEast: {
@@ -26,8 +35,12 @@ class BusinessMap extends React.Component {
                                lng: this.map.getBounds().getSouthWest().lng(),
                             }
                         }
-            this.props.updateBounds(bounds)
+            this.props.updateFilters("bounds", bounds)
         })
+    }
+
+    boundsOnClick() {
+        
     }
 
     componentDidUpdate(prevProps) {
@@ -36,8 +49,7 @@ class BusinessMap extends React.Component {
         }
     }
 
-    render() {
-        // debugger
+    render() { 
         return (
             <div className="search-map-container">
                 <div className="search-map" ref={map => this.mapNode = map}>

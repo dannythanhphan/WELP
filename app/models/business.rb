@@ -6,6 +6,7 @@ class Business < ApplicationRecord
         foreign_key: :business_id,
         class_name: :Review
 
+    
     def self.in_bounds(bounds)
         ne_lat = bounds["northEast"]["lat"]
         ne_lng = bounds["northEast"]["lng"]
