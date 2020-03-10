@@ -18,7 +18,7 @@
     position: relative;
     top: 15%;
     left: 5%;
-    background-image: url("stock.jpg");
+    background-image: image-url("stock.jpg");
     background-size: cover;
     width: 140px;
     height: 140px;
@@ -70,7 +70,7 @@
     justify-content: space-evenly;
 }
 
-.fa-star {
+.index-star {
     color: white;
     height: 100%;
     width: 100%;
@@ -92,6 +92,7 @@
     padding-left: 1.8%;
     color: grey;
     font-size: 13px;
+    min-width: 100px;
 }
 
 .cost-cat-container {

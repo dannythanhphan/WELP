@@ -6,25 +6,31 @@ class MarkerManager {
 
     updateMarkers(businesses) {
         this.businessObj = {};
-        businesses.forEach((business) => {
-            Object.assign(this.businessObj, {[business.id]: business})
-        })
+        if (businesses.length > 1) {
+            businesses.forEach((business) => {
+                Object.assign(this.businessObj, {[business.id]: business})
+            })
 
-        this.markerKeys = Object.keys(this.markers);
+            this.markerKeys = Object.keys(this.markers);
 
-        for (let i = 0; i < this.markerKeys.length; i++) {
-            if (!Object.keys(this.businessObj).includes(this.markerKeys[i])) {
-                this.removeMarker(this.markers[this.markerKeys[i]])
-                delete this.markers[this.markerKeys[i]]
+            for (let i = 0; i < this.markerKeys.length; i++) {
+                if (!Object.keys(this.businessObj).includes(this.markerKeys[i])) {
+                    this.removeMarker(this.markers[this.markerKeys[i]])
+                    delete this.markers[this.markerKeys[i]]
+                }
             }
+            let that = this;
+            businesses.forEach((business) => {
+
+                if (!Object.keys(that.markers).includes(`${business.id}`)) {
+                    this.createMarkerFromBusiness(business)
+                }
+            })
+        } else {
+            Object.assign(this.businessObj, {[businesses.id]: businesses});
+            this.createMarkerFromBusiness(businesses)
         }
-        let that = this;
-        businesses.forEach((business) => {
 
-            if (!Object.keys(that.markers).includes(`${business.id}`)) {
-                this.createMarkerFromBusiness(business)
-            }
-        })
     }
 
     createMarkerFromBusiness(business) {

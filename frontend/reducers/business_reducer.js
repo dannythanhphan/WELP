@@ -6,8 +6,7 @@ const BusinessReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_ALL_BUSINESSES:
             return action.businesses
-        case RECEIVE_BUSINESS:
-            debugger
+        case RECEIVE_BUSINESS: 
             return action.business
         default:
             return state

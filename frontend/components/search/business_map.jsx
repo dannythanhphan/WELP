@@ -3,16 +3,36 @@ import MarkerManager from '../../utils/marker_manager';
 
 class BusinessMap extends React.Component {
     componentDidMount() {
-        const firstBiz = Object.values(this.props.businesses)[0]
+        let mapOptions = {};
+        if (this.props.business) {
+            mapOptions = {
+                center: { lat: this.props.business.lat, lng: this.props.business.lng },
+                zoom: 16,
+                disableDefaultUI: true,
+                draggable: false
+            };
+        } else {
+            let firstBiz = Object.values(this.props.businesses)[0]
 
-        const mapOptions = {
-            center: { lat: firstBiz.lat, lng: firstBiz.lng },
-            zoom: 14
-        };
+            mapOptions = {
+                center: { lat: firstBiz.lat, lng: firstBiz.lng },
+                zoom: 14
+            };
+        }
+        
+        // const mapOptions = {
+        //     center: { lat: firstBiz.lat, lng: firstBiz.lng },
+        //     zoom: 14
+        // };
 
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map);
-        this.MarkerManager.updateMarkers(this.props.businesses)
+        if (this.props.business) {
+            this.MarkerManager.updateMarkers(this.props.business)
+            // this.map.setOptions({ draggable: false});
+        } else {
+            this.MarkerManager.updateMarkers(this.props.businesses)
+        }
         
         // let bounds = { northEast: {
         //                     lat: this.map.getBounds().getNorthEast().lat(),

@@ -371,6 +371,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/react.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _business_show_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./business_show_header */ "./frontend/components/business/business_show_header.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _search_business_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../search/business_map */ "./frontend/components/search/business_map.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -392,6 +394,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var BusinessShow = /*#__PURE__*/function (_React$Component) {
   _inherits(BusinessShow, _React$Component);
 
@@ -404,14 +408,125 @@ var BusinessShow = /*#__PURE__*/function (_React$Component) {
   _createClass(BusinessShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchBusiness(this.id);
-    }
+      this.props.fetchBusiness(this.props.match.params.id);
+    } // reSearch(category) {
+    //     this.props.updateFilters("categories", category)
+    //         .then(() => this.props.history.push("/search"))
+    // }
+
   }, {
     key: "render",
     value: function render() {
-      this.id = Number(this.props.match.params.id);
       var business = this.props.business;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_show_header__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, business.name));
+      var cost = "";
+      var number = "";
+
+      if (business) {
+        for (var i = 1; i <= business.cost; i++) {
+          cost += "$";
+        }
+
+        var numbersString = business.business_phone.toString();
+
+        for (var _i = 0; _i <= 2; _i++) {
+          if (_i === 0) {
+            number += "(".concat(numbersString[0]);
+          } else if (_i === 2) {
+            number += "".concat(numbersString[2], ") ");
+          } else {
+            number += "".concat(numbersString[1]);
+          }
+        }
+
+        for (var _i2 = 3; _i2 < 10; _i2++) {
+          if (_i2 === 5) {
+            number += "".concat(numbersString[_i2], "-");
+          } else {
+            number += "".concat(numbersString[_i2]);
+          }
+        }
+      }
+
+      var business_info = this.props.business ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-info-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-main-content-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-main-left-side"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "biz-name"
+      }, business.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-stars-count-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-stars-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "fa fa-star show-star ".concat(business.rating >= 1 ? "picked" : "")
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "fa fa-star show-star ".concat(business.rating >= 2 ? "picked" : "")
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "fa fa-star show-star ".concat(business.rating >= 3 ? "picked" : "")
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "fa fa-star show-star ".concat(business.rating >= 4 ? "picked" : "")
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "fa fa-star show-star ".concat(business.rating >= 5 ? "picked" : "")
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-review-count"
+      }, business.num_reviews, " ", business.num_reviews === 1 ? "review" : "reviews")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-cost-cat"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "show-cost"
+      }, cost), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "cost-cat"
+      }, "\u2022"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "show-cat"
+      }, business.categories)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-review-photo-buttons-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "show-review-button"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-star show-review-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "show-review-text"
+      }, " Write a Review "))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "add-photo-button"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-camera show-photo-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "show-photo-text"
+      }, " Add Photo")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-border-line"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-business-map"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "show-map-title"
+      }, "Location & Hours"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "actual-map"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_business_map__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        business: business
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "business-map-address"
+      }, business.street_address, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), business.city, ", ", business.state, " ", business.zip_code)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-border-line"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-stickied-right"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-stickied"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "biz-sticky"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-signature signature"
+      }), business.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "biz-sticky"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-phone phone"
+      }), number), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "biz-number"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "far fa-window-maximize window"
+      }), business.url))))) : null;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_show_header__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-photos-container"
+      }), business_info);
     }
   }]);
 
@@ -434,6 +549,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _business_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./business_show */ "./frontend/components/business/business_show.jsx");
 /* harmony import */ var _actions_business_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/business_actions */ "./frontend/actions/business_actions.js");
+/* harmony import */ var _actions_filter_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/filter_actions */ "./frontend/actions/filter_actions.js");
+
 
 
 
@@ -448,6 +565,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchBusiness: function fetchBusiness(businessId) {
       return dispatch(Object(_actions_business_actions__WEBPACK_IMPORTED_MODULE_2__["fetchBusiness"])(businessId));
+    },
+    updateFilters: function updateFilters(filter, value) {
+      return dispatch(Object(_actions_filter_actions__WEBPACK_IMPORTED_MODULE_3__["updateFilters"])(filter, value));
     }
   };
 };
@@ -1143,15 +1263,15 @@ var BusinessIndexItem = function BusinessIndexItem(_ref) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "stars-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "fa fa-star ".concat(business.rating >= 1 ? "checked" : "")
+    className: "fa fa-star index-star ".concat(business.rating >= 1 ? "checked" : "")
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "fa fa-star ".concat(business.rating >= 2 ? "checked" : "")
+    className: "fa fa-star index-star ".concat(business.rating >= 2 ? "checked" : "")
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "fa fa-star ".concat(business.rating >= 3 ? "checked" : "")
+    className: "fa fa-star index-star ".concat(business.rating >= 3 ? "checked" : "")
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "fa fa-star ".concat(business.rating >= 4 ? "checked" : "")
+    className: "fa fa-star index-star ".concat(business.rating >= 4 ? "checked" : "")
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "fa fa-star ".concat(business.rating >= 5 ? "checked" : "")
+    className: "fa fa-star index-star ".concat(business.rating >= 5 ? "checked" : "")
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "review-count"
   }, business.num_reviews)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1222,17 +1342,41 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
   _createClass(BusinessMap, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var firstBiz = Object.values(this.props.businesses)[0];
-      var mapOptions = {
-        center: {
-          lat: firstBiz.lat,
-          lng: firstBiz.lng
-        },
-        zoom: 14
-      };
+      var mapOptions = {};
+
+      if (this.props.business) {
+        mapOptions = {
+          center: {
+            lat: this.props.business.lat,
+            lng: this.props.business.lng
+          },
+          zoom: 16,
+          disableDefaultUI: true,
+          draggable: false
+        };
+      } else {
+        var firstBiz = Object.values(this.props.businesses)[0];
+        mapOptions = {
+          center: {
+            lat: firstBiz.lat,
+            lng: firstBiz.lng
+          },
+          zoom: 14
+        };
+      } // const mapOptions = {
+      //     center: { lat: firstBiz.lat, lng: firstBiz.lng },
+      //     zoom: 14
+      // };
+
+
       this.map = new google.maps.Map(this.mapNode, mapOptions);
       this.MarkerManager = new _utils_marker_manager__WEBPACK_IMPORTED_MODULE_1__["default"](this.map);
-      this.MarkerManager.updateMarkers(this.props.businesses); // let bounds = { northEast: {
+
+      if (this.props.business) {
+        this.MarkerManager.updateMarkers(this.props.business); // this.map.setOptions({ draggable: false});
+      } else {
+        this.MarkerManager.updateMarkers(this.props.businesses);
+      } // let bounds = { northEast: {
       //                     lat: this.map.getBounds().getNorthEast().lat(),
       //                     lng: this.map.getBounds().getNorthEast().lng()
       //                     },
@@ -1254,6 +1398,7 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
       //                 }
       //     this.props.updateFilters("bounds", bounds)
       // })
+
     } // boundsOnClick() {
     // }
 
@@ -1318,10 +1463,12 @@ var Search = function Search(_ref) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
     businesses: businesses,
     updateFilters: updateFilters
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_map__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "main-map-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_map__WEBPACK_IMPORTED_MODULE_1__["default"], {
     businesses: businesses,
     updateFilters: updateFilters
-  })));
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Search);
@@ -1387,7 +1534,6 @@ var BusinessReducer = function BusinessReducer() {
       return action.businesses;
 
     case _actions_business_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_BUSINESS"]:
-      debugger;
       return action.business;
 
     default:
@@ -2090,24 +2236,30 @@ var MarkerManager = /*#__PURE__*/function () {
       var _this = this;
 
       this.businessObj = {};
-      businesses.forEach(function (business) {
-        Object.assign(_this.businessObj, _defineProperty({}, business.id, business));
-      });
-      this.markerKeys = Object.keys(this.markers);
 
-      for (var i = 0; i < this.markerKeys.length; i++) {
-        if (!Object.keys(this.businessObj).includes(this.markerKeys[i])) {
-          this.removeMarker(this.markers[this.markerKeys[i]]);
-          delete this.markers[this.markerKeys[i]];
+      if (businesses.length > 1) {
+        businesses.forEach(function (business) {
+          Object.assign(_this.businessObj, _defineProperty({}, business.id, business));
+        });
+        this.markerKeys = Object.keys(this.markers);
+
+        for (var i = 0; i < this.markerKeys.length; i++) {
+          if (!Object.keys(this.businessObj).includes(this.markerKeys[i])) {
+            this.removeMarker(this.markers[this.markerKeys[i]]);
+            delete this.markers[this.markerKeys[i]];
+          }
         }
+
+        var that = this;
+        businesses.forEach(function (business) {
+          if (!Object.keys(that.markers).includes("".concat(business.id))) {
+            _this.createMarkerFromBusiness(business);
+          }
+        });
+      } else {
+        Object.assign(this.businessObj, _defineProperty({}, businesses.id, businesses));
+        this.createMarkerFromBusiness(businesses);
       }
-
-      var that = this;
-      businesses.forEach(function (business) {
-        if (!Object.keys(that.markers).includes("".concat(business.id))) {
-          _this.createMarkerFromBusiness(business);
-        }
-      });
     }
   }, {
     key: "createMarkerFromBusiness",

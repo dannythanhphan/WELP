@@ -9,7 +9,9 @@ const Search = ({ businesses, fetchBusinesses, updateFilters}) => (
         <BusinessShowHeader />
         <div className="index-map-container">
             <BusinessIndex businesses={businesses} updateFilters={updateFilters}/>
-            <BusinessMap businesses={businesses} updateFilters={updateFilters} />
+            <div className="main-map-container">
+                <BusinessMap businesses={businesses} updateFilters={updateFilters} />
+            </div>
         </div>
     </div>
 );

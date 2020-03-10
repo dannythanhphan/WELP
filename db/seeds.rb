@@ -58,6 +58,14 @@ def ran_cost
     return rand(1..4)
 end
 
+def open_gen
+    return rand(6..10)
+end
+
+def close_gen
+    return rand(5..11)
+end
+
 User.destroy_all
 Business.destroy_all
 # Reviews.destroy_all

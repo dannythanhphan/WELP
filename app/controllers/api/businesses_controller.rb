@@ -3,20 +3,19 @@ class Api::BusinessesController < ApplicationController
         if params[:category] != ""
             search = params[:category].capitalize
             bizs = Business.where("name LIKE ?", "%#{search}%")
-            bizs += Business.where("business_type LIKE ?", "%#{bizs[0].business_type}%") if bizs.length != 0
             bizs = Business.where("business_type LIKE ?", "%#{search}%") if bizs.length == 0
             bizs = Business.where("categories LIKE ?", "%#{search}%") if bizs.length == 0
+            bizs += Business.where("business_type LIKE ?", "%#{bizs[0].business_type}%") if bizs.length != 0
         else
             bizs = Business.all
         end
         
         bizs = bizs.in_bounds(params[:bounds]) if params[:bounds]
 
-        bizs = bizs.where("cost <= ?", params[:maxCost]) if params[:maxCost].to_i > 0
+        bizs = bizs.where("cost <= ?", params[:maxCost]).order(cost: :DESC) if params[:maxCost].to_i > 0
 
         if params[:rating] === "true"
             bizs = bizs.order(average_ratings: :DESC)
-            # debugger
         end
 
         @businesses = bizs.length > 20 ? bizs[0...19] : bizs

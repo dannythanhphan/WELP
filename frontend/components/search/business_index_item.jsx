@@ -13,11 +13,11 @@ const BusinessIndexItem = ({ business }) => {
                 <div className="search-business-name">{business.name}</div>
                 <div className="stars-count-container">
                     <div className="stars-container">
-                        <span className={`fa fa-star ${business.rating >= 1 ? "checked" : ""}`} />
-                        <span className={`fa fa-star ${business.rating >= 2 ? "checked" : ""}`} />
-                        <span className={`fa fa-star ${business.rating >= 3 ? "checked" : ""}`} />
-                        <span className={`fa fa-star ${business.rating >= 4 ? "checked" : ""}`} />
-                        <span className={`fa fa-star ${business.rating >= 5 ? "checked" : ""}`} />
+                        <span className={`fa fa-star index-star ${business.rating >= 1 ? "checked" : ""}`} />
+                        <span className={`fa fa-star index-star ${business.rating >= 2 ? "checked" : ""}`} />
+                        <span className={`fa fa-star index-star ${business.rating >= 3 ? "checked" : ""}`} />
+                        <span className={`fa fa-star index-star ${business.rating >= 4 ? "checked" : ""}`} />
+                        <span className={`fa fa-star index-star ${business.rating >= 5 ? "checked" : ""}`} />
                     </div>
                     <div className="review-count">{business.num_reviews}</div>
                 </div>  
