@@ -14,6 +14,11 @@ class Api::BusinessesController < ApplicationController
 
         bizs = bizs.where("cost <= ?", params[:maxCost]) if params[:maxCost].to_i > 0
 
+        if params[:rating] === "true"
+            bizs = bizs.order(average_ratings: :DESC)
+            # debugger
+        end
+
         @businesses = bizs.length > 20 ? bizs[0...19] : bizs
 
         render :index

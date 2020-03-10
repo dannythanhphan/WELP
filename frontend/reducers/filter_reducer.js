@@ -4,6 +4,7 @@ const filtersState = {
     bounds: {},
     maxCost: 0,
     category: "",
+    rating: false
 }
 
 const FilterReducer = (state = filtersState, action) => {

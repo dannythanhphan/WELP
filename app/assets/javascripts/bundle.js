@@ -395,22 +395,23 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var BusinessShow = /*#__PURE__*/function (_React$Component) {
   _inherits(BusinessShow, _React$Component);
 
-  function BusinessShow() {
+  function BusinessShow(props) {
     _classCallCheck(this, BusinessShow);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(BusinessShow).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(BusinessShow).call(this, props));
   }
 
   _createClass(BusinessShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchBusiness(this.props.match.params.id);
+      this.props.fetchBusiness(this.id);
     }
   }, {
     key: "render",
     value: function render() {
+      this.id = Number(this.props.match.params.id);
       var business = this.props.business;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_show_header__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, business.cost));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_show_header__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, business.name));
     }
   }]);
 
@@ -975,9 +976,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -996,23 +997,39 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(BusinessIndex).call(this, props));
     _this.state = {
-      cost: 0
+      rating: false
     };
+    _this.filterCost = _this.filterCost.bind(_assertThisInitialized(_this));
+    _this.toggleRating = _this.toggleRating.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(BusinessIndex, [{
     key: "filterCost",
     value: function filterCost(e) {
-      this.setState({
-        cost: e.target.value
-      });
-      this.props.updateFilters("maxCost", this.state.cost);
+      this.props.updateFilters("maxCost", parseInt(e.target.value));
     }
   }, {
     key: "toggleDropdown",
     value: function toggleDropdown() {
       document.getElementById("price-dropdown-content").classList.toggle("show");
+    }
+  }, {
+    key: "toggleRating",
+    value: function toggleRating() {
+      document.getElementById("rating-filter").classList.toggle("clicked");
+
+      if (this.state.rating === false) {
+        this.setState({
+          rating: true
+        });
+        this.props.updateFilters("rating", true);
+      } else {
+        this.setState({
+          rating: false
+        });
+        this.props.updateFilters("rating", false);
+      }
     }
   }, {
     key: "render",
@@ -1022,7 +1039,11 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
         className: "searched-businesses-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-filter-header"
-      }, "Browsing San Francisco, CA Businesses", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "filter-header-title"
+      }, "Browsing San Francisco, CA Businesses"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "filter-buttons"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "price-dropdown"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "price-button",
@@ -1031,25 +1052,45 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
         id: "price-dropdown-content",
         className: "search-filter-price-dropdown",
         onBlur: this.toggleDropdown
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "price-radio-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onClick: this.filterCost,
+        className: "price-radio",
         type: "radio",
         name: "cost",
         value: "1"
-      }), " $", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "price-radio-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onClick: this.filterCost,
+        className: "price-radio",
         type: "radio",
         name: "cost",
         value: "2"
-      }), " $$", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), "$$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "price-radio-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onClick: this.filterCost,
+        className: "price-radio",
         type: "radio",
         name: "cost",
         value: "3"
-      }), " $$$", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), "$$$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "price-radio-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onClick: this.filterCost,
+        className: "price-radio",
         type: "radio",
         name: "cost",
         value: "4"
-      }), " $$$$", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.filterCost
-      }, "Save")))), businesses.map(function (business) {
+      }), "$$$$"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "price-dropdown"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.toggleRating,
+        id: "rating-filter",
+        className: "rating-filter-button"
+      }, "Rating")))), businesses.map(function (business) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: business.id,
           business: business
@@ -1181,8 +1222,6 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
   _createClass(BusinessMap, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var _this = this;
-
       var firstBiz = Object.values(this.props.businesses)[0];
       var mapOptions = {
         center: {
@@ -1203,25 +1242,21 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
       //                     }
       //                 }
       // this.props.updateFilters("bounds", bounds)
+      // this.map.addListener("idle", () => {
+      //     let bounds = { northEast: {
+      //                         lat: this.map.getBounds().getNorthEast().lat(),
+      //                         lng: this.map.getBounds().getNorthEast().lng()
+      //                     },
+      //                    southWest: {
+      //                        lat: this.map.getBounds().getSouthWest().lat(),
+      //                        lng: this.map.getBounds().getSouthWest().lng(),
+      //                     }
+      //                 }
+      //     this.props.updateFilters("bounds", bounds)
+      // })
+    } // boundsOnClick() {
+    // }
 
-      this.map.addListener("idle", function () {
-        var bounds = {
-          northEast: {
-            lat: _this.map.getBounds().getNorthEast().lat(),
-            lng: _this.map.getBounds().getNorthEast().lng()
-          },
-          southWest: {
-            lat: _this.map.getBounds().getSouthWest().lat(),
-            lng: _this.map.getBounds().getSouthWest().lng()
-          }
-        };
-
-        _this.props.updateFilters("bounds", bounds);
-      });
-    }
-  }, {
-    key: "boundsOnClick",
-    value: function boundsOnClick() {}
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
@@ -1232,14 +1267,14 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-map-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-map",
         ref: function ref(map) {
-          return _this2.mapNode = map;
+          return _this.mapNode = map;
         }
       }));
     }
@@ -1352,7 +1387,8 @@ var BusinessReducer = function BusinessReducer() {
       return action.businesses;
 
     case _actions_business_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_BUSINESS"]:
-      return Object.assign({}, state, action.business);
+      debugger;
+      return action.business;
 
     default:
       return state;
@@ -1402,7 +1438,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var filtersState = {
   bounds: {},
   maxCost: 0,
-  category: ""
+  category: "",
+  rating: false
 };
 
 var FilterReducer = function FilterReducer() {

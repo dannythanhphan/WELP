@@ -25,23 +25,23 @@ class BusinessMap extends React.Component {
         //                 }
         // this.props.updateFilters("bounds", bounds)
 
-        this.map.addListener("idle", () => {
-            let bounds = { northEast: {
-                                lat: this.map.getBounds().getNorthEast().lat(),
-                                lng: this.map.getBounds().getNorthEast().lng()
-                            },
-                           southWest: {
-                               lat: this.map.getBounds().getSouthWest().lat(),
-                               lng: this.map.getBounds().getSouthWest().lng(),
-                            }
-                        }
-            this.props.updateFilters("bounds", bounds)
-        })
+        // this.map.addListener("idle", () => {
+        //     let bounds = { northEast: {
+        //                         lat: this.map.getBounds().getNorthEast().lat(),
+        //                         lng: this.map.getBounds().getNorthEast().lng()
+        //                     },
+        //                    southWest: {
+        //                        lat: this.map.getBounds().getSouthWest().lat(),
+        //                        lng: this.map.getBounds().getSouthWest().lng(),
+        //                     }
+        //                 }
+        //     this.props.updateFilters("bounds", bounds)
+        // })
     }
 
-    boundsOnClick() {
+    // boundsOnClick() {
         
-    }
+    // }
 
     componentDidUpdate(prevProps) {
         if (prevProps.businesses !== this.props.businesses) {

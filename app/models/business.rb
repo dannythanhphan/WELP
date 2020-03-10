@@ -6,6 +6,9 @@ class Business < ApplicationRecord
         foreign_key: :business_id,
         class_name: :Review
 
+    has_one_attached :photo
+
+    after_initialize :average_rating
     
     def self.in_bounds(bounds)
         ne_lat = bounds["northEast"]["lat"]
@@ -18,8 +21,13 @@ class Business < ApplicationRecord
 
     def average_rating
         total = 0
-        reviews.each { |review| total += review.rating }
-        average = (total / reviews.length)
+        if !reviews.empty?
+            reviews.each { |review| total += review.rating }
+            average = (total / reviews.length)
+            self.average_ratings = average
+            self.save
+        end
+        !average.nil? ? average : total
     end
 
     def number_of_reviews
