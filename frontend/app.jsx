@@ -5,10 +5,13 @@ import LoginContainer from './session/login_container'
 import SignupContainer from './session/signup_container'
 import BusinessShowContainer from './components/business/business_show_container'
 import SearchContainer from './components/search/search_container';
+import HomeBodyContainer from './components/navbar/home_body_container'
 
 const App = () => (
     <div>
+        
         <Route exact path="/" component={NavbarContainer} />
+        <Route exact path="/" component={HomeBodyContainer} />
         <Route exact path="/search" component={SearchContainer} />
         <Route exact path="/login" component={LoginContainer} />
         <Route exact path="/signup" component={SignupContainer} />

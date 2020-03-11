@@ -4,9 +4,6 @@ export const fetchBusinesses = (data) => {
         url: "/api/businesses",
         data
     })
-    // .then(response => {
-    //
-    // })
 }
 
 export const fetchBusiness = (businessId) => (

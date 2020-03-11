@@ -102,7 +102,7 @@ class Navbar extends React.Component {
             </div>
         )
         return (
-            <div id="nav-bar">
+            <div className="nav-bar">
                 <div id="home-buttons-container">
                     <div id="write-a-review-container">
                         <a id="home-review-button" href="" >Write a Review</a>
@@ -118,8 +118,9 @@ class Navbar extends React.Component {
                 {logged}
 
                 <div id="welp-name-logo">
-                    
+
                 </div>
+                
                 <div id="home-search-bar">
                     <form>
                         <input id="find" type="text" value="Find" disabled/>

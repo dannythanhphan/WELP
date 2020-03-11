@@ -1,6 +1,6 @@
 class Api::BusinessesController < ApplicationController
     def index
-        if params[:category] != ""
+        if !params[:category].nil?
             search = params[:category].capitalize
             bizs = Business.where("name LIKE ?", "%#{search}%")
             bizs = Business.where("business_type LIKE ?", "%#{search}%") if bizs.length == 0

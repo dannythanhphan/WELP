@@ -1,9 +1,10 @@
-#nav-bar {
+.nav-bar {
     background-image: image-url("main_picture.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 600px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     // filter: brightness(70%);
@@ -453,7 +454,9 @@
     left: 45%;
     top: 10%;
     background-image: image-url("welp_logo.png");
+    transition: 1s ease;
 }
+
 
 .fa-search {
     color: rgba(255, 255, 255, 0.911);
