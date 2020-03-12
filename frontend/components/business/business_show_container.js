@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
-    updateFilters: (filter, value) => dispatch(updateFilters(filter, value))
+    updateFilters: (filter, value) => dispatch(updateFilters(filter, value)),
+        // receiveSpecificReviews: (businessId) => dispatch(receiveSpecificReviews(businessId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BusinessShow);

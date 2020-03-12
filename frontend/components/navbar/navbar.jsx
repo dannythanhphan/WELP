@@ -118,7 +118,7 @@ class Navbar extends React.Component {
                 {logged}
 
                 <div id="welp-name-logo">
-
+                    
                 </div>
                 
                 <div id="home-search-bar">

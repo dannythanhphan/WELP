@@ -1,3 +1,56 @@
-// Place all the styles related to the reviews controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.reviews-container {
+    width: 100%;
+    margin-top: 4%;
+}
+
+.review-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4%;
+}
+
+.single-review-container {
+    display: flex;
+    min-height: 200px;
+}
+
+.review-profile-info-container {
+    flex: 1;
+    padding-top: 3.5%;
+    display: flex;
+}
+
+.review-pp-container {
+    background-image: image-url("stock.jpg");
+    background-size: cover;
+    width: 30%;
+    height: 30%;
+    margin-right: 3%;
+}
+
+.review-content-container {
+    flex: 2;
+    padding-top: 3%;
+    margin-left: 2%;
+}
+
+.review-created-at {
+    padding-top: 3%;
+    margin-left: 1%;
+    font-size: 12px;
+    color: grey;
+}
+
+.review-text {
+    margin-top: 5%;
+    width: 85%;
+}
+
+.reviewer-name {
+    color: rgb(55, 55, 226);
+    font-size: 13px;
+}
+
+.reviewer-username {
+    font-weight: bold;
+}

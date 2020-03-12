@@ -1,9 +1,22 @@
 import React from 'react';
 
 class HomeBody extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleSearchCategory = this.handleSearchCategory.bind(this)
+    }
+
     // componentDidMount() {
     //     this.props.fetchAllBusinesses();
     // }
+
+    handleSearchCategory(category) {
+        return e => {
+            e.preventDefault();
+            this.props.updateFilters("categories", category)
+                .then(() => this.props.history.push("/search"))
+        }
+    }
 
     render() {
         // const { businesses } = this.props
@@ -12,11 +25,13 @@ class HomeBody extends React.Component {
 
         // if (Object.keys(this.props.businesses).length > 0) {
         //     let bizKeys = Object.keys(businesses)
-        //     for (let i = 0; i < 3; i++) {
+        //     while (pickThree.length < 4) {
         //         let randomNumber = bizKeys[Math.floor(Math.random() * bizKeys.length)]
-        //         let indexToRemove = bizKeys.indexOf(randomNumber)
-        //         delete bizKeys[indexToRemove]
-        //         pickThree.push(randomNumber)
+        //         if (pickThree.includes(randomNumber)) {
+        //             continue;
+        //         } else {
+        //             pickThree.push(randomNumber)
+        //         }
         //     }
         // }
 
@@ -41,18 +56,25 @@ class HomeBody extends React.Component {
         return (
             <div>
                 <div className="body-categories-search">
-                    <div className="asian-fusion-search">
-                        
-                    </div>
-                    <div className="breakfast-search">
-
-                    </div>
-                    <div className="chinese-search">
-
-                    </div>
-                    <div className="japanese-search">
-
-                    </div>
+                    <p className="body-cat-title">Find the Best Businesses in Town</p>
+                    <div className="body-categories-container">
+                        <div className="body-search" onClick={this.handleSearchCategory("Asian Fusion")}>
+                            <img src="asian.jpg"/>
+                            <p className="body-cat-text">Asian Fusion</p>
+                        </div>
+                        <div className="body-search" onClick={this.handleSearchCategory("Breakfast")}>
+                            <img src="breakfast.jpg" />
+                            <p className="body-cat-text">Breakfast</p>
+                        </div>
+                        <div className="body-search" onClick={this.handleSearchCategory("Chinese")}>
+                            <img src="chinese.jpg" />
+                            <p className="body-cat-text">Chinese</p>
+                        </div>
+                        <div className="body-search" onClick={this.handleSearchCategory("Japanese")}>
+                            <img src="japanese.jpg" />
+                            <p className="body-cat-text">Japanese</p>
+                        </div>
+                    </div>    
                 </div>
                 <div className="body-welp-title">
                     Yelp San Francisco

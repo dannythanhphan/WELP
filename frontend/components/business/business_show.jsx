@@ -2,6 +2,7 @@ import React from 'react';
 import BusinessShowHeader from './business_show_header'
 import { Link } from 'react-router-dom'
 import BusinessMap from '../search/business_map';
+import ReviewItemContainer from './review_item_container';
 
 class BusinessShow extends React.Component {
     constructor(props) {
@@ -47,6 +48,7 @@ class BusinessShow extends React.Component {
             }
         }
 
+
         const business_info = this.props.business ? (
             <div className="show-info-container">
                 <div className="show-main-content-container">    
@@ -78,11 +80,13 @@ class BusinessShow extends React.Component {
                             </span>
                         </div>
                         <div className="show-review-photo-buttons-container">
-                            <button className="show-review-button">
-                                <i className="fa fa-star show-review-container">
-                                    <p className="show-review-text"> Write a Review </p>
-                                </i>
-                            </button>
+                            <Link to={`/businesses/${this.props.business.id}/reviews`}>
+                                <button className="show-review-button">
+                                    <i className="fa fa-star show-review-container">
+                                        <p className="show-review-text"> Write a Review </p>
+                                    </i>
+                                </button>
+                            </Link>
                             <button className="add-photo-button">
                                 <i className="fa fa-camera show-photo-container">
                                     <p className="show-photo-text"> Add Photo</p>
@@ -102,6 +106,9 @@ class BusinessShow extends React.Component {
                             </div>
                         </div>
                         <div className="show-border-line"></div>
+                        <div>
+                            <ReviewItemContainer business={business} />
+                        </div>
                     </div>
                     <div className="show-stickied-right">
                         <div className="show-stickied">

@@ -21,7 +21,7 @@ const removeUser = (userId) => ({
 
 export const fetchUsers = () => (dispatch) => (
     userUtils.fetchUsers()
-        .then(users => dispatch(receiveUsers(user)))
+        .then(users => dispatch(receiveUsers(users)))
 );
 
 export const createUser = (user) => (dispatch) => (

@@ -1,6 +1,6 @@
 class Api::BusinessesController < ApplicationController
     def index
-        if !params[:category].nil?
+        if !params[:category].empty?
             search = params[:category].capitalize
             bizs = Business.where("name LIKE ?", "%#{search}%")
             bizs = Business.where("business_type LIKE ?", "%#{search}%") if bizs.length == 0
@@ -12,7 +12,9 @@ class Api::BusinessesController < ApplicationController
         
         bizs = bizs.in_bounds(params[:bounds]) if params[:bounds]
 
-        bizs = bizs.where("cost <= ?", params[:maxCost]).order(cost: :DESC) if params[:maxCost].to_i > 0
+        if params[:maxCost].to_i > 0
+            bizs = bizs.where("cost <= ?", params[:maxCost]).order(cost: :DESC)
+        end
 
         if params[:rating] === "true"
             bizs = bizs.order(average_ratings: :DESC)
