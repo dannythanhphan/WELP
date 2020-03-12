@@ -18,7 +18,7 @@ export const receiveSpecificReviews = (businessId) => (dispatch) => (
         .then((reviews) => dispatch(receiveReviews(reviews)))
 )
 
-export const createNewReview = (businessId) => (dispatch) => (
-    reviewUtils.createReview(businessId)
+export const createNewReview = (form) => (dispatch) => (
+    reviewUtils.createReview(form)
         .then((review) => dispatch(createReview(review)))
 )

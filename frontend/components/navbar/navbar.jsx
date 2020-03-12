@@ -126,7 +126,7 @@ class Navbar extends React.Component {
                         <input id="find" type="text" value="Find" disabled/>
                         <input id="food-search" type="text" value={this.state.category} onChange={this.handleInput}/>
                         <input id="near" type="text" value="Near" disabled/>
-                        <input id="city-search" type="text" value="San Francisco" />
+                        <input id="city-search" type="text" placeholder="San Francisco" />
                         <button id="home-search-button" onClick={this.handleSubmit}><i className="fas fa-search fa-lg"></i></button>
                     </form>
                 </div>

@@ -216,9 +216,9 @@ var receiveSpecificReviews = function receiveSpecificReviews(businessId) {
     });
   };
 };
-var createNewReview = function createNewReview(businessId) {
+var createNewReview = function createNewReview(form) {
   return function (dispatch) {
-    return _utils_review_utils__WEBPACK_IMPORTED_MODULE_0__["createReview"](businessId).then(function (review) {
+    return _utils_review_utils__WEBPACK_IMPORTED_MODULE_0__["createReview"](form).then(function (review) {
       return dispatch(createReview(review));
     });
   };
@@ -889,9 +889,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -902,16 +902,115 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 var ReviewForm = /*#__PURE__*/function (_React$Component) {
   _inherits(ReviewForm, _React$Component);
 
-  function ReviewForm() {
+  function ReviewForm(props) {
+    var _this;
+
     _classCallCheck(this, ReviewForm);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(ReviewForm).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ReviewForm).call(this, props));
+    _this.state = {
+      rating: 0,
+      body: "",
+      business_id: _this.props.match.params.business_id
+    };
+    _this.handleSubmitReview = _this.handleSubmitReview.bind(_assertThisInitialized(_this));
+    _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(ReviewForm, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchBusiness(this.props.match.params.business_id);
+    }
+  }, {
+    key: "handleInput",
+    value: function handleInput(e) {
+      this.setState({
+        body: e.target.value
+      });
+    }
+  }, {
+    key: "handleRating",
+    value: function handleRating(value) {
+      this.setState({
+        rating: value
+      });
+    }
+  }, {
+    key: "handleSubmitReview",
+    value: function handleSubmitReview(e) {
+      e.preventDefault();
+      this.props.createNewReview(this.state);
+      this.props.history.push("/businesses/".concat(this.props.business.id));
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null));
+      var _this2 = this;
+
+      var textPlaceholder = "Spicy jalapeno bacon ipsum dolor amet jerky venison andouille bresaola burgdoggen, chicken pork chop leberkas sirloin ball tip tenderloin buffalo alcatra.Ball tip sirloin pastrami, strip steak short ribs rump kielbasa.Cow alcatra pork loin shoulder frankfurter.Strip steak chicken venison flank fatback bacon, shoulder jerky alcatra spare ribs frankfurter sirloin pork loin kielbasa pork chop.Bresaola filet mignon shoulder prosciutto.Beef ribs doner spare ribs, ball tip burgdoggen kevin prosciutto leberkas capicola.Prosciutto ham hock buffalo boudin turkey cupim.";
+      var business = this.props.business;
+      var businessName = business ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "review-biz-name"
+      }, business.name) : null;
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "login-top-bar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "welp-name-logo-login"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "review-form-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "review-form-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, businessName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "review-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "review-rating-buttons"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "review-stars ".concat(this.state.rating >= 1 ? "chosen" : ""),
+        onClick: function onClick() {
+          return _this2.handleRating(1);
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-star rev-stars"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "review-stars ".concat(this.state.rating >= 2 ? "chosen" : ""),
+        onClick: function onClick() {
+          return _this2.handleRating(2);
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-star rev-stars"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "review-stars ".concat(this.state.rating >= 3 ? "chosen" : ""),
+        onClick: function onClick() {
+          return _this2.handleRating(3);
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-star rev-stars"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "review-stars ".concat(this.state.rating >= 4 ? "chosen" : ""),
+        onClick: function onClick() {
+          return _this2.handleRating(4);
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-star rev-stars"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "review-stars ".concat(this.state.rating >= 5 ? "chosen" : ""),
+        onClick: function onClick() {
+          return _this2.handleRating(5);
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fa fa-star rev-stars"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "review-text-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        onChange: this.handleInput,
+        placeholder: textPlaceholder,
+        className: "actual-text"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "post-review-button",
+        onClick: this.handleSubmitReview
+      }, "Post Review")))));
     }
   }]);
 
@@ -935,19 +1034,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_review_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/review_actions */ "./frontend/actions/review_actions.js");
 /* harmony import */ var _review_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./review_form */ "./frontend/components/business/review_form.jsx");
+/* harmony import */ var _actions_business_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/business_actions */ "./frontend/actions/business_actions.js");
 
 
 
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    business: state.entities.businesses[ownProps.match.params.business_id]
+  };
+};
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     createNewReview: function createNewReview(form) {
       return dispatch(Object(_actions_review_actions__WEBPACK_IMPORTED_MODULE_1__["createNewReview"])(form));
+    },
+    fetchBusiness: function fetchBusiness(businessId) {
+      return dispatch(Object(_actions_business_actions__WEBPACK_IMPORTED_MODULE_3__["fetchBusiness"])(businessId));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(null, mapDispatchToProps)(_review_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_review_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -1561,7 +1671,7 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "city-search",
         type: "text",
-        value: "San Francisco"
+        placeholder: "San Francisco"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         id: "home-search-button",
         onClick: this.handleSubmit
@@ -2893,10 +3003,11 @@ var fetchReviews = function fetchReviews(businessId) {
     url: "/api/businesses/".concat(businessId, "/reviews")
   });
 };
-var createReview = function createReview(businessId) {
+var createReview = function createReview(data) {
   return $.ajax({
     method: "POST",
-    url: "/api/businesses/".concat(businessId, "/reviews")
+    url: "/api/businesses/".concat(data.business_id, "/reviews"),
+    data: data
   });
 };
 
