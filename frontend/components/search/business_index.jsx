@@ -6,6 +6,7 @@ class BusinessIndex extends React.Component {
         super(props);
         this.state = {
             rating: false,
+            businesses: this.props.businesses
         }
 
         this.filterCost = this.filterCost.bind(this);
@@ -26,18 +27,32 @@ class BusinessIndex extends React.Component {
             this.setState({ rating: true });
             this.props.updateFilters("rating", true);
         } else {
-            this.setState({ rating: false });
+            this.setState({ rating: false, businesses: this.props.businesses });
             this.props.updateFilters("rating", false);
         }
     }
     
     render() {
         const { businesses } = this.props
+
+        const displayBusiness = (Object.values(this.props.businesses).length > 0) ? (
+            businesses.map((business) => {
+                return <BusinessIndexItem key={business.id} business={business} />
+            })
+        ) : (
+            <div className="no-searches-found">
+                Not able to find what you are looking for. Please redo search
+            </div>
+        )
+
+        // if (this.state.rating === true) {
+        //     businesses = this.state.businesses
+        // }
         return (
             <div className="searched-businesses-container">
                 <div className="search-filter-header">
                     <label className="filter-header-title">Browsing San Francisco, CA Businesses</label> 
-                    <div className="filter-buttons">
+                    {/* <div className="filter-buttons">
                         <div className="price-dropdown">
                             <button className="price-button" onFocus={this.toggleDropdown}>
                                 Price &#9660;
@@ -84,11 +99,9 @@ class BusinessIndex extends React.Component {
                         <div className="price-dropdown">
                             <button onClick={this.toggleRating} id="rating-filter" className="rating-filter-button">Rating</button>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
-                {businesses.map((business) => {
-                    return <BusinessIndexItem key={business.id} business={business} />
-                })}
+                {displayBusiness}
             </div>
         )
     }

@@ -7,8 +7,14 @@ class ReviewItem extends React.Component {
     }
 
     componentDidMount() {
-        this.props.receiveSpecificReviews(this.props.business.id)
         this.props.fetchUsers();
+        this.props.receiveSpecificReviews(this.props.business.id)
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (Object.keys(prevProps.reviews).length != Object.keys(this.props.reviews).length) {
+            this.props.receiveSpecificReviews(this.props.business.id)
+        }
     }
 
     render() {
@@ -25,7 +31,7 @@ class ReviewItem extends React.Component {
                 <p className="review-title">Recommended Reviews</p>
                 <div className="show-border-line"></div>
                 {bizReviews.map(review => {
-                    return <SingleReview key={review.id} review={review} users={users}/>
+                    return <SingleReview key={Math.random()} review={review} users={users}/>
                 })}
                 <div className="show-border-line"></div>
             </div>

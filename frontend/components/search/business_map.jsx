@@ -11,13 +11,18 @@ class BusinessMap extends React.Component {
                 disableDefaultUI: true,
                 draggable: false
             };
-        } else {
+        } else if (Object.values(this.props.businesses).length > 0) {
             let firstBiz = Object.values(this.props.businesses)[0]
 
             mapOptions = {
                 center: { lat: firstBiz.lat, lng: firstBiz.lng },
                 zoom: 14
             };
+        } else {
+            mapOptions = {
+                center: { lat: 37.773972, lng: -122.431297 },
+                zoom: 14
+            }; 
         }
         
         // const mapOptions = {
@@ -30,7 +35,7 @@ class BusinessMap extends React.Component {
         if (this.props.business) {
             this.MarkerManager.updateMarkers(this.props.business)
             // this.map.setOptions({ draggable: false});
-        } else {
+        } else if (Object.values(this.props.businesses).length > 0) {
             this.MarkerManager.updateMarkers(this.props.businesses)
         }
         
@@ -45,7 +50,7 @@ class BusinessMap extends React.Component {
         //                 }
         // this.props.updateFilters("bounds", bounds)
 
-        if (!this.props.business) {
+        if (!this.props.business && Object.values(this.props.businesses).length > 0) {
             this.map.addListener("idle", () => {
                 let bounds = { northEast: {
                                     lat: this.map.getBounds().getNorthEast().lat(),
@@ -60,6 +65,8 @@ class BusinessMap extends React.Component {
             })
         }
     }
+
+    
 
     // boundsOnClick() {
         

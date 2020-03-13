@@ -1,4 +1,5 @@
 import React from 'react';
+import BusinessShowHeaderContainer from './business_show_header_container'
 import BusinessShowHeader from './business_show_header'
 import { Link } from 'react-router-dom'
 import BusinessMap from '../search/business_map';
@@ -135,7 +136,7 @@ class BusinessShow extends React.Component {
 
         return (
             <div>
-                <BusinessShowHeader />
+                <BusinessShowHeaderContainer history={this.props.history}/>
                 <div className="show-photos-container">
                     
                 </div>

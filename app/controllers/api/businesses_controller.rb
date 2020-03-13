@@ -10,15 +10,7 @@ class Api::BusinessesController < ApplicationController
             bizs = Business.all
         end
         
-        bizs = bizs.in_bounds(params[:bounds]) if params[:bounds]
-
-        if params[:maxCost].to_i > 0
-            bizs = bizs.where("cost <= ?", params[:maxCost]).order(cost: :DESC)
-        end
-
-        if params[:rating] === "true"
-            bizs = bizs.order(average_ratings: :DESC)
-        end
+        bizs = bizs.in_bounds(params[:bounds]) if params[:bounds] && params[:category].empty?
 
         @businesses = bizs.length > 20 ? bizs[0...19] : bizs
 

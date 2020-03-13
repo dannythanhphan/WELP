@@ -13,7 +13,7 @@ class HomeBody extends React.Component {
     handleSearchCategory(category) {
         return e => {
             e.preventDefault();
-            this.props.updateFilters("categories", category)
+            this.props.updateFilters("category", category)
                 .then(() => this.props.history.push("/search"))
         }
     }

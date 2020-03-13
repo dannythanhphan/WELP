@@ -8,7 +8,9 @@ class Api::ReviewsController < ApplicationController
         @review = Review.new(review_params)
         @review.user_id = current_user.id
         @review.business_id = params[:business_id].to_i
-        @review.save
+        if @review.save
+            render :show
+        end
     end
 
     def review_params

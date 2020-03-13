@@ -436,10 +436,11 @@ var App = function App() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/react.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _business_show_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./business_show_header */ "./frontend/components/business/business_show_header.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var _search_business_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../search/business_map */ "./frontend/components/search/business_map.jsx");
-/* harmony import */ var _review_item_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./review_item_container */ "./frontend/components/business/review_item_container.js");
+/* harmony import */ var _business_show_header_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./business_show_header_container */ "./frontend/components/business/business_show_header_container.js");
+/* harmony import */ var _business_show_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./business_show_header */ "./frontend/components/business/business_show_header.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _search_business_map__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../search/business_map */ "./frontend/components/search/business_map.jsx");
+/* harmony import */ var _review_item_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./review_item_container */ "./frontend/components/business/review_item_container.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -457,6 +458,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -549,7 +551,7 @@ var BusinessShow = /*#__PURE__*/function (_React$Component) {
         className: "show-cat"
       }, business.categories)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-review-photo-buttons-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
         to: "/businesses/".concat(this.props.business.id, "/reviews")
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "show-review-button"
@@ -571,13 +573,13 @@ var BusinessShow = /*#__PURE__*/function (_React$Component) {
         className: "show-map-title"
       }, "Location & Hours"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "actual-map"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_business_map__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_business_map__WEBPACK_IMPORTED_MODULE_4__["default"], {
         business: business
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "business-map-address"
       }, business.street_address, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), business.city, ", ", business.state, " ", business.zip_code)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-border-line"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_item_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_review_item_container__WEBPACK_IMPORTED_MODULE_5__["default"], {
         business: business
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-stickied-right"
@@ -596,7 +598,9 @@ var BusinessShow = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "far fa-window-maximize window"
       }), business.url))))) : null;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_show_header__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_show_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        history: this.props.history
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-photos-container"
       }), business_info);
     }
@@ -671,9 +675,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -692,32 +696,39 @@ var BusinessShowHeader = /*#__PURE__*/function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(BusinessShowHeader).call(this, props));
     _this.state = {
-      search: ""
+      category: ""
     };
+    _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(BusinessShowHeader, [{
+    key: "handleInput",
+    value: function handleInput(e) {
+      this.setState({
+        category: e.target.value
+      });
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      this.props.updateFilters("category", this.state.category).then(function () {
+        return _this2.props.history.push("/search");
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
           currentUser = _this$props.currentUser,
           logout = _this$props.logout;
       var logged = currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "logged-in-container"
+        className: "logged-in-con"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "message-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "message-icon"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-comment-alt"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "notification-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "notification-icon"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-bell"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-dropdown-arrow"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-dropdown"
@@ -798,28 +809,19 @@ var BusinessShowHeader = /*#__PURE__*/function (_React$Component) {
         className: "show-search-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        className: "show-search",
-        placeholder: "tacos, cheap dinner, Max's"
+        className: "show-search add-shadow1",
+        placeholder: "tacos, cheap dinner, Max's",
+        onChange: this.handleInput
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         className: "show-search show-search-border",
         placeholder: "San Francisco, CA"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "business-search-button"
+        className: "business-search-button",
+        onClick: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-search fa-lg"
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "business-review-buttons-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "business-business-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "business-button"
-      }, "For Businesses")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "business-review-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/businesses/1/reviews",
-        className: "business-review-redirect"
-      }, "Write a Review"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, logged));
+      })))), logged);
     }
   }]);
 
@@ -843,6 +845,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _business_show_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./business_show_header */ "./frontend/components/business/business_show_header.jsx");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_filter_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/filter_actions */ "./frontend/actions/filter_actions.js");
+
 
 
 
@@ -860,6 +864,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     login: function login(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
+    },
+    updateFilters: function updateFilters(filter, value) {
+      return dispatch(Object(_actions_filter_actions__WEBPACK_IMPORTED_MODULE_3__["updateFilters"])(filter, value));
     }
   };
 };
@@ -1106,8 +1113,15 @@ var ReviewItem = /*#__PURE__*/function (_React$Component) {
   _createClass(ReviewItem, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.receiveSpecificReviews(this.props.business.id);
       this.props.fetchUsers();
+      this.props.receiveSpecificReviews(this.props.business.id);
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (Object.keys(prevProps.reviews).length != Object.keys(this.props.reviews).length) {
+        this.props.receiveSpecificReviews(this.props.business.id);
+      }
     }
   }, {
     key: "render",
@@ -1135,7 +1149,7 @@ var ReviewItem = /*#__PURE__*/function (_React$Component) {
         className: "show-border-line"
       }), bizReviews.map(function (review) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_single_review__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: review.id,
+          key: Math.random(),
           review: review,
           users: users
         });
@@ -1329,7 +1343,7 @@ var HomeBody = /*#__PURE__*/function (_React$Component) {
       return function (e) {
         e.preventDefault();
 
-        _this2.props.updateFilters("categories", category).then(function () {
+        _this2.props.updateFilters("category", category).then(function () {
           return _this2.props.history.push("/search");
         });
       };
@@ -1775,7 +1789,8 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(BusinessIndex).call(this, props));
     _this.state = {
-      rating: false
+      rating: false,
+      businesses: _this.props.businesses
     };
     _this.filterCost = _this.filterCost.bind(_assertThisInitialized(_this));
     _this.toggleRating = _this.toggleRating.bind(_assertThisInitialized(_this));
@@ -1804,7 +1819,8 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
         this.props.updateFilters("rating", true);
       } else {
         this.setState({
-          rating: false
+          rating: false,
+          businesses: this.props.businesses
         });
         this.props.updateFilters("rating", false);
       }
@@ -1813,67 +1829,24 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var businesses = this.props.businesses;
+      var displayBusiness = Object.values(this.props.businesses).length > 0 ? businesses.map(function (business) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          key: business.id,
+          business: business
+        });
+      }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "no-searches-found"
+      }, "Not able to find what you are looking for. Please redo search"); // if (this.state.rating === true) {
+      //     businesses = this.state.businesses
+      // }
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "searched-businesses-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-filter-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "filter-header-title"
-      }, "Browsing San Francisco, CA Businesses"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "filter-buttons"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "price-dropdown"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "price-button",
-        onFocus: this.toggleDropdown
-      }, "Price \u25BC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        id: "price-dropdown-content",
-        className: "search-filter-price-dropdown",
-        onBlur: this.toggleDropdown
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "price-radio-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        onClick: this.filterCost,
-        className: "price-radio",
-        type: "radio",
-        name: "cost",
-        value: "1"
-      }), "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "price-radio-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        onClick: this.filterCost,
-        className: "price-radio",
-        type: "radio",
-        name: "cost",
-        value: "2"
-      }), "$$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "price-radio-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        onClick: this.filterCost,
-        className: "price-radio",
-        type: "radio",
-        name: "cost",
-        value: "3"
-      }), "$$$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "price-radio-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        onClick: this.filterCost,
-        className: "price-radio",
-        type: "radio",
-        name: "cost",
-        value: "4"
-      }), "$$$$"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "price-dropdown"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.toggleRating,
-        id: "rating-filter",
-        className: "rating-filter-button"
-      }, "Rating")))), businesses.map(function (business) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: business.id,
-          business: business
-        });
-      }));
+      }, "Browsing San Francisco, CA Businesses")), displayBusiness);
     }
   }]);
 
@@ -2014,12 +1987,20 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
           disableDefaultUI: true,
           draggable: false
         };
-      } else {
+      } else if (Object.values(this.props.businesses).length > 0) {
         var firstBiz = Object.values(this.props.businesses)[0];
         mapOptions = {
           center: {
             lat: firstBiz.lat,
             lng: firstBiz.lng
+          },
+          zoom: 14
+        };
+      } else {
+        mapOptions = {
+          center: {
+            lat: 37.773972,
+            lng: -122.431297
           },
           zoom: 14
         };
@@ -2034,7 +2015,7 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
 
       if (this.props.business) {
         this.MarkerManager.updateMarkers(this.props.business); // this.map.setOptions({ draggable: false});
-      } else {
+      } else if (Object.values(this.props.businesses).length > 0) {
         this.MarkerManager.updateMarkers(this.props.businesses);
       } // let bounds = { northEast: {
       //                     lat: this.map.getBounds().getNorthEast().lat(),
@@ -2048,7 +2029,7 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
       // this.props.updateFilters("bounds", bounds)
 
 
-      if (!this.props.business) {
+      if (!this.props.business && Object.values(this.props.businesses).length > 0) {
         this.map.addListener("idle", function () {
           var bounds = {
             northEast: {

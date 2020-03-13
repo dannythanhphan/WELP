@@ -4,25 +4,27 @@ class BusinessShowHeader extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            search: ""
+            category: ""
         };
+        this.handleInput = this.handleInput.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    handleInput(e) {
+        this.setState({ category: e.target.value })
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.updateFilters("category", this.state.category)
+            .then(() => this.props.history.push("/search"))
     }
 
     render() {
         const { currentUser, logout } = this.props
 
         let logged = (currentUser) ? (
-            <div className="logged-in-container">
-                <div className="message-button">
-                    <button className="message-icon">
-                        <i className="fas fa-comment-alt"></i>
-                    </button>
-                </div>
-                <div className="notification-button">
-                    <button className="notification-icon">
-                        <i className="fas fa-bell"></i>
-                    </button>
-                </div>
+            <div className="logged-in-con">
                 <div className="profile-dropdown-arrow">
                     <div className="profile-dropdown">
                         <button className="arrow-down">
@@ -82,8 +84,9 @@ class BusinessShowHeader extends React.Component {
                     <form className="show-search-container">
                         <input 
                             type="text"
-                            className="show-search"
+                            className="show-search add-shadow1"
                             placeholder="tacos, cheap dinner, Max's"
+                            onChange={this.handleInput}
                         />
                         
                         <input 
@@ -91,21 +94,12 @@ class BusinessShowHeader extends React.Component {
                             className="show-search show-search-border"
                             placeholder="San Francisco, CA"
                         />
-                        <button className="business-search-button"><i className="fas fa-search fa-lg"></i></button>
+                        <button className="business-search-button" onClick={this.handleSubmit}>
+                            <i className="fas fa-search fa-lg"></i>
+                        </button>
                     </form>
                 </div>
-                <div className="business-review-buttons-container">
-                    <div className="business-business-button">
-                        <button className="business-button">For Businesses</button>
-                    </div>
-                    <div className="business-review-button">
-                        {/* REMEMBER TO CHANGE THIS */}
-                        <Link to="/businesses/1/reviews" className="business-review-redirect">Write a Review</Link>
-                    </div>
-                </div>
-                <div>
-                    {logged}
-                </div>
+                {logged}
             </div>
         );
     }
