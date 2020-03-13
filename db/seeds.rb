@@ -74,44 +74,44 @@ Business.destroy_all
 
 # USERS
     u1 = User.create!(username: "Phantom", fname: "Danny", lname: "Fenton", email: "dannyphantom@gmail.com", password: "password")
-        file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/demo-pp.jpg')
-        u1.avatar.attach(io: file, filename: 'demo-pp.jpg')
+        # file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/demo-pp.jpg')
+        # u1.avatar.attach(io: file, filename: 'demo-pp.jpg')
 
     u2 = User.create!(username: "dk", fname: "Donkey", lname: "Kong", email: "dk@gmail.com", password: "password")
-        file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/dk-pp.jpg')
-        u2.avatar.attach(io: file, filename: 'dk-pp.jpg')
+        # file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/dk-pp.jpg')
+        # u2.avatar.attach(io: file, filename: 'dk-pp.jpg')
 
     u3 = User.create!(username: "power", fname: "Ganon", lname: "Dorf", email: "ganonsCastle@gmail.com", password: "password")
-        file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/ganon-pp.jpg')
-        u3.avatar.attach(io: file, filename: 'ganon-pp.jpg')
+        # file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/ganon-pp.jpg')
+        # u3.avatar.attach(io: file, filename: 'ganon-pp.jpg')
 
     u4 = User.create!(username: "courage", fname: "Link", lname: "Elf", email: "zeldasluver@gmail.com", password: "password")
-        file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/link-pp.jpg')
-        u4.avatar.attach(io: file, filename: 'link-pp.jpg')   
+        # file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/link-pp.jpg')
+        # u4.avatar.attach(io: file, filename: 'link-pp.jpg')   
 
     u5 = User.create!(username: "wisdom", fname: "Zelda", lname: "AlsoAnElf", email: "saveme@gmail.com", password: "password")
-        file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/zelda-pp.jpg')
-        u5.avatar.attach(io: file, filename: 'zelda-pp.jpg') 
+        # file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/zelda-pp.jpg')
+        # u5.avatar.attach(io: file, filename: 'zelda-pp.jpg') 
         
     u6 = User.create!(username: "paper", fname: "Mario", lname: "Bro", email: "thousandyeardoor@gmail.com", password: "password")
-        file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/mario-pp.jpg')
-        u6.avatar.attach(io: file, filename: 'mario-pp.jpg')
+        # file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/mario-pp.jpg')
+        # u6.avatar.attach(io: file, filename: 'mario-pp.jpg')
 
     u7 = User.create!(username: "ghostexterminator", fname: "Luigi", lname: "bro", email: "scaredstraight@gmail.com", password: "password")
-        file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/luigi-pp.jpg')
-        u7.avatar.attach(io: file, filename: 'luigi-pp.jpg')
+        # file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/luigi-pp.jpg')
+        # u7.avatar.attach(io: file, filename: 'luigi-pp.jpg')
 
     u8 = User.create!(username: "excalibur", fname: "Saber", lname: "Servent", email: "bestwaifu@gmail.com", password: "password")
-        file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/saber-pp.jpg')
-        u8.avatar.attach(io: file, filename: 'saber-pp.jpg')
+        # file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/saber-pp.jpg')
+        # u8.avatar.attach(io: file, filename: 'saber-pp.jpg')
 
     u9 = User.create!(username: "popsiclemelted", fname: "Todoroki", lname: "Shoto", email: "songoffireandice@gmail.com", password: "password")
-        file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/todoroki-pp.jpg')
-        u9.avatar.attach(io: file, filename: 'todoroki-pp.jpg')
+        # file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/todoroki-pp.jpg')
+        # u9.avatar.attach(io: file, filename: 'todoroki-pp.jpg')
 
     u10 = User.create!(username: "iflydragons", fname: "Jon", lname: "Snow", email: "wolvesanddragons@gmail.com", password: "password")
-        file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/jon-pp.jpg')
-        u10.avatar.attach(io: file, filename: 'jon-pp.jpg')
+        # file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/jon-pp.jpg')
+        # u10.avatar.attach(io: file, filename: 'jon-pp.jpg')
 
 # BUSINESSES
     # RESTAURANTS
