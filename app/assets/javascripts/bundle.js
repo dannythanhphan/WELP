@@ -1558,18 +1558,6 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
       var logged = currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logged-in-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "message-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "message-icon"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-comment-alt"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "notification-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "notification-icon"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-bell"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-dropdown-arrow"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-dropdown"
@@ -1595,33 +1583,7 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
         className: "user-info-name"
       }, currentUser.fname, " ", currentUser.lname[0], "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "user-info-username"
-      }, currentUser.username))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-buttons"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-dropdown-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-user fa-"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "profile-dropdown-words"
-      }, "About Me")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-dropdown-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-user-friends"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "profile-dropdown-words"
-      }, "Find Friends")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-dropdown-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-dollar-sign"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "profile-dropdown-words"
-      }, "Cash Back")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-dropdown-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-cog"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "profile-dropdown-words"
-      }, "Account Settings"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, currentUser.username))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: logout,
         className: "logout-button"
       }, "Log Out")))))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1647,23 +1609,24 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "home-buttons-container"
+        className: "home-socials-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "write-a-review-container"
+        className: "github-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        id: "home-review-button",
-        href: ""
-      }, "Write a Review")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "events-container"
+        href: "https://github.com/dannythanhphan",
+        className: "home-github"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://github.com/dannythanhphan",
+        className: "github-text"
+      }, "GitHub")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "linkedin-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        id: "event-button",
-        href: ""
-      }, "Events")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "talk-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        id: "talk-button",
-        href: ""
-      }, "Talk"))), logged, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        href: "https://www.linkedin.com/in/danny-phan-0b6307184/",
+        className: "home-linkedin"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://www.linkedin.com/in/danny-phan-0b6307184/",
+        className: "linkedin-text"
+      }, "LinkedIn"))), logged, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "welp-name-logo"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "home-search-bar"

@@ -34,16 +34,6 @@ class Navbar extends React.Component {
 
         let logged = (currentUser) ? (
             <div className="logged-in-container">
-                <div className="message-button">
-                    <button className="message-icon">
-                        <i className="fas fa-comment-alt"></i>
-                    </button>
-                </div>
-                <div className="notification-button">
-                    <button className="notification-icon">
-                        <i className="fas fa-bell"></i>
-                    </button>
-                </div>
                 <div className="profile-dropdown-arrow">
                     <div className="profile-dropdown">
                         <button className="arrow-down">
@@ -62,24 +52,6 @@ class Navbar extends React.Component {
                                         <p className="user-info-username">{currentUser.username}</p>
                                     </div>
                                 </div>    
-                                <div className="profile-buttons">
-                                    <div className="profile-dropdown-button">
-                                        <i className="fas fa-user fa-"></i>
-                                        <p className="profile-dropdown-words">About Me</p>
-                                    </div>
-                                    <div className="profile-dropdown-button">
-                                        <i className="fas fa-user-friends"></i>
-                                        <p className="profile-dropdown-words">Find Friends</p>
-                                    </div>
-                                    <div className="profile-dropdown-button">
-                                        <i className="fas fa-dollar-sign"></i>
-                                        <p className="profile-dropdown-words">Cash Back</p>
-                                    </div>
-                                    <div className="profile-dropdown-button">
-                                        <i className="fas fa-cog"></i>
-                                        <p className="profile-dropdown-words">Account Settings</p>
-                                    </div>
-                                </div>
                                 <button onClick={logout} className="logout-button">Log Out</button>
                             </div>
                         </div>
@@ -103,15 +75,22 @@ class Navbar extends React.Component {
         )
         return (
             <div className="nav-bar">
-                <div id="home-buttons-container">
-                    <div id="write-a-review-container">
-                        <a id="home-review-button" href="" >Write a Review</a>
+                <div className="home-socials-container">
+                    <div className="github-container">
+                        <a href="https://github.com/dannythanhphan" 
+                            className="home-github">
+                        </a>
+                        <a href="https://github.com/dannythanhphan" 
+                            className="github-text">GitHub</a>
                     </div>
-                    <div id="events-container">
-                        <a id="event-button" href="">Events</a>
-                    </div>
-                    <div id="talk-container">
-                        <a id="talk-button" href="">Talk</a>
+
+                    <div className="linkedin-container">
+                        <a href="https://www.linkedin.com/in/danny-phan-0b6307184/"
+                            className="home-linkedin">
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/danny-phan-0b6307184/"
+                            className="linkedin-text">LinkedIn</a>
                     </div>
                 </div>
 

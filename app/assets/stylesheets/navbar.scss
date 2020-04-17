@@ -1,8 +1,9 @@
 .nav-bar {
-    background-image: image-url("main_picture.jpg");
+    background-image: image-url("main_picture3.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
     height: 600px;
     width: 100%;
     display: flex;
@@ -16,45 +17,80 @@
     position: relative;
     top: 10%;
     left: 30%;
+    width: 20%;
 }
 
-#home-review-button {
-    text-decoration: none;
-    font-weight: bold;
-    color: white;
-    padding: 10px;
-    font-size: 14px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+.home-socials-container {
+    // background-color: red;
+    width: 100px;
+    height: 50px;
+    position: relative;
+    top: 90px;
+    left: 530px;
+    display: flex;
 }
 
-#home-review-button:hover {
+.github-container {
+    display: flex;
+    margin-right: 10px;
+}
+
+.home-github:hover > .github-text {
     border-bottom: 2px solid white;
 }
 
-#event-button {
+.github-text {
+    position: relative;
     text-decoration: none;
-    font-weight: bold;
-    color: white;
-    padding: 10px;
-    font-size: 14px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: black;
+    font-weight: 600;
+    top: 20px;
+    max-height: 20px;
+    transition: ease 1s;
 }
 
-#event-button:hover {
-    border-bottom: 2px solid white;
+.github-text:hover {
+    border-bottom: 1px solid white;
 }
 
-#talk-button {
+.home-github {
+    background-image: image-url("github-logo.png");
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
+
+.linkedin-container {
+    display: flex;
+}
+
+
+.linkedin-text {
+    position: relative;
     text-decoration: none;
-    font-weight: bold;
-    color: white;
-    padding: 10px;
-    font-size: 14px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: 	rgb(0, 122, 185);
+    // color: white;
+    font-weight: 600;
+    top: 20px;
+    max-height: 20px;
+    transition: ease 1s;
 }
 
-#talk-button:hover {
-    border-bottom: 2px solid white;
+.linkedin-text:hover {
+    border-bottom: 1px solid white;
+}
+
+.home-linkedin {
+    background-image: image-url("linkedin.png");
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 5px;
 }
 
 #session-buttons {
@@ -143,47 +179,8 @@
     flex-direction: row;
     position: relative;
     top: 40px;
-    left: 61%;
-}
-
-.message-icon {
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-    font-size: 18px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    margin-right: 5px;
-}
-
-.message-icon:hover {
-    background-color: rgba(0, 0, 0, 0.397);
-    border: none;
-}
-
-.notification-icon {
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-    font-size: 18px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    margin-right: 5px;
-}
-
-.notification-icon:hover {
-    background-color: rgba(0, 0, 0, 0.397);
-    border: none;
-}
-
-.fa-comment-alt {
-    color: white
-}
-
-.fa-bell {
-    color: white
+    left: 67%;
+    width: 30%;
 }
 
 .profile-dropdown-arrow {
@@ -322,51 +319,6 @@
 }
 
 .user-info-username:hover {
-    text-decoration: underline;
-}
-
-.profile-buttons {
-    padding-bottom: 5px;
-    border-bottom: 1px solid lightgray;
-}
-
-.profile-dropdown-button {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 8px;
-}
-
-.fa-user {
-    margin-right: 10px;
-}
-
-.fa-user-friends {
-    margin-right: 4px;
-    position: relative;
-    right: 4px;
-}
-
-.fa-dollar-sign {
-    margin-right: 15px;
-    font-size: 16px;
-    position: relative;
-    left: 1px;
-}
-
-.fa-cog {
-    margin-right: 8px;
-    position: relative;
-    right: 2px;
-}
-
-.profile-dropdown-words {
-    font-size: 14px;
-    font-weight: bold;
-    color: rgb(72, 72, 218);
-}
-
-.profile-dropdown-words:hover {
-    cursor: pointer;
     text-decoration: underline;
 }
 
