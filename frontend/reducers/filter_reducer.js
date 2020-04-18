@@ -2,9 +2,7 @@ import { UPDATE_FILTERS } from "../actions/filter_actions";
 
 const filtersState = {
     bounds: {},
-    maxCost: 0,
     category: "",
-    rating: false
 }
 
 const FilterReducer = (state = filtersState, action) => {

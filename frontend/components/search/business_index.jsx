@@ -6,15 +6,18 @@ class BusinessIndex extends React.Component {
         super(props);
         this.state = {
             rating: false,
-            businesses: this.props.businesses
+            businesses: this.props.businesses,
+            price: 0
         }
 
         this.filterCost = this.filterCost.bind(this);
         this.toggleRating = this.toggleRating.bind(this);
+        this.filterBusinesses = this.filterBusinesses.bind(this);
     }
 
     filterCost(e) {
-        this.props.updateFilters("maxCost", parseInt(e.target.value))
+        this.setState({ price: parseInt(e.target.value) })
+        console.log(this.state.price)
     }
 
     toggleDropdown() {
@@ -25,18 +28,36 @@ class BusinessIndex extends React.Component {
         document.getElementById("rating-filter").classList.toggle("clicked")
         if (this.state.rating === false) {
             this.setState({ rating: true });
-            this.props.updateFilters("rating", true);
         } else {
             this.setState({ rating: false, businesses: this.props.businesses });
-            this.props.updateFilters("rating", false);
         }
+    }
+
+    filterBusinesses(businesses) {
+        let filteredBizs;
+        let { price, rating } = this.state;
+
+        if (price > 0 && rating) {
+            filteredBizs = businesses.filter(biz => biz.cost === this.state.price);
+            filteredBizs = filteredBizs.sort(function(b, a){return a.rating - b.rating});
+        } else if (price > 0) {
+            filteredBizs = businesses.filter(biz => biz.cost === this.state.price);
+        } else if (rating === true) {
+            filteredBizs = businesses.sort(function(b, a){return a.rating - b.rating});
+        } else if (price === 0 && !rating) {
+            filteredBizs = businesses;
+        }
+
+        return filteredBizs;
     }
     
     render() {
-        const { businesses } = this.props
+        let { businesses } = this.props;
+        let businessesCopy = [...businesses];
+        let filteredBizs = this.filterBusinesses(businessesCopy);
 
-        const displayBusiness = (Object.values(this.props.businesses).length > 0) ? (
-            businesses.map((business) => {
+        const displayBusiness = (businesses.length > 0) ? (
+            filteredBizs.map((business) => {
                 return <BusinessIndexItem key={business.id} business={business} />
             })
         ) : (
@@ -52,12 +73,21 @@ class BusinessIndex extends React.Component {
             <div className="searched-businesses-container">
                 <div className="search-filter-header">
                     <label className="filter-header-title">Browsing San Francisco, CA Businesses</label> 
-                    {/* <div className="filter-buttons">
+                    <div className="filter-buttons">
                         <div className="price-dropdown">
                             <button className="price-button" onFocus={this.toggleDropdown}>
                                 Price &#9660;
                             </button>
                             <form id="price-dropdown-content" className="search-filter-price-dropdown"  onBlur={this.toggleDropdown} >
+                                    <label className="price-radio-container">
+                                        <input onClick={this.filterCost} 
+                                            className="price-radio" 
+                                            type="radio" 
+                                            name="cost" 
+                                            value="0" 
+                                        /> 
+                                        No Filter
+                                    </label>
                                     <label className="price-radio-container">
                                         <input onClick={this.filterCost} 
                                             className="price-radio" 
@@ -99,7 +129,7 @@ class BusinessIndex extends React.Component {
                         <div className="price-dropdown">
                             <button onClick={this.toggleRating} id="rating-filter" className="rating-filter-button">Rating</button>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
                 {displayBusiness}
             </div>

@@ -1723,6 +1723,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _business_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./business_index_item */ "./frontend/components/search/business_index_item.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1753,17 +1761,22 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(BusinessIndex).call(this, props));
     _this.state = {
       rating: false,
-      businesses: _this.props.businesses
+      businesses: _this.props.businesses,
+      price: 0
     };
     _this.filterCost = _this.filterCost.bind(_assertThisInitialized(_this));
     _this.toggleRating = _this.toggleRating.bind(_assertThisInitialized(_this));
+    _this.filterBusinesses = _this.filterBusinesses.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(BusinessIndex, [{
     key: "filterCost",
     value: function filterCost(e) {
-      this.props.updateFilters("maxCost", parseInt(e.target.value));
+      this.setState({
+        price: parseInt(e.target.value)
+      });
+      console.log(this.state.price);
     }
   }, {
     key: "toggleDropdown",
@@ -1779,20 +1792,53 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
         this.setState({
           rating: true
         });
-        this.props.updateFilters("rating", true);
       } else {
         this.setState({
           rating: false,
           businesses: this.props.businesses
         });
-        this.props.updateFilters("rating", false);
       }
+    }
+  }, {
+    key: "filterBusinesses",
+    value: function filterBusinesses(businesses) {
+      var _this2 = this;
+
+      var filteredBizs;
+      var _this$state = this.state,
+          price = _this$state.price,
+          rating = _this$state.rating;
+
+      if (price > 0 && rating) {
+        filteredBizs = businesses.filter(function (biz) {
+          return biz.cost === _this2.state.price;
+        });
+        filteredBizs = filteredBizs.sort(function (b, a) {
+          return a.rating - b.rating;
+        });
+      } else if (price > 0) {
+        filteredBizs = businesses.filter(function (biz) {
+          return biz.cost === _this2.state.price;
+        });
+      } else if (rating === true) {
+        filteredBizs = businesses.sort(function (b, a) {
+          return a.rating - b.rating;
+        });
+      } else if (price === 0 && !rating) {
+        filteredBizs = businesses;
+      }
+
+      return filteredBizs;
     }
   }, {
     key: "render",
     value: function render() {
       var businesses = this.props.businesses;
-      var displayBusiness = Object.values(this.props.businesses).length > 0 ? businesses.map(function (business) {
+
+      var businessesCopy = _toConsumableArray(businesses);
+
+      var filteredBizs = this.filterBusinesses(businessesCopy);
+      var displayBusiness = businesses.length > 0 ? filteredBizs.map(function (business) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: business.id,
           business: business
@@ -1809,7 +1855,64 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
         className: "search-filter-header"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "filter-header-title"
-      }, "Browsing San Francisco, CA Businesses")), displayBusiness);
+      }, "Browsing San Francisco, CA Businesses"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "filter-buttons"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "price-dropdown"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "price-button",
+        onFocus: this.toggleDropdown
+      }, "Price \u25BC"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        id: "price-dropdown-content",
+        className: "search-filter-price-dropdown",
+        onBlur: this.toggleDropdown
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "price-radio-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onClick: this.filterCost,
+        className: "price-radio",
+        type: "radio",
+        name: "cost",
+        value: "0"
+      }), "No Filter"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "price-radio-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onClick: this.filterCost,
+        className: "price-radio",
+        type: "radio",
+        name: "cost",
+        value: "1"
+      }), "$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "price-radio-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onClick: this.filterCost,
+        className: "price-radio",
+        type: "radio",
+        name: "cost",
+        value: "2"
+      }), "$$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "price-radio-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onClick: this.filterCost,
+        className: "price-radio",
+        type: "radio",
+        name: "cost",
+        value: "3"
+      }), "$$$"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "price-radio-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        onClick: this.filterCost,
+        className: "price-radio",
+        type: "radio",
+        name: "cost",
+        value: "4"
+      }), "$$$$"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "price-dropdown"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.toggleRating,
+        id: "rating-filter",
+        className: "rating-filter-button"
+      }, "Rating")))), displayBusiness);
     }
   }]);
 
@@ -2195,9 +2298,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var filtersState = {
   bounds: {},
-  maxCost: 0,
-  category: "",
-  rating: false
+  category: ""
 };
 
 var FilterReducer = function FilterReducer() {
