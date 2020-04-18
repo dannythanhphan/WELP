@@ -181,6 +181,18 @@ Business.destroy_all
         r22 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        r22 = Business.create!(name: "Two Worlds Collide", categories: "Asian Fusion", business_phone: number_generator,
+                              url: "twoworldscollide.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#twoworldscollide@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        r22 = Business.create!(name: "The Joint", categories: "Breakfast", business_phone: number_generator,
+                              url: "thejoint.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "thejoint@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        r22 = Business.create!(name: "24/7 Dim Sum", categories: "Chinese", business_phone: number_generator,
+                              url: "dimsum.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "dimsum@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        r22 = Business.create!(name: "Top Ramen", categories: "Japanese", business_phone: number_generator,
+                              url: "topramen.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "topramen@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
     # HOME SERVICES
         home_service_name = home_service.sample.split("-")
         h1 = Business.create!(name: "#{curr = name.sample()}'s #{home_service_name.first}", categories: "#{home_service_name.last}", business_phone: number_generator,

@@ -1776,7 +1776,6 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
       this.setState({
         price: parseInt(e.target.value)
       });
-      console.log(this.state.price);
     }
   }, {
     key: "toggleDropdown",
@@ -1801,13 +1800,14 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "filterBusinesses",
-    value: function filterBusinesses(businesses) {
+    value: function filterBusinesses(businesses, search) {
       var _this2 = this;
 
       var filteredBizs;
       var _this$state = this.state,
           price = _this$state.price,
           rating = _this$state.rating;
+      var searchedItems;
 
       if (price > 0 && rating) {
         filteredBizs = businesses.filter(function (biz) {
@@ -1829,15 +1829,20 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
       }
 
       return filteredBizs;
-    }
+    } // componentDidMount() {
+    //     this.props.updateFilters("category", this.props.search);
+    // }
+
   }, {
     key: "render",
     value: function render() {
-      var businesses = this.props.businesses;
+      var _this$props = this.props,
+          businesses = _this$props.businesses,
+          search = _this$props.search;
 
       var businessesCopy = _toConsumableArray(businesses);
 
-      var filteredBizs = this.filterBusinesses(businessesCopy);
+      var filteredBizs = this.filterBusinesses(businessesCopy, search);
       var displayBusiness = businesses.length > 0 ? filteredBizs.map(function (business) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: business.id,
@@ -2166,7 +2171,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var Search = function Search(_ref) {
   var businesses = _ref.businesses,
-      fetchBusinesses = _ref.fetchBusinesses,
+      search = _ref.search,
       updateFilters = _ref.updateFilters;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "search-page-container"
@@ -2174,7 +2179,8 @@ var Search = function Search(_ref) {
     className: "index-map-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
     businesses: businesses,
-    updateFilters: updateFilters
+    updateFilters: updateFilters,
+    search: search
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "main-map-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_map__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -2208,7 +2214,7 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state) {
   return {
     businesses: Object.values(state.entities.businesses),
-    maxCost: state.ui.filter.maxCost
+    search: state.ui.filter.category
   };
 };
 

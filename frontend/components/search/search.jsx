@@ -4,13 +4,20 @@ import BusinessIndex from './business_index'
 import BusinessShowHeader from '../business/business_show_header_container';
 import BusinessShowHeaderContainer from '../business/business_show_header_container';
 
-const Search = ({ businesses, fetchBusinesses, updateFilters}) => (
+const Search = ({ businesses, search, updateFilters}) => (
     <div className="search-page-container">
         <BusinessShowHeader />
         <div className="index-map-container">
-            <BusinessIndex businesses={businesses} updateFilters={updateFilters}/>
+            <BusinessIndex 
+                businesses={businesses} 
+                updateFilters={updateFilters} 
+                search={search}
+            />
             <div className="main-map-container">
-                <BusinessMap businesses={businesses} updateFilters={updateFilters} />
+                <BusinessMap 
+                    businesses={businesses} 
+                    updateFilters={updateFilters} 
+                />
             </div>
         </div>
     </div>

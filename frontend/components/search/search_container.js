@@ -5,7 +5,7 @@ import { updateFilters } from "../../actions/filter_actions";
 
 const mapStateToProps = (state) => ({
     businesses: Object.values(state.entities.businesses),
-    maxCost: state.ui.filter.maxCost
+    search: state.ui.filter.category
 });
 
 const mapDispatchToProps = (dispatch) => ({

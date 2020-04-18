@@ -17,7 +17,6 @@ class BusinessIndex extends React.Component {
 
     filterCost(e) {
         this.setState({ price: parseInt(e.target.value) })
-        console.log(this.state.price)
     }
 
     toggleDropdown() {
@@ -33,9 +32,10 @@ class BusinessIndex extends React.Component {
         }
     }
 
-    filterBusinesses(businesses) {
+    filterBusinesses(businesses, search) {
         let filteredBizs;
         let { price, rating } = this.state;
+        let searchedItems;
 
         if (price > 0 && rating) {
             filteredBizs = businesses.filter(biz => biz.cost === this.state.price);
@@ -50,11 +50,15 @@ class BusinessIndex extends React.Component {
 
         return filteredBizs;
     }
+
+    // componentDidMount() {
+    //     this.props.updateFilters("category", this.props.search);
+    // }
     
     render() {
-        let { businesses } = this.props;
+        let { businesses, search } = this.props;
         let businessesCopy = [...businesses];
-        let filteredBizs = this.filterBusinesses(businessesCopy);
+        let filteredBizs = this.filterBusinesses(businessesCopy, search);
 
         const displayBusiness = (businesses.length > 0) ? (
             filteredBizs.map((business) => {
