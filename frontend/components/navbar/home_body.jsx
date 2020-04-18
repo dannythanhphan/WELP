@@ -58,7 +58,7 @@ class HomeBody extends React.Component {
                 <div className="body-categories-search">
                     <p className="body-cat-title">Find the Best Businesses in Town</p>
                     <div className="body-categories-container">
-                        <div className="body-search" onClick={this.handleSearchCategory("Asian Fusion")}>
+                        <div className="body-search" onClick={this.handleSearchCategory("Asian")}>
                             <img src="asian.jpg"/>
                             <p className="body-cat-text">Asian Fusion</p>
                         </div>
@@ -77,7 +77,7 @@ class HomeBody extends React.Component {
                     </div>    
                 </div>
                 <div className="body-welp-title">
-                    Yelp San Francisco
+                    Welp San Francisco
                 </div>
                 {/* {threeBusinesses} */}
             </div>

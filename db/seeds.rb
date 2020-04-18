@@ -115,82 +115,82 @@ Business.destroy_all
 
 # BUSINESSES
     # RESTAURANTS
-        r1 = Business.create!(name: "#{curr = name.pop()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res1 = Business.create!(name: "#{curr = name.pop()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r2 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res2 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r3 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res3 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r4 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res4 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r5 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res5 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r6 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res6 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r7 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res7 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r8 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res8 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r9 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res9 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r10 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res10 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r11 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res11 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r12 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res12 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r13 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res13 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r14 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res14 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r15 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res15 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r16 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res16 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r17 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res17 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r18 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res18 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r19 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res19 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r20 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res20 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r21 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res21 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r22 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
+        res22 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
                               url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r22 = Business.create!(name: "Two Worlds Collide", categories: "Asian Fusion", business_phone: number_generator,
+        res23 = Business.create!(name: "Two Worlds Collide", categories: "Asian Fusion", business_phone: number_generator,
                               url: "twoworldscollide.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#twoworldscollide@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r22 = Business.create!(name: "The Joint", categories: "Breakfast", business_phone: number_generator,
+        res24 = Business.create!(name: "The Joint", categories: "Breakfast", business_phone: number_generator,
                               url: "thejoint.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "thejoint@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r22 = Business.create!(name: "24/7 Dim Sum", categories: "Chinese", business_phone: number_generator,
+        res25 = Business.create!(name: "24/7 Dim Sum", categories: "Chinese", business_phone: number_generator,
                               url: "dimsum.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "dimsum@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
-        r22 = Business.create!(name: "Top Ramen", categories: "Japanese", business_phone: number_generator,
+        res26 = Business.create!(name: "Top Ramen", categories: "Japanese", business_phone: number_generator,
                               url: "topramen.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "topramen@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
     # HOME SERVICES
@@ -330,28 +330,28 @@ Business.destroy_all
                               email: "excellent@welp.com", business_type: "Other", lat: lat_gen, lng: lng_gen, cost: ran_cost)
 
 # REVIEWS
-    r1 = Review.create!(business_id: r1.id, user_id: u1.id, rating: 5, body: "Excellent service and the food was A1")
-    r2 = Review.create!(business_id: r2.id, user_id: u2.id, rating: 3, body: "Poor service but the food was delicious")
-    r3 = Review.create!(business_id: r3.id, user_id: u3.id, rating: 2, body: "My party and I had to wait an extra 45 minutes even though we had a reservation. Food was subpar")
-    r4 = Review.create!(business_id: r4.id, user_id: u4.id, rating: 4, body: "I came when it was busy but the waiter was very attentive.")
-    r5 = Review.create!(business_id: r5.id, user_id: u5.id, rating: 1, body: "How is this restaurant kept afloat? My entire dining experience was ruined by the horrible waiter. They must have used old ingredients because the food was disgusting")
-    r6 = Review.create!(business_id: r6.id, user_id: u6.id, rating: 1, body: "DO NOT GO HERE")
-    r7 = Review.create!(business_id: r7.id, user_id: u7.id, rating: 4, body: "Although the waiter was not as attentive, the food was great. The restaurant was busy so I understand that it can get hectic.")
-    r8 = Review.create!(business_id: r8.id, user_id: u8.id, rating: 5, body: "Excellent service and the food was A1")
-    r9 = Review.create!(business_id: r9.id, user_id: u9.id, rating: 3, body: "The only redeeming factor of this restaurant is their food. The staff was incredibly rude")
-    r10 = Review.create!(business_id: r10.id, user_id: u10.id, rating: 3, body: "You would think that having a reservation would get you a table on time, but not at this place. The food was amazing though.")
-    r11 = Review.create!(business_id: r11.id, user_id: u1.id, rating: 2, body: "Decided to try this restaurant after passing by it so many times. I was disappointed with the food and the staff was decent.")
-    r12 = Review.create!(business_id: r12.id, user_id: u2.id, rating: 4, body: "You have to try this restaurant. The view of the ocean is so nice and complements the ambient setting really well")
-    r13 = Review.create!(business_id: r13.id, user_id: u3.id, rating: 5, body: "The waitress was attentive and checked on my partner and I frequently. I would give this a 5* solely on the waitress but the food was also amazing.")
-    r14 = Review.create!(business_id: r14.id, user_id: u4.id, rating: 5, body: "Good food and good music")
-    r15 = Review.create!(business_id: r15.id, user_id: u5.id, rating: 5, body: "10/10 would recommend")
-    r16 = Review.create!(business_id: r16.id, user_id: u6.id, rating: 3, body: "5/10")
-    r17 = Review.create!(business_id: r17.id, user_id: u7.id, rating: 5, body: "You will never meet a better group of stafff members then at this restaurant.")
-    r18 = Review.create!(business_id: r18.id, user_id: u8.id, rating: 4, body: "Top tier food")
-    r19 = Review.create!(business_id: r19.id, user_id: u9.id, rating: 5, body: "TRY THIS PLACE")
-    r20 = Review.create!(business_id: r20.id, user_id: u10.id, rating: 3, body: "I will have to go here again to judge this place completely.")
-    r21 = Review.create!(business_id: r21.id, user_id: u1.id, rating: 2, body: "Decided to try this restaurant after passing by it so many times. I was disappointed with the food and the staff was decent.")
-    r22 = Review.create!(business_id: r22.id, user_id: u2.id, rating: 4, body: "You have to try this restaurant. The view of the ocean is so nice and complements the ambient setting really well")
+    r1 = Review.create!(business_id: res1.id, user_id: u1.id, rating: 5, body: "Excellent service and the food was A1")
+    r2 = Review.create!(business_id: res2.id, user_id: u2.id, rating: 3, body: "Poor service but the food was delicious")
+    r3 = Review.create!(business_id: res3.id, user_id: u3.id, rating: 2, body: "My party and I had to wait an extra 45 minutes even though we had a reservation. Food was subpar")
+    r4 = Review.create!(business_id: res4.id, user_id: u4.id, rating: 4, body: "I came when it was busy but the waiter was very attentive.")
+    r5 = Review.create!(business_id: res5.id, user_id: u5.id, rating: 1, body: "How is this restaurant kept afloat? My entire dining experience was ruined by the horrible waiter. They must have used old ingredients because the food was disgusting")
+    r6 = Review.create!(business_id: res6.id, user_id: u6.id, rating: 1, body: "DO NOT GO HERE")
+    r7 = Review.create!(business_id: res7.id, user_id: u7.id, rating: 4, body: "Although the waiter was not as attentive, the food was great. The restaurant was busy so I understand that it can get hectic.")
+    r8 = Review.create!(business_id: res8.id, user_id: u8.id, rating: 5, body: "Excellent service and the food was A1")
+    r9 = Review.create!(business_id: res9.id, user_id: u9.id, rating: 3, body: "The only redeeming factor of this restaurant is their food. The staff was incredibly rude")
+    r10 = Review.create!(business_id: res10.id, user_id: u10.id, rating: 3, body: "You would think that having a reservation would get you a table on time, but not at this place. The food was amazing though.")
+    r11 = Review.create!(business_id: res11.id, user_id: u1.id, rating: 2, body: "Decided to try this restaurant after passing by it so many times. I was disappointed with the food and the staff was decent.")
+    r12 = Review.create!(business_id: res12.id, user_id: u2.id, rating: 4, body: "You have to try this restaurant. The view of the ocean is so nice and complements the ambient setting really well")
+    r13 = Review.create!(business_id: res13.id, user_id: u3.id, rating: 5, body: "The waitress was attentive and checked on my partner and I frequently. I would give this a 5* solely on the waitress but the food was also amazing.")
+    r14 = Review.create!(business_id: res14.id, user_id: u4.id, rating: 5, body: "Good food and good music")
+    r15 = Review.create!(business_id: res15.id, user_id: u5.id, rating: 5, body: "10/10 would recommend")
+    r16 = Review.create!(business_id: res16.id, user_id: u6.id, rating: 3, body: "5/10")
+    r17 = Review.create!(business_id: res17.id, user_id: u7.id, rating: 5, body: "You will never meet a better group of stafff members then at this restaurant.")
+    r18 = Review.create!(business_id: res18.id, user_id: u8.id, rating: 4, body: "Top tier food")
+    r19 = Review.create!(business_id: res19.id, user_id: u9.id, rating: 5, body: "TRY THIS PLACE")
+    r20 = Review.create!(business_id: res20.id, user_id: u10.id, rating: 3, body: "I will have to go here again to judge this place completely.")
+    r21 = Review.create!(business_id: res21.id, user_id: u1.id, rating: 2, body: "Decided to try this restaurant after passing by it so many times. I was disappointed with the food and the staff was decent.")
+    r22 = Review.create!(business_id: res22.id, user_id: u2.id, rating: 4, body: "You have to try this restaurant. The view of the ocean is so nice and complements the ambient setting really well")
     r23 = Review.create!(business_id: h1.id, user_id: u3.id, rating: 5, body: "Prompt and fast.")
     r24 = Review.create!(business_id: h2.id, user_id: u4.id, rating: 1, body: "Never hire these clowns")
     r25 = Review.create!(business_id: h3.id, user_id: u5.id, rating: 3, body: "Person was late but he got the job done")
@@ -389,4 +389,8 @@ Business.destroy_all
     r57 = Review.create!(business_id: o6.id, user_id: u7.id, rating: 5, body: "It's only open for 23 hours a day but people put the gym equipment back where it's supposed to be.")
     r58 = Review.create!(business_id: o7.id, user_id: u8.id, rating: 1, body: "I was depressed after getting a massage. Do not go here")
     r59 = Review.create!(business_id: o8.id, user_id: u9.id, rating: 5, body: "The name speaks for itself")
+    r60 = Review.create!(business_id: res23.id, user_id: u10.id, rating: 4, body: "Great service")
+    r61 = Review.create!(business_id: res24.id, user_id: u1.id, rating: 5, body: "The food is spectacular!")
+    r62 = Review.create!(business_id: res25.id, user_id: u2.id, rating: 5, body: "Awsome service and even better food!")
+    r63 = Review.create!(business_id: res26.id, user_id: u3.id, rating: 5, body: "Best ramen in San Francisco")
   

@@ -1389,7 +1389,7 @@ var HomeBody = /*#__PURE__*/function (_React$Component) {
         className: "body-categories-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "body-search",
-        onClick: this.handleSearchCategory("Asian Fusion")
+        onClick: this.handleSearchCategory("Asian")
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: "asian.jpg"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
@@ -1417,7 +1417,7 @@ var HomeBody = /*#__PURE__*/function (_React$Component) {
         className: "body-cat-text"
       }, "Japanese")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "body-welp-title"
-      }, "Yelp San Francisco"));
+      }, "Welp San Francisco"));
     }
   }]);
 
