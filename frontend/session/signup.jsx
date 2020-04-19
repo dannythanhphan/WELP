@@ -31,9 +31,9 @@ export default class Signup extends React.Component {
         return (
             <div className="session-form">
                 <div id="login-top-bar">
-                    <div id="welp-name-logo-login">
-
-                    </div>
+                    <Link to="/">
+                        <div id="welp-name-logo-login"/>
+                    </Link>
                 </div>
                 <div id="body-div">
                     <div id="picture-signup-container">
@@ -44,29 +44,9 @@ export default class Signup extends React.Component {
                             <div className="signup-words">
                                 Connect with great local businesses
                             </div>
-                            <div className="legal-stuff">
-                                By loggin in, you agree to Welp's
-                                <a href="" className="login-tos">Terms of Service</a>
+                            
+                            <div className="line-seperator"/>
 
-                                <br />
-                                <div className="legal-stuff-organized">
-                                    <p>and</p>
-                                    <a href="" className="login-privacy">Privacy Policy.</a>
-                                </div>
-
-                            </div>
-                            <div className="social-login-buttons-container">
-                                <button className="facebook-login" disabled>
-                                    <i className="fab fa-facebook-square fa-lg"></i>
-                                    Sign Up with Facebook</button>
-                                <br />
-                                <button className="google-login" disabled>
-                                    <i className="fab fa-google fa-lg"></i>
-                                    Sign Up with Google</button>
-                            </div>
-                            <fieldset className="line-seperator">
-                                <legend className="or-seperator">OR</legend>
-                            </fieldset>
                             <form>
                                 <input 
                                     type="text" 

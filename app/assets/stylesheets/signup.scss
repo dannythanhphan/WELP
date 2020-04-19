@@ -1,6 +1,6 @@
 #login-top-bar {
     height: 70px;
-    background-color: rgb(185, 59, 59);
+    background-color: lightgrey;
     display: flex;
     justify-content: center;
 }
@@ -43,77 +43,6 @@
     font-size: 13px;
     font-weight: bold;
     margin-bottom: 15px;
-}
-
-.legal-stuff {
-    overflow-wrap: break-word;
-    font-size: 12px;
-    margin-bottom: 30px;
-}
-
-.login-tos {
-    margin-left: 3px;
-    text-decoration: none;
-    color: blue;
-}
-
-.login-tos:hover {
-    text-decoration: underline;
-}
-
-.legal-stuff-organized {
-    margin-top: 3px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.login-privacy {
-    margin-left: 3px;
-    text-decoration: none;
-    color: blue;
-}
-
-.login-privacy:hover {
-    text-decoration: underline;
-}
-
-.facebook-login:disabled {
-    padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    background-color: #3b5998;
-    color: white;
-    width: 280px;
-    border-radius: 6px;
-    margin-bottom: 6px;
-    transition: 0.5s ease;
-}
-
-.facebook-login:hover {
-    background-color: #3b5898b0;
-    cursor: pointer;
-}
-
-.fa-facebook-square {
-    margin-right: 10px;
-}
-
-.google-login:disabled {
-    padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    background-color: white;
-    color: rgb(83, 83, 83);
-    width: 280px;
-    border-radius: 6px;
-    margin-bottom: 6px;
-    cursor: pointer;
-}
-
-.fa-google {
-    margin-right: 10px;
-    color: green;
 }
 
 .line-seperator {

@@ -1,6 +1,6 @@
 #login-top-bar {
     height: 70px;
-    background-color: rgb(185, 59, 59);
+    background-color: lightgray;
     display: flex;
     justify-content: center;
 }
@@ -54,29 +54,6 @@
     text-decoration: underline;
 }
 
-.legal-stuff {
-    overflow-wrap: break-word;
-    font-size: 12px;
-    margin-bottom: 30px;
-}
-
-.login-tos {
-    margin-left: 3px;
-    text-decoration: none;
-    color: blue;
-}
-
-.login-tos:hover {
-    text-decoration: underline;
-}
-
-.legal-stuff-organized {
-    margin-top: 3px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
 .login-privacy {
     margin-left: 3px;
     text-decoration: none;
@@ -87,53 +64,10 @@
     text-decoration: underline;
 }
 
-.facebook-login:disabled {
-    padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    background-color: #3b5998;
-    color: white;
-    width: 280px;
-    border-radius: 6px;
-    margin-bottom: 6px;
-    transition: 0.5s ease;
-}
-
-.facebook-login:hover {
-    background-color: #3b5898b0;
-    cursor: pointer;
-}
-
-.fa-facebook-square {
-    margin-right: 10px;
-}
-
-.google-login:disabled {
-    padding: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    background-color: white;
-    color: rgb(83, 83, 83);
-    width: 280px;
-    border-radius: 6px;
-    margin-bottom: 6px;
-    cursor: pointer;
-}
-
-.fa-google {
-    margin-right: 10px;
-    color: green;
-}
-
 .line-seperator {
     border-top: 1px solid lightgrey;
+    margin-bottom: 20px;
     text-align: center;
-}
-
-.or-seperator {
-    color: grey;
-    padding: 15px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .login-username-box {
@@ -156,23 +90,11 @@
     border-radius: 6px;
 }
 
-.forgot-password {
-    text-decoration: none;
-    font-size: 11px;
-    color: rgb(48, 91, 233);
-    display: flex;
-    justify-content: flex-end;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
 .login-login-button {
     display: flex;
     justify-content: center;
     background-color: rgb(219, 40, 40);
+    margin-top: 5px;
     width: 280px;
     padding: 12px;
     font-size: 16px;

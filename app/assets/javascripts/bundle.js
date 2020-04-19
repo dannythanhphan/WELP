@@ -2592,9 +2592,11 @@ var Login = /*#__PURE__*/function (_React$Component) {
         className: "session-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "login-top-bar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "welp-name-logo-login"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "body-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "picture-login-container"
@@ -2608,32 +2610,8 @@ var Login = /*#__PURE__*/function (_React$Component) {
         to: "/signup",
         className: "signup-redirect"
       }, "Sign Up")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "legal-stuff"
-      }, "By loggin in, you agree to Welp's", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "",
-        className: "login-tos"
-      }, "Terms of Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "legal-stuff-organized"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "and"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "",
-        className: "login-privacy"
-      }, "Privacy Policy."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "social-login-buttons-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "facebook-login",
-        disabled: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fab fa-facebook-square fa-lg"
-      }), "Log In with Facebook"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "google-login",
-        disabled: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fab fa-google fa-lg"
-      }), "Log In with Google")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("fieldset", {
         className: "line-seperator"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("legend", {
-        className: "or-seperator"
-      }, "OR")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         onChange: this.handleInput("username"),
         value: this.state.username,
@@ -2645,10 +2623,7 @@ var Login = /*#__PURE__*/function (_React$Component) {
         value: this.state.password,
         placeholder: "Password",
         className: "login-password-box"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "",
-        className: "forgot-password"
-      }, "Forgot password?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "login-login-button",
         onClick: this.handleSubmit
       }, "Log In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2781,9 +2756,11 @@ var Signup = /*#__PURE__*/function (_React$Component) {
         className: "session-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "login-top-bar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "welp-name-logo-login"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "body-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "picture-signup-container"
@@ -2794,32 +2771,8 @@ var Signup = /*#__PURE__*/function (_React$Component) {
       }, "Sign Up for Welp"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-words"
       }, "Connect with great local businesses"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "legal-stuff"
-      }, "By loggin in, you agree to Welp's", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "",
-        className: "login-tos"
-      }, "Terms of Service"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "legal-stuff-organized"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "and"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "",
-        className: "login-privacy"
-      }, "Privacy Policy."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "social-login-buttons-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "facebook-login",
-        disabled: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fab fa-facebook-square fa-lg"
-      }), "Sign Up with Facebook"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "google-login",
-        disabled: true
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fab fa-google fa-lg"
-      }), "Sign Up with Google")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("fieldset", {
         className: "line-seperator"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("legend", {
-        className: "or-seperator"
-      }, "OR")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         onChange: this.handleInput('fname'),
         value: this.state.fname,

@@ -27,9 +27,9 @@ export default class Login extends React.Component {
         return (
             <div className="session-form">
                 <div id="login-top-bar">
-                    <div id="welp-name-logo-login">
-
-                    </div>
+                    <Link to="/">
+                        <div id="welp-name-logo-login"/>
+                    </Link>
                 </div>
                 <div id="body-div">
                     <div id="picture-login-container">
@@ -41,29 +41,8 @@ export default class Login extends React.Component {
                                 New to Welp? 
                                 <Link to="/signup" className="signup-redirect">Sign Up</Link>
                             </div>
-                            <div className="legal-stuff">
-                                By loggin in, you agree to Welp's 
-                                <a href="" className="login-tos">Terms of Service</a>
-                                
-                                <br/>
-                                <div className="legal-stuff-organized">
-                                    <p>and</p>
-                                    <a href="" className="login-privacy">Privacy Policy.</a>
-                                </div>
 
-                            </div>
-                            <div className="social-login-buttons-container">
-                                <button className="facebook-login" disabled>
-                                    <i className="fab fa-facebook-square fa-lg"></i>
-                                    Log In with Facebook</button>
-                                <br/>
-                                <button className="google-login" disabled>
-                                    <i className="fab fa-google fa-lg"></i>
-                                    Log In with Google</button>
-                            </div>
-                            <fieldset className="line-seperator">
-                                <legend className="or-seperator">OR</legend>
-                            </fieldset>
+                            <div className="line-seperator"/>
                             <form>
                                 <input 
                                     type="text" 
@@ -80,9 +59,7 @@ export default class Login extends React.Component {
                                     placeholder="Password"
                                     className="login-password-box"
                                 />
-                                <br />
-                                <a href="" className="forgot-password">Forgot password?</a>
-                                <br/>
+                                
                                 <button className="login-login-button" onClick={this.handleSubmit}>Log In</button>
                                 <div className="form-signup-words">
                                     New to Welp?
