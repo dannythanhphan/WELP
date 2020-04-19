@@ -1807,7 +1807,17 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
       var _this$state = this.state,
           price = _this$state.price,
           rating = _this$state.rating;
-      var searchedItems;
+      var searchedItems = [];
+
+      if (search.length > 0) {
+        for (var i = 0; i < businesses.length; i++) {
+          if (businesses[i].categories === search || businesses[i].business_type === search) {
+            searchedItems.push(businesses[i]);
+          }
+        }
+
+        searchedItems.reverse();
+      }
 
       if (price > 0 && rating) {
         filteredBizs = businesses.filter(function (biz) {
@@ -1816,16 +1826,40 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
         filteredBizs = filteredBizs.sort(function (b, a) {
           return a.rating - b.rating;
         });
+
+        if (searchedItems.length > 0) {
+          for (var _i = 0; _i < searchedItems.length; _i++) {
+            filteredBizs.unshift(searchedItems[_i]);
+          }
+        }
       } else if (price > 0) {
         filteredBizs = businesses.filter(function (biz) {
           return biz.cost === _this2.state.price;
         });
+
+        if (searchedItems.length > 0) {
+          for (var _i2 = 0; _i2 < searchedItems.length; _i2++) {
+            filteredBizs.unshift(searchedItems[_i2]);
+          }
+        }
       } else if (rating === true) {
         filteredBizs = businesses.sort(function (b, a) {
           return a.rating - b.rating;
         });
+
+        if (searchedItems.length > 0) {
+          for (var _i3 = 0; _i3 < searchedItems.length; _i3++) {
+            filteredBizs.unshift(searchedItems[_i3]);
+          }
+        }
       } else if (price === 0 && !rating) {
         filteredBizs = businesses;
+
+        if (searchedItems.length > 0) {
+          for (var _i4 = 0; _i4 < searchedItems.length; _i4++) {
+            filteredBizs.unshift(searchedItems[_i4]);
+          }
+        }
       }
 
       return filteredBizs;
@@ -1836,6 +1870,7 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      window.scrollTo(0, 0);
       var _this$props = this.props,
           businesses = _this$props.businesses,
           search = _this$props.search;

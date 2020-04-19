@@ -35,17 +35,46 @@ class BusinessIndex extends React.Component {
     filterBusinesses(businesses, search) {
         let filteredBizs;
         let { price, rating } = this.state;
-        let searchedItems;
+        let searchedItems = [];
+
+        if (search.length > 0) {
+            for (let i = 0; i < businesses.length; i++) {
+                if (businesses[i].categories === search || businesses[i].business_type === search) {
+                    searchedItems.push(businesses[i])
+                }
+            }
+            searchedItems.reverse();
+        }
 
         if (price > 0 && rating) {
             filteredBizs = businesses.filter(biz => biz.cost === this.state.price);
             filteredBizs = filteredBizs.sort(function(b, a){return a.rating - b.rating});
+            if (searchedItems.length > 0) {
+                for (let i = 0; i < searchedItems.length; i++) {
+                    filteredBizs.unshift(searchedItems[i]);
+                }
+            }
         } else if (price > 0) {
             filteredBizs = businesses.filter(biz => biz.cost === this.state.price);
+            if (searchedItems.length > 0) {
+                for (let i = 0; i < searchedItems.length; i++) {
+                    filteredBizs.unshift(searchedItems[i]);
+                }
+            }
         } else if (rating === true) {
             filteredBizs = businesses.sort(function(b, a){return a.rating - b.rating});
+            if (searchedItems.length > 0) {
+                for (let i = 0; i < searchedItems.length; i++) {
+                    filteredBizs.unshift(searchedItems[i]);
+                }
+            }
         } else if (price === 0 && !rating) {
             filteredBizs = businesses;
+            if (searchedItems.length > 0) {
+                for (let i = 0; i < searchedItems.length; i++) {
+                    filteredBizs.unshift(searchedItems[i]);
+                }
+            }
         }
 
         return filteredBizs;
@@ -56,6 +85,7 @@ class BusinessIndex extends React.Component {
     // }
     
     render() {
+        window.scrollTo(0,0);
         let { businesses, search } = this.props;
         let businessesCopy = [...businesses];
         let filteredBizs = this.filterBusinesses(businessesCopy, search);
