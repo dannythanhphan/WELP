@@ -13,6 +13,7 @@ class BusinessIndex extends React.Component {
         this.filterCost = this.filterCost.bind(this);
         this.toggleRating = this.toggleRating.bind(this);
         this.filterBusinesses = this.filterBusinesses.bind(this);
+        this.onlyUnique = this.onlyUnique.bind(this);
     }
 
     filterCost(e) {
@@ -39,7 +40,7 @@ class BusinessIndex extends React.Component {
 
         if (search.length > 0) {
             for (let i = 0; i < businesses.length; i++) {
-                if (businesses[i].categories === search || businesses[i].business_type === search) {
+                if (businesses[i].categories === search.charAt(0).toUpperCase() + search.slice(1)) {
                     searchedItems.push(businesses[i])
                 }
             }
@@ -77,12 +78,13 @@ class BusinessIndex extends React.Component {
             }
         }
 
-        return filteredBizs;
+        return filteredBizs.filter(this.onlyUnique);
     }
 
-    // componentDidMount() {
-    //     this.props.updateFilters("category", this.props.search);
-    // }
+
+    onlyUnique(value, index, self) { 
+        return self.indexOf(value) === index;
+    }
     
     render() {
         window.scrollTo(0,0);
@@ -92,7 +94,7 @@ class BusinessIndex extends React.Component {
 
         const displayBusiness = (businesses.length > 0) ? (
             filteredBizs.map((business) => {
-                return <BusinessIndexItem key={business.id} business={business} />
+                return <BusinessIndexItem key={Math.random()} business={business} />
             })
         ) : (
             <div className="no-searches-found">

@@ -713,12 +713,8 @@ var BusinessShowHeader = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      var _this2 = this;
-
       e.preventDefault();
-      this.props.updateFilters("category", this.state.category).then(function () {
-        return _this2.props.history.push("/search");
-      });
+      this.props.updateFilters("category", this.state.category); // .then(() => this.props.history.push("/search"))
     }
   }, {
     key: "render",
@@ -886,6 +882,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/react.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -903,6 +900,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -963,9 +961,11 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
       }, business.name) : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "login-top-bar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "welp-name-logo-login"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "review-form-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "review-form-content"
@@ -1767,6 +1767,7 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
     _this.filterCost = _this.filterCost.bind(_assertThisInitialized(_this));
     _this.toggleRating = _this.toggleRating.bind(_assertThisInitialized(_this));
     _this.filterBusinesses = _this.filterBusinesses.bind(_assertThisInitialized(_this));
+    _this.onlyUnique = _this.onlyUnique.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1811,7 +1812,7 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
 
       if (search.length > 0) {
         for (var i = 0; i < businesses.length; i++) {
-          if (businesses[i].categories === search || businesses[i].business_type === search) {
+          if (businesses[i].categories === search.charAt(0).toUpperCase() + search.slice(1)) {
             searchedItems.push(businesses[i]);
           }
         }
@@ -1862,11 +1863,13 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
         }
       }
 
-      return filteredBizs;
-    } // componentDidMount() {
-    //     this.props.updateFilters("category", this.props.search);
-    // }
-
+      return filteredBizs.filter(this.onlyUnique);
+    }
+  }, {
+    key: "onlyUnique",
+    value: function onlyUnique(value, index, self) {
+      return self.indexOf(value) === index;
+    }
   }, {
     key: "render",
     value: function render() {
@@ -1880,7 +1883,7 @@ var BusinessIndex = /*#__PURE__*/function (_React$Component) {
       var filteredBizs = this.filterBusinesses(businessesCopy, search);
       var displayBusiness = businesses.length > 0 ? filteredBizs.map(function (business) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: business.id,
+          key: Math.random(),
           business: business
         });
       }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

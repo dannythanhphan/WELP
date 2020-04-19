@@ -17,7 +17,7 @@ class BusinessShowHeader extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.updateFilters("category", this.state.category)
-            .then(() => this.props.history.push("/search"))
+            // .then(() => this.props.history.push("/search"))
     }
 
     render() {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ReviewForm extends React.Component {
     constructor(props) {
@@ -46,9 +47,9 @@ class ReviewForm extends React.Component {
         return (
             <div>
                 <div id="login-top-bar">
-                    <div id="welp-name-logo-login">
-
-                    </div>
+                    <Link to="/">
+                        <div id="welp-name-logo-login"/>
+                    </Link>
                 </div>
                 <div className="review-form-container">
                     <div className="review-form-content">
