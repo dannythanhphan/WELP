@@ -32,7 +32,7 @@ class ReviewForm extends React.Component {
     }
 
     render() {
-        const textPlaceholder = "Spicy jalapeno bacon ipsum dolor amet jerky venison andouille bresaola burgdoggen, chicken pork chop leberkas sirloin ball tip tenderloin buffalo alcatra.Ball tip sirloin pastrami, strip steak short ribs rump kielbasa.Cow alcatra pork loin shoulder frankfurter.Strip steak chicken venison flank fatback bacon, shoulder jerky alcatra spare ribs frankfurter sirloin pork loin kielbasa pork chop.Bresaola filet mignon shoulder prosciutto.Beef ribs doner spare ribs, ball tip burgdoggen kevin prosciutto leberkas capicola.Prosciutto ham hock buffalo boudin turkey cupim."
+        const textPlaceholder = "Write a review..."
 
         const { business } = this.props
 
