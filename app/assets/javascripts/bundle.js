@@ -1330,12 +1330,14 @@ var HomeBody = /*#__PURE__*/function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(HomeBody).call(this, props));
     _this.handleSearchCategory = _this.handleSearchCategory.bind(_assertThisInitialized(_this));
     return _this;
-  } // componentDidMount() {
-  //     this.props.fetchAllBusinesses();
-  // }
-
+  }
 
   _createClass(HomeBody, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchAllBusinesses();
+    }
+  }, {
     key: "handleSearchCategory",
     value: function handleSearchCategory(category) {
       var _this2 = this;
@@ -1351,8 +1353,7 @@ var HomeBody = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // const { businesses } = this.props
-      // let pickThree = []
+      var businesses = this.props.businesses; // let pickThree = []
       // if (Object.keys(this.props.businesses).length > 0) {
       //     let bizKeys = Object.keys(businesses)
       //     while (pickThree.length < 4) {
@@ -1381,6 +1382,7 @@ var HomeBody = /*#__PURE__*/function (_React$Component) {
       // ) : (
       //     null
       // )
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "body-categories-search"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {

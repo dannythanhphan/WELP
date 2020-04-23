@@ -1,6 +1,6 @@
 class Api::BusinessesController < ApplicationController
     def index
-        if !params[:category].empty?
+        if !params[:category].nil?
             search = params[:category].capitalize
             bizs = Business.where("name LIKE ?", "%#{search}%")
             bizs = Business.where("business_type LIKE ?", "%#{search}%") if bizs.length == 0
@@ -10,7 +10,7 @@ class Api::BusinessesController < ApplicationController
             bizs = Business.all
         end
         
-        bizs = bizs.in_bounds(params[:bounds]) if params[:bounds] && params[:category].empty?
+        bizs = bizs.in_bounds(params[:bounds]) if params[:bounds]
 
         @businesses = bizs.length > 20 ? bizs[0...19] : bizs
 
