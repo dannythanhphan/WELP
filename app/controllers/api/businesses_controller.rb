@@ -10,7 +10,7 @@ class Api::BusinessesController < ApplicationController
             bizs = Business.all
         end
         
-        bizs = bizs.in_bounds(params[:bounds]) if params[:bounds]
+        bizs = bizs.in_bounds(params[:bounds]) if params[:bounds] && params[:category].length > 0
 
         @businesses = bizs.length > 20 ? bizs[0...19] : bizs
 

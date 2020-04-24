@@ -6,9 +6,9 @@ class HomeBody extends React.Component {
         this.handleSearchCategory = this.handleSearchCategory.bind(this)
     }
 
-    componentDidMount() {
-        this.props.fetchAllBusinesses();
-    }
+    // componentDidMount() {
+    //     this.props.fetchAllBusinesses();
+    // }
 
     handleSearchCategory(category) {
         return e => {

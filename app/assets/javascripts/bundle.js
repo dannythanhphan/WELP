@@ -1141,7 +1141,7 @@ var ReviewItem = /*#__PURE__*/function (_React$Component) {
         });
       }
 
-      var displayReviews = this.props.business ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      var displayReviews = this.props.business && Object.values(users).length > 2 ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "reviews-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "review-title"
@@ -1195,11 +1195,11 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    receiveSpecificReviews: function receiveSpecificReviews(businessId) {
-      return dispatch(Object(_actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["receiveSpecificReviews"])(businessId));
-    },
     fetchUsers: function fetchUsers() {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_3__["fetchUsers"])());
+    },
+    receiveSpecificReviews: function receiveSpecificReviews(businessId) {
+      return dispatch(Object(_actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["receiveSpecificReviews"])(businessId));
     }
   };
 };
@@ -1330,14 +1330,12 @@ var HomeBody = /*#__PURE__*/function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(HomeBody).call(this, props));
     _this.handleSearchCategory = _this.handleSearchCategory.bind(_assertThisInitialized(_this));
     return _this;
-  }
+  } // componentDidMount() {
+  //     this.props.fetchAllBusinesses();
+  // }
+
 
   _createClass(HomeBody, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.fetchAllBusinesses();
-    }
-  }, {
     key: "handleSearchCategory",
     value: function handleSearchCategory(category) {
       var _this2 = this;

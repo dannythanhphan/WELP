@@ -26,7 +26,7 @@ class ReviewItem extends React.Component {
             bizReviews = this.reviewKeys.filter(review => review.business_id === this.props.business.id)
         }
 
-        const displayReviews = this.props.business ? (
+        const displayReviews = (this.props.business && Object.values(users).length > 2) ? (
             <div className="reviews-container">
                 <p className="review-title">Recommended Reviews</p>
                 <div className="show-border-line"></div>

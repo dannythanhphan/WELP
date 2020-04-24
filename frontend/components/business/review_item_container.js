@@ -8,8 +8,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    receiveSpecificReviews: (businessId) => dispatch(receiveSpecificReviews(businessId)),
-    fetchUsers: () => dispatch(fetchUsers())
+    fetchUsers: () => dispatch(fetchUsers()),
+    receiveSpecificReviews: (businessId) => dispatch(receiveSpecificReviews(businessId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewItem)

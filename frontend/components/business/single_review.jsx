@@ -10,6 +10,7 @@ const SingleReview = ({ review, users }) => {
                 <div className="profile-info-container">
                     <div className="reviewer-name">
                         {users[review.user_id].fname} {users[review.user_id].lname}
+                        
                     </div>
                     <div className="reviewer-username">
                         {users[review.user_id].username}
