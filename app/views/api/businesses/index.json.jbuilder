@@ -4,5 +4,6 @@
       json.rating business.average_rating
       json.num_reviews business.number_of_reviews
       json.review business.reviews.first.body
+      json.photoUrl url_for(business.photo)
     end
 end

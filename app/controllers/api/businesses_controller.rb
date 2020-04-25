@@ -1,16 +1,23 @@
 class Api::BusinessesController < ApplicationController
     def index
+        if params[:bounds].nil?
+            bounds = { 
+                "northEast" => { "lat" => "37.80971", "lng" => "-122.39208"},
+                "southWest" => { "lat" => "37.74187", "lng" => "-122.47791"}
+            }
+        else
+            bounds = params[:bounds]
+        end
+
         if !params[:category].nil?
             search = params[:category].capitalize
             bizs = Business.where("name LIKE ?", "%#{search}%")
-            bizs = Business.where("business_type LIKE ?", "%#{search}%") if bizs.length == 0
-            bizs = Business.where("categories LIKE ?", "%#{search}%") if bizs.length == 0
-            bizs += Business.where("business_type LIKE ?", "%#{bizs[0].business_type}%") if bizs.length != 0
+            bizs = Business.where("business_type LIKE ?", "%#{search}%").in_bounds(bounds) if bizs.length == 0
+            bizs = Business.where("categories LIKE ?", "%#{search}%").in_bounds(bounds) if bizs.length == 0
+            bizs += Business.where("business_type LIKE ?", "%#{bizs[0].business_type}%").in_bounds(bounds) if bizs.length != 0
         else
             bizs = Business.all
         end
-        
-        bizs = bizs.in_bounds(params[:bounds]) if params[:bounds] && params[:category].length > 0
 
         @businesses = bizs.length > 20 ? bizs[0...19] : bizs
 

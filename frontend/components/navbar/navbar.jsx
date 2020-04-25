@@ -36,6 +36,7 @@ class Navbar extends React.Component {
             <div className="logged-in-container">
                 <div className="profile-dropdown-arrow">
                     <div className="profile-dropdown">
+                        <img src={`${currentUser.photoUrl}`} className="profile-picture-main"/>
                         <button className="arrow-down">
                             <i className="fas fa-caret-down"></i>
                         </button>
@@ -45,8 +46,7 @@ class Navbar extends React.Component {
                         <div className="profile-dropdown-content">
                             <div className="pp-user-info-container">
                                 <div className="pp-ui-container">
-                                    <div className="profile-picture">
-                                    </div>
+                                    <img src={`${currentUser.photoUrl}`} className="profile-picture"/>
                                     <div className="user-info">
                                         <p className="user-info-name">{currentUser.fname} {currentUser.lname[0]}.</p>
                                         <p className="user-info-username">{currentUser.username}</p>

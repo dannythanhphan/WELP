@@ -4,9 +4,7 @@ const SingleReview = ({ review, users }) => {
     return (
         <div className="single-review-container">
             <div className="review-profile-info-container">
-                <div className="review-pp-container">
-
-                </div>
+                <img src={`${users[review.user_id].photoUrl}`} className="review-pp-container"/>
                 <div className="profile-info-container">
                     <div className="reviewer-name">
                         {users[review.user_id].fname} {users[review.user_id].lname}

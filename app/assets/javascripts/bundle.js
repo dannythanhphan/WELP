@@ -1228,7 +1228,8 @@ var SingleReview = function SingleReview(_ref) {
     className: "single-review-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "review-profile-info-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "".concat(users[review.user_id].photoUrl),
     className: "review-pp-container"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "profile-info-container"
@@ -1561,7 +1562,10 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
         className: "profile-dropdown-arrow"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-dropdown"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "".concat(currentUser.photoUrl),
+        className: "profile-picture-main"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "arrow-down"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-caret-down"
@@ -1575,7 +1579,8 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
         className: "pp-user-info-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pp-ui-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "".concat(currentUser.photoUrl),
         className: "profile-picture"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-info"
@@ -1992,7 +1997,8 @@ var BusinessIndexItem = function BusinessIndexItem(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/businesses/".concat(business.id),
     className: "business-info-box-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "".concat(business.photoUrl),
     className: "business-picture-container"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "business-info-container"

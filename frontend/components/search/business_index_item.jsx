@@ -8,7 +8,7 @@ const BusinessIndexItem = ({ business }) => {
     }
     return (
         <Link to={`/businesses/${business.id}`} className="business-info-box-container">
-            <div className="business-picture-container"></div>
+            <img src={`${business.photoUrl}`} className="business-picture-container"/>
             <div className="business-info-container">
                 <div className="search-business-name">{business.name}</div>
                 <div className="stars-count-container">
