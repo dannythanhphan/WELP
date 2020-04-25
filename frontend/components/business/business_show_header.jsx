@@ -25,40 +25,22 @@ class BusinessShowHeader extends React.Component {
 
         let logged = (currentUser) ? (
             <div className="logged-in-con">
-                <div className="profile-dropdown-arrow">
-                    <div className="profile-dropdown">
-                        <button className="arrow-down">
+                <div className="search-profile-dropdown-arrow">
+                    <img src={`${currentUser.photoUrl}`} className="profile-picture-main"/>
+                    <div className="search-profile-dropdown">
+                        <button className="search-arrow-down">
                             <i className="fas fa-caret-down"></i>
                         </button>
-                        <div className="dropdown-arrow-container">
-                            <div className="dropdown-arrow"></div>
+                        <div className="search-dropdown-arrow-container">
+                            <div className="search-dropdown-arrow"></div>
                         </div>
-                        <div className="profile-dropdown-content">
-                            <div className="pp-user-info-container">
-                                <div className="pp-ui-container">
-                                    <div className="profile-picture">
-                                    </div>
+                        <div className="search-profile-dropdown-content">
+                            <div className="search-pp-user-info-container">
+                                <div className="search-pp-ui-container">
+                                    <img src={`${currentUser.photoUrl}`} className="search-profile-picture"/>
                                     <div className="user-info">
                                         <p className="user-info-name">{currentUser.fname} {currentUser.lname[0]}.</p>
                                         <p className="user-info-username">{currentUser.username}</p>
-                                    </div>
-                                </div>
-                                <div className="profile-buttons">
-                                    <div className="profile-dropdown-button">
-                                        <i className="fas fa-user fa-"></i>
-                                        <p className="profile-dropdown-words">About Me</p>
-                                    </div>
-                                    <div className="profile-dropdown-button">
-                                        <i className="fas fa-user-friends"></i>
-                                        <p className="profile-dropdown-words">Find Friends</p>
-                                    </div>
-                                    <div className="profile-dropdown-button">
-                                        <i className="fas fa-dollar-sign"></i>
-                                        <p className="profile-dropdown-words">Cash Back</p>
-                                    </div>
-                                    <div className="profile-dropdown-button">
-                                        <i className="fas fa-cog"></i>
-                                        <p className="profile-dropdown-words">Account Settings</p>
                                     </div>
                                 </div>
                                 <button onClick={logout} className="logout-button">Log Out</button>
@@ -85,7 +67,7 @@ class BusinessShowHeader extends React.Component {
                         <input 
                             type="text"
                             className="show-search add-shadow1"
-                            placeholder="tacos, cheap dinner, Max's"
+                            placeholder="restaurant, home, auto, other"
                             onChange={this.handleInput}
                         />
                         

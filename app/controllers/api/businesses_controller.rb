@@ -16,10 +16,10 @@ class Api::BusinessesController < ApplicationController
             bizs = Business.where("categories LIKE ?", "%#{search}%").in_bounds(bounds) if bizs.length == 0
             bizs += Business.where("business_type LIKE ?", "%#{bizs[0].business_type}%").in_bounds(bounds) if bizs.length != 0
         else
-            bizs = Business.all
+            bizs = Business.in_bounds(bounds)
         end
 
-        @businesses = bizs.length > 20 ? bizs[0...19] : bizs
+        @businesses = bizs
 
         render :index
     end

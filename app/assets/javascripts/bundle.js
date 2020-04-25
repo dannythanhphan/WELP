@@ -725,58 +725,36 @@ var BusinessShowHeader = /*#__PURE__*/function (_React$Component) {
       var logged = currentUser ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "logged-in-con"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-dropdown-arrow"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-dropdown"
+        className: "search-profile-dropdown-arrow"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "".concat(currentUser.photoUrl),
+        className: "profile-picture-main"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "search-profile-dropdown"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "arrow-down"
+        className: "search-arrow-down"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-caret-down"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dropdown-arrow-container"
+        className: "search-dropdown-arrow-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dropdown-arrow"
+        className: "search-dropdown-arrow"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-dropdown-content"
+        className: "search-profile-dropdown-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "pp-user-info-container"
+        className: "search-pp-user-info-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "pp-ui-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-picture"
+        className: "search-pp-ui-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "".concat(currentUser.photoUrl),
+        className: "search-profile-picture"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "user-info-name"
       }, currentUser.fname, " ", currentUser.lname[0], "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "user-info-username"
-      }, currentUser.username))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-buttons"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-dropdown-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-user fa-"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "profile-dropdown-words"
-      }, "About Me")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-dropdown-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-user-friends"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "profile-dropdown-words"
-      }, "Find Friends")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-dropdown-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-dollar-sign"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "profile-dropdown-words"
-      }, "Cash Back")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-dropdown-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-cog"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "profile-dropdown-words"
-      }, "Account Settings"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, currentUser.username))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: logout,
         className: "logout-button"
       }, "Log Out")))))) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -806,7 +784,7 @@ var BusinessShowHeader = /*#__PURE__*/function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         className: "show-search add-shadow1",
-        placeholder: "tacos, cheap dinner, Max's",
+        placeholder: "restaurant, home, auto, other",
         onChange: this.handleInput
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -1644,7 +1622,8 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
         id: "food-search",
         type: "text",
         value: this.state.category,
-        onChange: this.handleInput
+        onChange: this.handleInput,
+        placeholder: "restaurant, home, auto, other"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "near",
         type: "text",

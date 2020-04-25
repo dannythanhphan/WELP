@@ -139,18 +139,17 @@
     margin-right: 4%
 }
 
-.profile-dropdown-arrow {
+.search-profile-dropdown-arrow {
     display: flex;
     flex-direction: row;
 }
 
-.profile-dropdown {
+.search-profile-dropdown {
     position: relative;
     display: inline-block;
     width: 35px;
     height: 35px;
     background-color: transparent;
-    background-image: image-url("stock.jpg");
     background-size: cover;
     background-position: center;
     border: none;
@@ -160,7 +159,7 @@
     border-bottom-left-radius: 4px;
 }
 
-.arrow-down {
+.search-arrow-down {
     width: 10px;
     height: 35px;
     background-color: rgba(46, 46, 46, 0.603);
@@ -173,10 +172,10 @@
     padding-right: 10px;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
-    left: 35px;
+    
 }
 
-.arrow-down:hover {
+.search-arrow-down:hover {
     cursor: pointer;
 }
 
@@ -184,7 +183,7 @@
     color: white;
 }
 
-.profile-dropdown::after {
+.search-profile-dropdown::after {
     width: 0; 
     height: 0; 
     border-left: 5px solid transparent;
@@ -192,26 +191,28 @@
     border-bottom: 35px solid red;
 }
 
-.dropdown-arrow-container {
-    width: 50px;
+.search-dropdown-arrow-container {
+    width: 75px;
+    position: relative;
+    right: 35px;
 }
 
-.dropdown-arrow {
+.search-dropdown-arrow {
     display: none;
     width: 0; 
     height: 0; 
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 13px solid white;
+    border-bottom: 13px solid #f1f1f1;;
     position: relative;
     left: 15px;
 }
 
-.profile-dropdown-content {
+.search-profile-dropdown-content {
     display: none;
     position: relative;
     background-color: #f1f1f1;
-    right: 138px;
+    right: 170px;
     border-radius: 4px;
     min-width: 160px;
     min-height: 100px;
@@ -221,19 +222,19 @@
     cursor: default;
 }
 
-.profile-dropdown:hover .dropdown-arrow-container .dropdown-arrow {
+.search-profile-dropdown:hover .search-dropdown-arrow-container .search-dropdown-arrow {
     display: block;
 }
 
-.profile-dropdown:hover .profile-dropdown-content {
+.search-profile-dropdown:hover .search-profile-dropdown-content {
     display: block;
 }
 
-.pp-user-info-container {
+.search-pp-user-info-container {
     vertical-align: baseline;
 }
 
-.pp-ui-container {
+.search-pp-ui-container {
     display: flex;
     flex-direction: row;
     padding-bottom: 10px;
@@ -241,10 +242,9 @@
     border-bottom: 1px solid lightgray;
 }
 
-.profile-picture {
+.search-profile-picture {
     width: 50px;
     height: 50px;
-    background-image: image-url("stock.jpg");
     background-size: cover;
     background-position: center;
     margin-right: 15px;
@@ -275,51 +275,6 @@
 }
 
 .user-info-username:hover {
-    text-decoration: underline;
-}
-
-.profile-buttons {
-    padding-bottom: 5px;
-    border-bottom: 1px solid lightgray;
-}
-
-.profile-dropdown-button {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 8px;
-}
-
-.fa-user {
-    margin-right: 10px;
-}
-
-.fa-user-friends {
-    margin-right: 4px;
-    position: relative;
-    right: 4px;
-}
-
-.fa-dollar-sign {
-    margin-right: 15px;
-    font-size: 16px;
-    position: relative;
-    left: 1px;
-}
-
-.fa-cog {
-    margin-right: 8px;
-    position: relative;
-    right: 2px;
-}
-
-.profile-dropdown-words {
-    font-size: 14px;
-    font-weight: bold;
-    color: rgb(72, 72, 218);
-}
-
-.profile-dropdown-words:hover {
-    cursor: pointer;
     text-decoration: underline;
 }
 
