@@ -96,11 +96,11 @@ class BusinessShow extends React.Component {
                                     </i>
                                 </button>
                             </Link>
-                            <button className="add-photo-button">
+                            {/* <button className="add-photo-button">
                                 <i className="fa fa-camera show-photo-container">
                                     <p className="show-photo-text"> Add Photo</p>
                                 </i>
-                            </button>
+                            </button> */}
                         </div>
                         <div className="show-border-line"></div>
                         <div className="show-business-map">

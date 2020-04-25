@@ -30,7 +30,7 @@ const SingleReview = ({ review, users }) => {
                     {review.body}
                 </div>
             </div>
-
+            
         </div>
     )
 };

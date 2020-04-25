@@ -33,7 +33,6 @@ class ReviewItem extends React.Component {
                 {bizReviews.map(review => {
                     return <SingleReview key={Math.random()} review={review} users={users}/>
                 })}
-                <div className="show-border-line"></div>
             </div>
         ) : (
             null

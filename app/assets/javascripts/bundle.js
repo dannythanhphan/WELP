@@ -565,13 +565,7 @@ var BusinessShow = /*#__PURE__*/function (_React$Component) {
         className: "fa fa-star show-review-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "show-review-text"
-      }, " Write a Review ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "add-photo-button"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fa fa-camera show-photo-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "show-photo-text"
-      }, " Add Photo")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, " Write a Review "))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-border-line"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-business-map"
@@ -1135,8 +1129,6 @@ var ReviewItem = /*#__PURE__*/function (_React$Component) {
           review: review,
           users: users
         });
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "show-border-line"
       })) : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, displayReviews);
     }
