@@ -6,8 +6,15 @@
 }
 
 .show-photos-container {
-    min-height: 250px;
+    height: 250px;
     background-color: lightsalmon;
+    display: flex;
+    justify-content: center;
+}
+
+.business-picture {
+    height: 100%;
+    width: 400px;
 }
 
 .show-main-content-container {

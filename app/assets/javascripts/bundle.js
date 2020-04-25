@@ -489,7 +489,7 @@ var BusinessShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var business = this.props.business;
       var cost = "";
-      var number = "";
+      var number = ""; // debugger
 
       if (business) {
         for (var i = 1; i <= business.cost; i++) {
@@ -517,6 +517,12 @@ var BusinessShow = /*#__PURE__*/function (_React$Component) {
         }
       }
 
+      var business_photo = this.props.business ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "show-photos-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "".concat(business.photoUrl),
+        className: "business-picture"
+      })) : null;
       var business_info = this.props.business ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "show-info-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -600,9 +606,7 @@ var BusinessShow = /*#__PURE__*/function (_React$Component) {
       }), business.url))))) : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_show_header_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
         history: this.props.history
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "show-photos-container"
-      }), business_info);
+      }), business_photo, business_info);
     }
   }]);
 

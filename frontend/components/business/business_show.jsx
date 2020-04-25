@@ -24,6 +24,7 @@ class BusinessShow extends React.Component {
 
         let cost = "";
         let number = ""
+        // debugger
 
         if (business) {
             for (let i = 1; i <= business.cost; i++) {
@@ -49,6 +50,13 @@ class BusinessShow extends React.Component {
             }
         }
 
+        const business_photo = this.props.business ? (
+            <div className="show-photos-container">
+                <img src={`${business.photoUrl}`} className="business-picture"/>
+            </div>
+        ) : ( 
+            null
+        )
 
         const business_info = this.props.business ? (
             <div className="show-info-container">
@@ -137,9 +145,7 @@ class BusinessShow extends React.Component {
         return (
             <div>
                 <BusinessShowHeaderContainer history={this.props.history}/>
-                <div className="show-photos-container">
-                    
-                </div>
+                {business_photo}
                 {business_info}
             </div>
         );
