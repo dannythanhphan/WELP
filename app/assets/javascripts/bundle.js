@@ -711,8 +711,12 @@ var BusinessShowHeader = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this2 = this;
+
       e.preventDefault();
-      this.props.updateFilters("category", this.state.category); // .then(() => this.props.history.push("/search"))
+      this.props.updateFilters("category", this.state.category).then(function () {
+        return _this2.props.history.push("/search");
+      });
     }
   }, {
     key: "render",
@@ -2191,10 +2195,13 @@ __webpack_require__.r(__webpack_exports__);
 var Search = function Search(_ref) {
   var businesses = _ref.businesses,
       search = _ref.search,
-      updateFilters = _ref.updateFilters;
+      updateFilters = _ref.updateFilters,
+      history = _ref.history;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "search-page-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_business_show_header_container__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_business_show_header_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    history: history
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "index-map-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
     businesses: businesses,

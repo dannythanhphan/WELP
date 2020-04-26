@@ -17,12 +17,11 @@ class BusinessShowHeader extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.updateFilters("category", this.state.category)
-            // .then(() => this.props.history.push("/search"))
+            .then(() => this.props.history.push("/search"))
     }
 
     render() {
         const { currentUser, logout } = this.props
-
         let logged = (currentUser) ? (
             <div className="logged-in-con">
                 <div className="search-profile-dropdown-arrow">
