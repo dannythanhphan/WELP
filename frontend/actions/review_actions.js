@@ -1,7 +1,8 @@
 import * as reviewUtils from '../utils/review_utils'
 
 export const RECEIVE_ALL_REVIEWS = "RECEIVE_ALL_REVIEWS";
-export const CREATE_REVIEW = "CREATE_REVIEW"
+export const CREATE_REVIEW = "CREATE_REVIEW";
+export const DELETE_REVIEW = "DELETE_REVIEW";
 
 const receiveReviews = (reviews) => ({
     type: RECEIVE_ALL_REVIEWS,
@@ -13,6 +14,11 @@ const createReview = (review) => ({
     review
 })
 
+const deleteReview = (review) => ({
+    type: DELETE_REVIEW,
+    review
+})
+
 export const receiveSpecificReviews = (businessId) => (dispatch) => (
     reviewUtils.fetchReviews(businessId)
         .then((reviews) => dispatch(receiveReviews(reviews)))
@@ -21,4 +27,9 @@ export const receiveSpecificReviews = (businessId) => (dispatch) => (
 export const createNewReview = (form) => (dispatch) => (
     reviewUtils.createReview(form)
         .then((review) => dispatch(createReview(review)))
+)
+
+export const createNewReview = (reviewId) => (dispatch) => (
+    reviewUtils.deleteReview(reviewId)
+        .then((review) => dispatch(deleteReview(review)))
 )

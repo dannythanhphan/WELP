@@ -12,3 +12,11 @@ export const createReview = (data) => {
         data
     })
 }
+
+export const deleteReview = (reviewId) => {
+    return $.ajax({
+        method: "POST",
+        url: `/api/businesses/${data.business_id}/reviews/${reviewId}`,
+        data
+    })
+}
