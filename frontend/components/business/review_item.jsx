@@ -11,11 +11,11 @@ class ReviewItem extends React.Component {
         this.props.receiveSpecificReviews(this.props.business.id)
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        if (Object.keys(prevProps.reviews).length != Object.keys(this.props.reviews).length) {
-            this.props.receiveSpecificReviews(this.props.business.id)
-        }
-    }
+    // componentDidUpdate(prevProps, prevState) {
+    //     if (Object.keys(prevProps.reviews).length != Object.keys(this.props.reviews).length) {
+    //         this.props.receiveSpecificReviews(this.props.business.id)
+    //     }
+    // }
 
     render() {
         const { reviews, users } = this.props
