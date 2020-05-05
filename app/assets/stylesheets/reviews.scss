@@ -157,3 +157,31 @@
     font-size: 16px;
     font-weight: bold;
 }
+
+.review-delete-button-container {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    top: 80px
+}
+
+.review-delete-button {
+    color: white;
+    border: none;
+    background-color: red;
+    border: 1px solid white;
+    border-radius: 6px;
+    font-weight: bold;
+    height: 30px;
+    cursor: pointer;
+    transition: ease 0.5s;
+}
+
+.review-delete-button:hover {
+    color: red;
+    border: none;
+    background-color: white;
+    border: 1px solid red;
+
+    cursor: pointer;
+}
