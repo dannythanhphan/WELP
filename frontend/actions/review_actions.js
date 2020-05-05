@@ -14,7 +14,7 @@ const createReview = (review) => ({
     review
 })
 
-const deleteReview = (review) => ({
+const removeReview = (review) => ({
     type: DELETE_REVIEW,
     review
 })
@@ -29,7 +29,7 @@ export const createNewReview = (form) => (dispatch) => (
         .then((review) => dispatch(createReview(review)))
 )
 
-export const createNewReview = (reviewId) => (dispatch) => (
-    reviewUtils.deleteReview(reviewId)
-        .then((review) => dispatch(deleteReview(review)))
+export const deleteReview = (review) => (dispatch) => (
+    reviewUtils.deleteReview(review)
+        .then((review) => dispatch(removeReview(review)))
 )

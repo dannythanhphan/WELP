@@ -13,6 +13,11 @@ class Api::ReviewsController < ApplicationController
         end
     end
 
+    def destroy
+        debugger
+        review = Review.find()
+    end
+
     def review_params
         params.permit(:rating, :body)
     end
