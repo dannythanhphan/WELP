@@ -14,13 +14,10 @@ const createReview = (review) => ({
     review
 })
 
-const removeReview = (review) => {
-    debugger
-    return ({
-        type: DELETE_REVIEW,
-        review
-    })
-}
+const removeReview = (review) => ({
+    type: DELETE_REVIEW,
+    review
+})
 
 export const receiveSpecificReviews = (businessId) => (dispatch) => (
     reviewUtils.fetchReviews(businessId)
@@ -32,10 +29,7 @@ export const createNewReview = (form) => (dispatch) => (
         .then((review) => dispatch(createReview(review)))
 )
 
-export const deleteReview = (review) => (dispatch) => {
-    debugger
-    return (
-        reviewUtils.deleteReview(review)
-            .then((review) => dispatch(removeReview(review)))
-    )
-}
+export const deleteReview = (review) => (dispatch) => (
+    reviewUtils.deleteReview(review)
+        .then((review) => dispatch(removeReview(review)))
+)

@@ -56,9 +56,9 @@ class BusinessMap extends React.Component {
                                     lat: this.map.getBounds().getNorthEast().lat(),
                                     lng: this.map.getBounds().getNorthEast().lng()
                                 },
-                            southWest: {
-                                lat: this.map.getBounds().getSouthWest().lat(),
-                                lng: this.map.getBounds().getSouthWest().lng(),
+                                southWest: {
+                                    lat: this.map.getBounds().getSouthWest().lat(),
+                                    lng: this.map.getBounds().getSouthWest().lng(),
                                 }
                             }
                 this.props.updateFilters("bounds", bounds)

@@ -213,7 +213,6 @@ var createReview = function createReview(review) {
 };
 
 var removeReview = function removeReview(review) {
-  debugger;
   return {
     type: DELETE_REVIEW,
     review: review
@@ -236,7 +235,6 @@ var createNewReview = function createNewReview(form) {
 };
 var deleteReview = function deleteReview(review) {
   return function (dispatch) {
-    debugger;
     return _utils_review_utils__WEBPACK_IMPORTED_MODULE_0__["deleteReview"](review).then(function (review) {
       return dispatch(removeReview(review));
     });
@@ -2449,7 +2447,6 @@ var ReviewReducer = function ReviewReducer() {
 
     case _actions_review_actions__WEBPACK_IMPORTED_MODULE_0__["DELETE_REVIEW"]:
       var nextState = Object.assign({}, state);
-      debugger;
       delete nextState[action.review.id];
       return nextState;
 
@@ -3120,7 +3117,6 @@ var createReview = function createReview(data) {
   });
 };
 var deleteReview = function deleteReview(review) {
-  debugger;
   return $.ajax({
     method: "DELETE",
     url: "/api/reviews/".concat(review.id)

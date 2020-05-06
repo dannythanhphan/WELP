@@ -14,7 +14,6 @@ export const createReview = (data) => {
 }
 
 export const deleteReview = (review) => {
-    debugger
     return $.ajax({
         method: "DELETE",
         url: `/api/reviews/${review.id}`,

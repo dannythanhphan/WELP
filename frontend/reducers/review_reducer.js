@@ -10,7 +10,6 @@ const ReviewReducer = (state = {}, action) => {
             return action.review
         case DELETE_REVIEW:
             let nextState = Object.assign({}, state);
-            debugger
             delete nextState[action.review.id];
             return nextState;
         default:
