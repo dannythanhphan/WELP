@@ -66,8 +66,6 @@ class BusinessMap extends React.Component {
         }
     }
 
-    
-
     // boundsOnClick() {
         
     // }
