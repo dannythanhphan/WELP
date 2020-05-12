@@ -39,16 +39,16 @@ class BusinessMap extends React.Component {
             this.MarkerManager.updateMarkers(this.props.businesses)
         }
         
-        // let bounds = { northEast: {
-        //                     lat: this.map.getBounds().getNorthEast().lat(),
-        //                     lng: this.map.getBounds().getNorthEast().lng()
-        //                     },
-        //                 southWest: {
-        //                     lat: this.map.getBounds().getSouthWest().lat(),
-        //                     lng: this.map.getBounds().getSouthWest().lng(),
-        //                     }
-        //                 }
-        // this.props.updateFilters("bounds", bounds)
+        let bounds = { northEast: {
+                            lat: this.map.getBounds().getNorthEast().lat(),
+                            lng: this.map.getBounds().getNorthEast().lng()
+                            },
+                        southWest: {
+                            lat: this.map.getBounds().getSouthWest().lat(),
+                            lng: this.map.getBounds().getSouthWest().lng(),
+                            }
+                        }
+        this.props.updateFilters("bounds", bounds)
 
         if (!this.props.business && Object.values(this.props.businesses).length > 0) {
             this.map.addListener("idle", () => {
