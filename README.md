@@ -1,24 +1,30 @@
-# README
+# Welp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live Site](https://welp-biz.herokuapp.com/#/)
 
-Things you may want to cover:
+WELP took inspiration from Yelp to create a website dedicated to rating businesses in San Francisco. 
 
-* Ruby version
+# Technologies
+* Frontend
+  * React.js
+  * Redux.js
+* Backend
+  * Ruby on Rails
+  * PostgreSQL
+* Storage
+  * Amazon Web Services S3
 
-* System dependencies
+# Features
 
-* Configuration
+## Search
+Users are able to use the search bar to search for any businesses, business type, or business category in San Francisco. 
 
-* Database creation
+## Maps
+After searching for a business, the user is directed to the search page where it displays the businesses on the map with markers displaying the location of the business. The user can move the map around and it will redo the search based on the new map location. 
 
-* Database initialization
+![](https://media.giphy.com/media/lrsI9egcgI4RdVuRQE/giphy.gif)
 
-* How to run the test suite
+## Reviews
+If the user is logged in, they will be able to write a review for the business
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![](https://media.giphy.com/media/LMX0CKLxrCzIqBZqVp/giphy.gif)
