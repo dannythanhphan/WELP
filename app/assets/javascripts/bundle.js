@@ -3058,6 +3058,13 @@ var MarkerManager = /*#__PURE__*/function () {
         businesses.forEach(function (business) {
           if (!Object.keys(that.markers).includes("".concat(business.id))) {
             _this.createMarkerFromBusiness(business);
+
+            var infowindow = new google.maps.InfoWindow({
+              content: "hi"
+            });
+            that.markers[business.id].addListener('click', function () {
+              infowindow.open(that.map, that.markers[business.id]);
+            });
           }
         });
       } else {

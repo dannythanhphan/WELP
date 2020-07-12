@@ -23,7 +23,14 @@ class MarkerManager {
             businesses.forEach((business) => {
 
                 if (!Object.keys(that.markers).includes(`${business.id}`)) {
-                    this.createMarkerFromBusiness(business)
+                    this.createMarkerFromBusiness(business);
+                    let infowindow = new google.maps.InfoWindow({
+                        content: "hi"
+                      });
+
+                    that.markers[business.id].addListener('click', function() {
+                        infowindow.open(that.map, that.markers[business.id]);
+                    });
                 }
             })
         } else {
