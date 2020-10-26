@@ -1924,6 +1924,7 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
 
       if (this.state.loaded === false) {
         document.getElementsByClassName("body-container")[0].style.display = "none";
+        document.getElementsByClassName("footer-container")[0].style.display = "none";
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "loading-container"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

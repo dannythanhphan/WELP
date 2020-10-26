@@ -40,6 +40,7 @@ class Navbar extends React.Component {
 
         if (this.state.loaded === false) {
             document.getElementsByClassName("body-container")[0].style.display = "none"
+            document.getElementsByClassName("footer-container")[0].style.display = "none"
             return (
                 <div className="loading-container">
                     <div className="loading-header">
