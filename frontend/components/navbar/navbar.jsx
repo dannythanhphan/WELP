@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import HomeBodyContainer from './home_body_container';
 
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             category: "",
+            loaded: true
         }
         this.handleInput = this.handleInput.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -18,8 +20,12 @@ class Navbar extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.setState({ loaded: false });
         this.props.updateFilters("category", this.state.category)
-            .then(() => this.props.history.push("/search"))
+            .then(() => {
+                this.setState({ loaded: true });
+                this.props.history.push("/search");
+            })
     }
 
     demoSubmit(e) {
@@ -31,6 +37,24 @@ class Navbar extends React.Component {
 
     render() {
         const { currentUser, logout } = this.props
+
+        if (this.state.loaded === false) {
+            document.getElementsByClassName("body-container")[0].style.display = "none"
+            return (
+                <div className="loading-container">
+                    <div className="loading-header">
+                        <div id="welp-name-logo-login"></div>
+                    </div>
+                    <div className="loading-body">
+                        <div className="big-o-popup"></div>    
+                    </div>
+                    <div className="loading-footer">
+                        <div className="footer-image-pop"></div>
+                    </div>
+
+                </div>
+            )
+        }
 
         let logged = (currentUser) ? (
             <div className="logged-in-container">

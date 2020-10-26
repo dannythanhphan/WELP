@@ -91,7 +91,6 @@ class BusinessIndex extends React.Component {
         let { businesses, search } = this.props;
         let businessesCopy = [...businesses];
         let filteredBizs = this.filterBusinesses(businessesCopy, search);
-
         const displayBusiness = (businesses.length > 0) ? (
             filteredBizs.map((business) => {
                 return <BusinessIndexItem key={Math.random()} business={business} />

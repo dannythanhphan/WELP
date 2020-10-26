@@ -54,7 +54,7 @@ class HomeBody extends React.Component {
         // )
 
         return (
-            <div>
+            <div className="body-container">
                 <div className="body-categories-search">
                     <p className="body-cat-title">Find the Best Businesses in San Francisco</p>
                     <div className="body-categories-container">

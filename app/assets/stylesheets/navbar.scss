@@ -440,3 +440,39 @@
     width: 100%;
     height: 100%;
 }
+
+.loading-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.loading-header {
+    height: 10%;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+}
+
+.loading-body {
+    height: 20%;
+}
+
+.big-o-popup { 
+    background-image: image-url("loading.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.loading-footer {
+    height: 20%;
+}
+
+.footer-image-pop {
+    background-image: image-url("footer.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
