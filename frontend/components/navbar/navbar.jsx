@@ -76,25 +76,27 @@ class Navbar extends React.Component {
         return (
             <div className="nav-bar">
                 <div className="home-socials-container">
-                    <div className="github-container">
-                        <a href="https://github.com/dannythanhphan" 
-                            className="home-github">
-                        </a>
-                        <a href="https://github.com/dannythanhphan" 
-                            className="github-text">GitHub</a>
-                    </div>
+                    <div className="socials-container">
+                        <div className="github-container">
+                            <a href="https://github.com/dannythanhphan" 
+                                className="home-github">
+                            </a>
+                            <a href="https://github.com/dannythanhphan" 
+                                className="github-text">GitHub</a>
+                        </div>
 
-                    <div className="linkedin-container">
-                        <a href="https://www.linkedin.com/in/danny-phan-0b6307184/"
-                            className="home-linkedin">
-                        </a>
+                        <div className="linkedin-container">
+                            <a href="https://www.linkedin.com/in/danny-phan-0b6307184/"
+                                className="home-linkedin">
+                            </a>
 
-                        <a href="https://www.linkedin.com/in/danny-phan-0b6307184/"
-                            className="linkedin-text">LinkedIn</a>
+                            <a href="https://www.linkedin.com/in/danny-phan-0b6307184/"
+                                className="linkedin-text">LinkedIn</a>
+                        </div>
                     </div>
+                    {logged}
                 </div>
 
-                {logged}
 
                 <div id="welp-name-logo">
                     
@@ -110,8 +112,6 @@ class Navbar extends React.Component {
                             onChange={this.handleInput}
                             placeholder="restaurant, home, auto, other"
                         />
-                        <input id="near" type="text" value="Near" disabled/>
-                        <input id="city-search" type="text" placeholder="San Francisco" />
                         <button id="home-search-button" onClick={this.handleSubmit}>
                             <i className="fas fa-search fa-lg"></i>
                         </button>
