@@ -104,19 +104,24 @@ class Navbar extends React.Component {
                     <div className="socials-container">
                         <div className="github-container">
                             <a href="https://github.com/dannythanhphan" 
-                                className="home-github">
+                                className="home-github"
+                                target="_blank"
+                            >
                             </a>
                             <a href="https://github.com/dannythanhphan" 
-                                className="github-text">GitHub</a>
+                                className="github-text"
+                                target="_blank">GitHub</a>
                         </div>
 
                         <div className="linkedin-container">
                             <a href="https://www.linkedin.com/in/danny-phan-0b6307184/"
-                                className="home-linkedin">
+                                className="home-linkedin"
+                                target="_blank">
                             </a>
 
                             <a href="https://www.linkedin.com/in/danny-phan-0b6307184/"
-                                className="linkedin-text">LinkedIn</a>
+                                className="linkedin-text"
+                                target="_blank">LinkedIn</a>
                         </div>
                     </div>
                     {logged}

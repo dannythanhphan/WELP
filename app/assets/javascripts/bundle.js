@@ -2007,18 +2007,22 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
         className: "github-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://github.com/dannythanhphan",
-        className: "home-github"
+        className: "home-github",
+        target: "_blank"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://github.com/dannythanhphan",
-        className: "github-text"
+        className: "github-text",
+        target: "_blank"
       }, "GitHub")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "linkedin-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://www.linkedin.com/in/danny-phan-0b6307184/",
-        className: "home-linkedin"
+        className: "home-linkedin",
+        target: "_blank"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://www.linkedin.com/in/danny-phan-0b6307184/",
-        className: "linkedin-text"
+        className: "linkedin-text",
+        target: "_blank"
       }, "LinkedIn"))), logged), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "welp-name-logo"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
