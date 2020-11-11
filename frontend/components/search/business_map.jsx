@@ -12,8 +12,13 @@ class BusinessMap extends React.Component {
                 draggable: false
             };
         } else if (Object.values(this.props.businesses).length > 0) {
-            let firstBiz = Object.values(this.props.businesses)[0]
-
+            let firstBiz;
+            for (let i = 0; i < this.props.businesses.length; i++) {
+                if (this.props.businesses[i].categories === this.props.search) {
+                    firstBiz = this.props.businesses[i];
+                    break;
+                }
+            }
             mapOptions = {
                 center: { lat: firstBiz.lat, lng: firstBiz.lng },
                 zoom: 14

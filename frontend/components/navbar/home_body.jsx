@@ -3,6 +3,9 @@ import React from 'react';
 class HomeBody extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            loaded: true
+        }
         this.handleSearchCategory = this.handleSearchCategory.bind(this)
     }
 
@@ -13,13 +16,37 @@ class HomeBody extends React.Component {
     handleSearchCategory(category) {
         return e => {
             e.preventDefault();
+            this.setState({ loaded: false })
             this.props.updateFilters("category", category)
-                .then(() => this.props.history.push("/search"))
+                .then(() => {
+                    this.setState({ loaded: true })
+                    document.getElementsByClassName("footer-container")[0].style.display = "block"
+                    this.props.history.push("/search")
+                })
         }
     }
 
     render() {
         const { businesses } = this.props
+
+        if (this.state.loaded === false) {
+            document.getElementsByClassName("nav-bar")[0].style.display = "none"
+            document.getElementsByClassName("footer-container")[0].style.display = "none"
+            window.scrollTo(0, 0)
+            return (
+                <div className="loading-container">
+                    <div className="loading-header">
+                        <div id="welp-name-logo-login"></div>
+                    </div>
+                    <div className="loading-body">
+                        <div className="big-o-popup"></div>    
+                    </div>
+                    <div className="loading-footer">
+                        <div className="footer-image-pop"></div>
+                    </div>
+                </div>
+            )
+        }
 
         // let pickThree = []
 
@@ -58,9 +85,9 @@ class HomeBody extends React.Component {
                 <div className="body-categories-search">
                     <p className="body-cat-title">Find the Best Businesses in San Francisco</p>
                     <div className="body-categories-container">
-                        <div className="body-search" onClick={this.handleSearchCategory("Asian")}>
-                            <img src="asian.jpg"/>
-                            <p className="body-cat-text">Asian Fusion</p>
+                        <div className="body-search" onClick={this.handleSearchCategory("Bakery")}>
+                            <img src="bakery.jpg"/>
+                            <p className="body-cat-text">Bakery</p>
                         </div>
                         <div className="body-search" onClick={this.handleSearchCategory("Breakfast")}>
                             <img src="breakfast.jpg" />

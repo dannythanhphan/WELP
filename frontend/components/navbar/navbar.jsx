@@ -24,6 +24,7 @@ class Navbar extends React.Component {
         this.props.updateFilters("category", this.state.category)
             .then(() => {
                 this.setState({ loaded: true });
+                document.getElementsByClassName("footer-container")[0].style.display = "block"
                 this.props.history.push("/search");
             })
     }

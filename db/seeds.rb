@@ -247,7 +247,7 @@ Business.destroy_all
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r22.jpg')
         res22.photo.attach(io: file, filename: 'r22.jpg')
         
-        res23 = Business.create!(name: "Two Worlds Collide", categories: "Asian Fusion", business_phone: number_generator,
+        res23 = Business.create!(name: "Two Worlds Collide", categories: "Bakery", business_phone: number_generator,
                               url: "twoworldscollide.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
                               email: "#twoworldscollide@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r23.jpg')

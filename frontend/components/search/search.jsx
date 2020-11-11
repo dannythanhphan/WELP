@@ -17,6 +17,7 @@ const Search = ({ businesses, search, updateFilters, history }) => (
                 <BusinessMap 
                     businesses={businesses} 
                     updateFilters={updateFilters} 
+                    search={search}
                 />
             </div>
         </div>

@@ -19,7 +19,7 @@ class Api::BusinessesController < ApplicationController
             bizs = Business.in_bounds(bounds)
         end
 
-        @businesses = bizs.length > 20 ? bizs[0...19] : bizs
+        @businesses = bizs
 
         render :index
     end

@@ -1676,6 +1676,9 @@ var HomeBody = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, HomeBody);
 
     _this = _super.call(this, props);
+    _this.state = {
+      loaded: true
+    };
     _this.handleSearchCategory = _this.handleSearchCategory.bind(_assertThisInitialized(_this));
     return _this;
   } // componentDidMount() {
@@ -1691,15 +1694,46 @@ var HomeBody = /*#__PURE__*/function (_React$Component) {
       return function (e) {
         e.preventDefault();
 
+        _this2.setState({
+          loaded: false
+        });
+
         _this2.props.updateFilters("category", category).then(function () {
-          return _this2.props.history.push("/search");
+          _this2.setState({
+            loaded: true
+          });
+
+          document.getElementsByClassName("footer-container")[0].style.display = "block";
+
+          _this2.props.history.push("/search");
         });
       };
     }
   }, {
     key: "render",
     value: function render() {
-      var businesses = this.props.businesses; // let pickThree = []
+      var businesses = this.props.businesses;
+
+      if (this.state.loaded === false) {
+        document.getElementsByClassName("nav-bar")[0].style.display = "none";
+        document.getElementsByClassName("footer-container")[0].style.display = "none";
+        window.scrollTo(0, 0);
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "loading-container"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "loading-header"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          id: "welp-name-logo-login"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "loading-body"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "big-o-popup"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "loading-footer"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "footer-image-pop"
+        })));
+      } // let pickThree = []
       // if (Object.keys(this.props.businesses).length > 0) {
       //     let bizKeys = Object.keys(businesses)
       //     while (pickThree.length < 4) {
@@ -1729,6 +1763,7 @@ var HomeBody = /*#__PURE__*/function (_React$Component) {
       //     null
       // )
 
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1739,12 +1774,12 @@ var HomeBody = /*#__PURE__*/function (_React$Component) {
         className: "body-categories-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "body-search",
-        onClick: this.handleSearchCategory("Asian")
+        onClick: this.handleSearchCategory("Bakery")
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "asian.jpg"
+        src: "bakery.jpg"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "body-cat-text"
-      }, "Asian Fusion")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Bakery")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "body-search",
         onClick: this.handleSearchCategory("Breakfast")
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1897,6 +1932,8 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
         _this2.setState({
           loaded: true
         });
+
+        document.getElementsByClassName("footer-container")[0].style.display = "block";
 
         _this2.props.history.push("/search");
       });
@@ -2503,7 +2540,15 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
           draggable: false
         };
       } else if (Object.values(this.props.businesses).length > 0) {
-        var firstBiz = Object.values(this.props.businesses)[0];
+        var firstBiz;
+
+        for (var i = 0; i < this.props.businesses.length; i++) {
+          if (this.props.businesses[i].categories === this.props.search) {
+            firstBiz = this.props.businesses[i];
+            break;
+          }
+        }
+
         mapOptions = {
           center: {
             lat: firstBiz.lat,
@@ -2632,7 +2677,8 @@ var Search = function Search(_ref) {
     className: "main-map-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_business_map__WEBPACK_IMPORTED_MODULE_1__["default"], {
     businesses: businesses,
-    updateFilters: updateFilters
+    updateFilters: updateFilters,
+    search: search
   }))));
 };
 
@@ -3420,7 +3466,7 @@ var MarkerManager = /*#__PURE__*/function () {
             _this.createMarkerFromBusiness(business);
 
             var infowindow = new google.maps.InfoWindow({
-              content: "hi"
+              content: "<div className=`info-window`> yo </div"
             });
             that.markers[business.id].addListener('click', function () {
               infowindow.open(that.map, that.markers[business.id]);

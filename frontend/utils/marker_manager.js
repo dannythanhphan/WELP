@@ -25,7 +25,7 @@ class MarkerManager {
                 if (!Object.keys(that.markers).includes(`${business.id}`)) {
                     this.createMarkerFromBusiness(business);
                     let infowindow = new google.maps.InfoWindow({
-                        content: "hi"
+                        content: "<div className=`info-window`> yo </div"
                       });
 
                     that.markers[business.id].addListener('click', function() {
