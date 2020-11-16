@@ -1800,9 +1800,7 @@ var HomeBody = /*#__PURE__*/function (_React$Component) {
         src: "japanese1.jpg"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "body-cat-text"
-      }, "Japanese")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "body-welp-title"
-      }, "Welp San Francisco"));
+      }, "Japanese")))));
     }
   }]);
 
@@ -1928,15 +1926,28 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
       this.setState({
         loaded: false
       });
-      this.props.updateFilters("category", this.state.category).then(function () {
-        _this2.setState({
-          loaded: true
+
+      if (this.state.category.length < 1) {
+        this.props.updateFilters("category", "Restaurant").then(function () {
+          _this2.setState({
+            loaded: true
+          });
+
+          document.getElementsByClassName("footer-container")[0].style.display = "block";
+
+          _this2.props.history.push("/search");
         });
+      } else {
+        this.props.updateFilters("category", this.state.category).then(function () {
+          _this2.setState({
+            loaded: true
+          });
 
-        document.getElementsByClassName("footer-container")[0].style.display = "block";
+          document.getElementsByClassName("footer-container")[0].style.display = "block";
 
-        _this2.props.history.push("/search");
-      });
+          _this2.props.history.push("/search");
+        });
+      }
     }
   }, {
     key: "demoSubmit",
@@ -2528,6 +2539,7 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
       var _this = this;
 
       var mapOptions = {};
+      var category = ["Restaurant", "Home", "Other", "Auto"];
 
       if (this.props.business) {
         mapOptions = {
@@ -2541,12 +2553,17 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
         };
       } else if (Object.values(this.props.businesses).length > 0) {
         var firstBiz;
+        var capitalizeSearch = this.props.search.charAt(0).toUpperCase() + this.props.search.slice(1);
 
-        for (var i = 0; i < this.props.businesses.length; i++) {
-          if (this.props.businesses[i].categories === this.props.search) {
-            firstBiz = this.props.businesses[i];
-            break;
+        if (this.props.search.length > 0 && !category.includes(capitalizeSearch)) {
+          for (var i = 0; i < this.props.businesses.length; i++) {
+            if (this.props.businesses[i].categories === this.props.search) {
+              firstBiz = this.props.businesses[i];
+              break;
+            }
           }
+        } else {
+          firstBiz = this.props.businesses[0];
         }
 
         mapOptions = {

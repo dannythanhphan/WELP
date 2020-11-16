@@ -103,9 +103,9 @@ class HomeBody extends React.Component {
                         </div>
                     </div>    
                 </div>
-                <div className="body-welp-title">
+                {/* <div className="body-welp-title">
                     Welp San Francisco
-                </div>
+                </div> */}
                 {/* {threeBusinesses} */}
             </div>
         );

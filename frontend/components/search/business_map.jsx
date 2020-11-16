@@ -4,6 +4,7 @@ import MarkerManager from '../../utils/marker_manager';
 class BusinessMap extends React.Component {
     componentDidMount() {
         let mapOptions = {};
+        const category = ["Restaurant", "Home", "Other", "Auto"]
         if (this.props.business) {
             mapOptions = {
                 center: { lat: this.props.business.lat, lng: this.props.business.lng },
@@ -13,11 +14,16 @@ class BusinessMap extends React.Component {
             };
         } else if (Object.values(this.props.businesses).length > 0) {
             let firstBiz;
-            for (let i = 0; i < this.props.businesses.length; i++) {
-                if (this.props.businesses[i].categories === this.props.search) {
-                    firstBiz = this.props.businesses[i];
-                    break;
+            let capitalizeSearch = this.props.search.charAt(0).toUpperCase() + this.props.search.slice(1)
+            if (this.props.search.length > 0 && !category.includes(capitalizeSearch)) {
+                for (let i = 0; i < this.props.businesses.length; i++) {
+                    if (this.props.businesses[i].categories === this.props.search) {
+                        firstBiz = this.props.businesses[i];
+                        break;
+                    }
                 }
+            } else {
+                firstBiz = this.props.businesses[0]
             }
             mapOptions = {
                 center: { lat: firstBiz.lat, lng: firstBiz.lng },

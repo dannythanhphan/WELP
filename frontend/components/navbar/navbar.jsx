@@ -21,12 +21,22 @@ class Navbar extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.setState({ loaded: false });
-        this.props.updateFilters("category", this.state.category)
+        if (this.state.category.length < 1) {
+            this.props.updateFilters("category", "Restaurant")
+                .then(() => {
+                    this.setState({ loaded: true });
+                    document.getElementsByClassName("footer-container")[0].style.display = "block"
+                    this.props.history.push("/search");
+                })
+
+        } else {
+            this.props.updateFilters("category", this.state.category)
             .then(() => {
                 this.setState({ loaded: true });
                 document.getElementsByClassName("footer-container")[0].style.display = "block"
                 this.props.history.push("/search");
             })
+        }
     }
 
     demoSubmit(e) {
