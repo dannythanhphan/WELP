@@ -25,11 +25,12 @@ class MarkerManager {
                 if (!Object.keys(that.markers).includes(`${business.id}`)) {
                     this.createMarkerFromBusiness(business);
                     let infowindow = new google.maps.InfoWindow({
-                        content: "<div className=`info-window`> yo </div"
+                        content: `<div className="info-window"> ${business.name} </div`
                       });
 
                     that.markers[business.id].addListener('click', function() {
                         infowindow.open(that.map, that.markers[business.id]);
+                        document.getElementById(`${business.name}`).scrollIntoView({block: "center"})
                     });
                 }
             })

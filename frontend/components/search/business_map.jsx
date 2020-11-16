@@ -13,7 +13,7 @@ class BusinessMap extends React.Component {
                 draggable: false
             };
         } else if (Object.values(this.props.businesses).length > 0) {
-            let firstBiz;
+            let firstBiz = this.props.businesses[0]
             let capitalizeSearch = this.props.search.charAt(0).toUpperCase() + this.props.search.slice(1)
             if (this.props.search.length > 0 && !category.includes(capitalizeSearch)) {
                 for (let i = 0; i < this.props.businesses.length; i++) {
@@ -22,17 +22,16 @@ class BusinessMap extends React.Component {
                         break;
                     }
                 }
-            } else {
-                firstBiz = this.props.businesses[0]
             }
+
             mapOptions = {
                 center: { lat: firstBiz.lat, lng: firstBiz.lng },
-                zoom: 14
+                zoom: 13
             };
         } else {
             mapOptions = {
                 center: { lat: 37.773972, lng: -122.431297 },
-                zoom: 14
+                zoom: 13
             }; 
         }
         

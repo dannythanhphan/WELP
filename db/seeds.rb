@@ -12,8 +12,9 @@ name_file = File.open("./generators/name.txt")
 name = name_file.readlines.map(&:chomp)
 name_file.close
 
-res_file = File.open("./generators/restaurant_categories.txt")
-res_category_name = res_file.readlines.map(&:chomp)
+res_file = File.open("./generators/restaurant_names.txt")
+res_name = res_file.readlines.map(&:chomp)
+res_name.shuffle()
 res_file.close
 
 food_file = File.open("./generators/food_categories.txt")
@@ -115,135 +116,135 @@ Business.destroy_all
 
 # BUSINESSES
     # RESTAURANTS
-        res1 = Business.create!(name: "#{curr = name.pop()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res1 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r1.jpeg')
         res1.photo.attach(io: file, filename: 'r1.jpeg')
         
-        res2 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res2 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r2.jpg')
         res2.photo.attach(io: file, filename: 'r2.jpg')
         
-        res3 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res3 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r3.png')
         res3.photo.attach(io: file, filename: 'r3.png')
         
-        res4 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res4 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r4.jpeg')
         res4.photo.attach(io: file, filename: 'r4.jpeg')
         
-        res5 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res5 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r5.jpeg')
         res5.photo.attach(io: file, filename: 'r5.jpeg')
         
-        res6 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res6 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r6.jpg')
         res6.photo.attach(io: file, filename: 'r6.jpg')
         
-        res7 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res7 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r7.jpg')
         res7.photo.attach(io: file, filename: 'r7.jpg')
         
-        res8 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res8 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r8.jpeg')
         res8.photo.attach(io: file, filename: 'r8.jpeg')
         
-        res9 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res9 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r9.jpeg')
         res9.photo.attach(io: file, filename: 'r9.jpeg')
         
-        res10 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res10 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r10.jpg')
         res10.photo.attach(io: file, filename: 'r10.jpg')
         
-        res11 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res11 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r11.jpeg')
         res11.photo.attach(io: file, filename: 'r11.jpeg')
         
-        res12 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res12 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r12.jpg')
         res12.photo.attach(io: file, filename: 'r12.jpg')
         
-        res13 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res13 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r13.jpg')
         res13.photo.attach(io: file, filename: 'r13.jpg')
         
-        res14 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res14 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r14.jpeg')
         res14.photo.attach(io: file, filename: 'r14.jpeg')
         
-        res15 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res15 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r15.jpg')
         res15.photo.attach(io: file, filename: 'r15.jpg')
         
-        res16 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res16 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r16.jpg')
         res16.photo.attach(io: file, filename: 'r16.jpg')
         
-        res17 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res17 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r17.jpg')
         res17.photo.attach(io: file, filename: 'r17.jpg')
         
-        res18 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res18 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r18.jpg')
         res18.photo.attach(io: file, filename: 'r18.jpg')
         
-        res19 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res19 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r19.jpg')
         res19.photo.attach(io: file, filename: 'r19.jpg')
         
-        res20 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res20 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r20.jpg')
         res20.photo.attach(io: file, filename: 'r20.jpg')
         
-        res21 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res21 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r21.jpg')
         res21.photo.attach(io: file, filename: 'r21.jpg')
         
-        res22 = Business.create!(name: "#{curr = name.sample()}'s #{curr_res = res_category_name.sample}", categories: "#{food_category.sample}", business_phone: number_generator,
-                              url: "#{curr}#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
-                              email: "#{curr}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
+        res22 = Business.create!(name: "#{curr_res = res_name.pop()}", categories: "#{food_category.sample}", business_phone: number_generator,
+                              url: "#{curr_res.split("").join("")}.com", city: "San Francisco", state: "California", street_address: "#{address_gen(street_name)}", zip_code: 94133, 
+                              email: "#{curr_res}@welp.com", business_type: "Restaurant", lat: lat_gen, lng: lng_gen, cost: ran_cost)
         file = open('https://welp-biz-seeds.s3-us-west-1.amazonaws.com/r22.jpg')
         res22.photo.attach(io: file, filename: 'r22.jpg')
         

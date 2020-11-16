@@ -7,7 +7,7 @@ const BusinessIndexItem = ({ business }) => {
         cost += "$";
     }
     return (
-        <Link to={`/businesses/${business.id}`} className="business-info-box-container">
+        <Link to={`/businesses/${business.id}`} className="business-info-box-container" id={`${business.name}`}>
             <img src={`${business.photoUrl}`} className="business-picture-container"/>
             <div className="business-info-container">
                 <div className="search-business-name">{business.name}</div>

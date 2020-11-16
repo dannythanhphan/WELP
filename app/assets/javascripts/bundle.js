@@ -2438,7 +2438,8 @@ var BusinessIndexItem = function BusinessIndexItem(_ref) {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/businesses/".concat(business.id),
-    className: "business-info-box-container"
+    className: "business-info-box-container",
+    id: "".concat(business.name)
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: "".concat(business.photoUrl),
     className: "business-picture-container"
@@ -2552,7 +2553,7 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
           draggable: false
         };
       } else if (Object.values(this.props.businesses).length > 0) {
-        var firstBiz;
+        var firstBiz = this.props.businesses[0];
         var capitalizeSearch = this.props.search.charAt(0).toUpperCase() + this.props.search.slice(1);
 
         if (this.props.search.length > 0 && !category.includes(capitalizeSearch)) {
@@ -2562,8 +2563,6 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
               break;
             }
           }
-        } else {
-          firstBiz = this.props.businesses[0];
         }
 
         mapOptions = {
@@ -2571,7 +2570,7 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
             lat: firstBiz.lat,
             lng: firstBiz.lng
           },
-          zoom: 14
+          zoom: 13
         };
       } else {
         mapOptions = {
@@ -2579,7 +2578,7 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
             lat: 37.773972,
             lng: -122.431297
           },
-          zoom: 14
+          zoom: 13
         };
       } // const mapOptions = {
       //     center: { lat: firstBiz.lat, lng: firstBiz.lng },
@@ -3483,10 +3482,13 @@ var MarkerManager = /*#__PURE__*/function () {
             _this.createMarkerFromBusiness(business);
 
             var infowindow = new google.maps.InfoWindow({
-              content: "<div className=`info-window`> yo </div"
+              content: "<div className=\"info-window\"> ".concat(business.name, " </div")
             });
             that.markers[business.id].addListener('click', function () {
               infowindow.open(that.map, that.markers[business.id]);
+              document.getElementById("".concat(business.name)).scrollIntoView({
+                block: "center"
+              });
             });
           }
         });
