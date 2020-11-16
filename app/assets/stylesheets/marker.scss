@@ -1,0 +1,19 @@
+#info-window-container {
+    width: 150px;
+    height: 175px;
+    display: block;
+    text-align: center;
+}
+
+#info-window-photo {
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+#info-window-business-name {
+    margin-top: 20px;
+    font-size: 16px;
+}

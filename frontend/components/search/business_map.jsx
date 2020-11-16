@@ -46,7 +46,7 @@ class BusinessMap extends React.Component {
             this.MarkerManager.updateMarkers(this.props.business)
             // this.map.setOptions({ draggable: false});
         } else if (Object.values(this.props.businesses).length > 0) {
-            this.MarkerManager.updateMarkers(this.props.businesses)
+            this.MarkerManager.updateMarkers(this.props.businesses, this.props.history)
         }
         
         // let bounds = { northEast: {
@@ -82,7 +82,7 @@ class BusinessMap extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps.businesses !== this.props.businesses) {
-            this.MarkerManager.updateMarkers(this.props.businesses)
+            this.MarkerManager.updateMarkers(this.props.businesses, this.props.history)
         }
     }
 

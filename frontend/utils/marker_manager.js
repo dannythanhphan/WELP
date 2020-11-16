@@ -4,7 +4,7 @@ class MarkerManager {
         this.markers = {};
     }
 
-    updateMarkers(businesses) {
+    updateMarkers(businesses, history) {
         this.businessObj = {};
         if (businesses.length > 1) {
             businesses.forEach((business) => {
@@ -20,15 +20,16 @@ class MarkerManager {
                 }
             }
             let that = this;
+            let infowindow = new google.maps.InfoWindow
             businesses.forEach((business) => {
 
                 if (!Object.keys(that.markers).includes(`${business.id}`)) {
                     this.createMarkerFromBusiness(business);
-                    let infowindow = new google.maps.InfoWindow({
-                        content: `<div className="info-window"> ${business.name} </div`
-                      });
 
                     that.markers[business.id].addListener('click', function() {
+                        infowindow.setContent(`<div id="info-window-container">` +
+                                                `<img src="${business.photoUrl}" id="info-window-photo"/>
+                                                <span id="info-window-business-name"> ${business.name} </span> </div>`)
                         infowindow.open(that.map, that.markers[business.id]);
                         document.getElementById(`${business.name}`).scrollIntoView({block: "center"})
                     });

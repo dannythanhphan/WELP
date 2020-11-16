@@ -2592,7 +2592,7 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
       if (this.props.business) {
         this.MarkerManager.updateMarkers(this.props.business); // this.map.setOptions({ draggable: false});
       } else if (Object.values(this.props.businesses).length > 0) {
-        this.MarkerManager.updateMarkers(this.props.businesses);
+        this.MarkerManager.updateMarkers(this.props.businesses, this.props.history);
       } // let bounds = { northEast: {
       //                     lat: this.map.getBounds().getNorthEast().lat(),
       //                     lng: this.map.getBounds().getNorthEast().lng()
@@ -2628,7 +2628,7 @@ var BusinessMap = /*#__PURE__*/function (_React$Component) {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       if (prevProps.businesses !== this.props.businesses) {
-        this.MarkerManager.updateMarkers(this.props.businesses);
+        this.MarkerManager.updateMarkers(this.props.businesses, this.props.history);
       }
     }
   }, {
@@ -3458,7 +3458,7 @@ var MarkerManager = /*#__PURE__*/function () {
 
   _createClass(MarkerManager, [{
     key: "updateMarkers",
-    value: function updateMarkers(businesses) {
+    value: function updateMarkers(businesses, history) {
       var _this = this;
 
       this.businessObj = {};
@@ -3477,14 +3477,13 @@ var MarkerManager = /*#__PURE__*/function () {
         }
 
         var that = this;
+        var infowindow = new google.maps.InfoWindow();
         businesses.forEach(function (business) {
           if (!Object.keys(that.markers).includes("".concat(business.id))) {
             _this.createMarkerFromBusiness(business);
 
-            var infowindow = new google.maps.InfoWindow({
-              content: "<div className=\"info-window\"> ".concat(business.name, " </div")
-            });
             that.markers[business.id].addListener('click', function () {
+              infowindow.setContent("<div id=\"info-window-container\">" + "<img src=\"".concat(business.photoUrl, "\" id=\"info-window-photo\"/>\n                                                <span id=\"info-window-business-name\"> ").concat(business.name, " </span> </div>"));
               infowindow.open(that.map, that.markers[business.id]);
               document.getElementById("".concat(business.name)).scrollIntoView({
                 block: "center"
